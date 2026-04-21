@@ -1,0 +1,316 @@
+{
+ "profile" : {
+    "firstname": "Lothaire",
+    "lastname": "Epee",
+    "profession": "Développeur Full Stack",
+    "locations":[
+      "Paris",
+      "Berlin"
+    ],
+    "phone": "+33 6 98 07 19 53",
+    "email": "lothaire.epee@gmail.com",
+    "portrait": {
+      "src":"/images/profile/lothaire-epee-portrait.png",
+      "alt": "Portrait de Lothaire Epee"
+    }
+  },
+  "landing" : {
+    "locationLabel": "Basé à",
+    "phoneCta": "Copier",
+    "phoneCopied": "Copié",
+    "emailCta": "Ouvrir",
+    "emailOpened": "Client mail ouvert"
+  },
+
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences et Expertise",
+    "experience": "Expérience",
+    "projects": "Projets réalisés"
+  },
+  "errorBoundary": {
+    "fallback": {
+      "title": "Une erreur est survenue",
+      "message": "Quelque chose ne s’est pas passé comme prévu.",
+      "button": "Réessayer"
+    }
+  },
+  "about": {
+    "label": "À propos",
+    "title": "À propos de moi",
+    "intro": "Un développeur confiant avec plus de 5 ans d’expérience en milieu professionnel",
+    "portraitAlt": "Photo de profil",
+    "sideText1": "J’ai contribué au développement de plateformes SaaS dans le secteur des énergies renouvelables, ainsi qu’à un système d’enquêtes à grande échelle dans le cadre d’un projet européen open source. Cela m’a permis de travailler sur des applications orientées données et des systèmes complexes utilisés dans des contextes réels.",
+    "sideText2": "Par ailleurs, j’ai développé des sites web et des solutions commerciales pour des clients privés, en m’adaptant à des besoins spécifiques tout en délivrant des résultats concrets, centrés sur l’utilisateur.",
+    "sideText3": "Je porte une grande attention à l’écriture d’un code propre, testé, respectueux des pratiques du métier. Je continue d’apprendre et apprécie relever des défis techniques. Mon objectif est d’améliorer le produit sur lequel je travail et d’offrir une meilleure expérience aux clients comme aux utilisateurs.",
+    "closing": "Tout au long de ma carrière, j’ai cherché à travailler sur des projets utiles et porteurs de sens.",
+    "bottomCta": "Contact",
+    "seo": {
+      "title": "À propos – Lothaire Epee | Développeur Full Stack",
+      "description": "Découvrez le profil d’un développeur full stack avec plusieurs années d’expérience dans la création d’applications web, de plateformes SaaS et de produits numériques."
+    }
+  },
+  "skillsAndExpertise" : {
+    "label": "Compétences et Expertise",
+    "title": "Compétences et Expertise",
+    "stackLabel": "Stack",
+    "intro": "Un ensemble de technologies front-end et back-end pour construire de bonnes interfaces dans un domaine d'expertise ciblé."
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "Compétences",
+    "stackLabel": "Stack",
+    "approachLabel": "Approche",
+    "intro": "J’utilise un ensemble de technologies frontend et backend pour concevoir des interfaces performantes.",
+    "closing": "Je privilégie des outils qui permettent d’aller vite, de garder un code propre et de construire des produits durables.",
+    "seo": {
+      "title": "Compétences – Lothaire Epee | Développeur Full Stack",
+      "description": "Explorez les technologies, langages et outils utilisés pour concevoir des applications web performantes et maintenables."
+    },
+    "frontend": {
+      "label": "Frontend",
+      "items": [
+            "React",
+            "Next.js",
+            "Angular",
+            "TypeScript",
+            "JavaScript",
+            "Tailwind CSS",
+            "Material-UI",
+            "Shadcn/ui",
+            "HTML5",
+            "CSS3 / SCSS",
+            "Framer Motion"
+          ]},
+    "backend": {
+      "label": "Backend",
+      "items": [
+        "Node.js",
+        "Django",
+        "Express",
+        "NestJS",
+        "REST API",
+        "GraphQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Drizzle",
+        "Firebase"
+      ]},
+    "programmingLanguages":{
+      "label": "Langages",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL",
+        "Bash"
+      ]},
+    "tools": {
+      "label": "Outils",
+      "items": [
+        "Git ",
+        "GitHub / Gitlab",
+        "Vite",
+        "Figma",
+        "Postman",
+        "Docker",
+        "Vercel",
+        "Netlify",
+        "Notion"
+      ]}
+  },
+  "expertise":{
+    "label": "Expertise",
+    "title": "Expertise",
+    "stackLabel": "Expertise",
+    "items": [
+      "Principes SOLID, design patterns, architecture modulaire et maintenable",
+      "Développement d’applications web d’entreprise et Software as a Service (SaaS)",
+      "Conception d’API REST et services sécurisés",
+      "Bases de données relationnelles, SQL et patterns ORM",
+      "Programmation asynchrone et optimisation des performances",
+      "Intégration de services cloud",
+      "Authentification et autorisation (OAuth, JWT)",
+      "Contrôle d’accès basé sur les rôles (RBAC)",
+      "Méthodologies Agile / SCRUM et travail collaboratif",
+      "Intégration de l’IA et développement de fonctionnalités IA (LLM, automatisation)",
+      "Tests unitaires et end-to-end"
+    ]
+  },
+
+  "experience": {
+    "label": "Expérience",
+    "title": "Expérience et parcours professionnel",
+    "timelineLabel": "Parcours",
+    "stackLabel": "Technos",
+    "closingLabel": "Approche",
+    "intro": "Un parcours construit autour du développement frontend, du design d’interface et de la création de produits numériques robustes.",
+    "seo": {
+      "title": "Expérience – Lothaire Epee | Développeur Full Stack",
+      "description": "Parcours professionnel à travers des projets SaaS, des applications complexes et des produits numériques conçus pour des usages réels."
+    },
+    "experienceList": [
+      {
+        "id": "work-experience-3",
+        "period": "Sept. 2025 — Aujourd’hui",
+        "role": "Développeur Freelance",
+        "company": "",
+        "location": "",
+        "summary": "Réalisation de solutions web sur mesure pour des sites vitrines, incluant des lancements de produits et des plateformes de vente en ligne. Développement d’interfaces web axées sur la performance, l’accessibilité, tout en créant des designs élégants pour divers produits digitaux.",
+        "missions": [
+          "Création de landing pages élégantes et de design systems",
+          "Développement de composants UI réutilisables",
+          "Intégration d’interfaces de vente et de paiement",
+          "Intégration de pages responsives depuis Figma",
+          "Amélioration de l’accessibilité et des performances",
+          "Collaboration étroite avec les clients",
+          "Implémentation d’animations et de transitions",
+          "Collaboration avec les équipes de direction artistique"
+        ],
+        "stack": ["Javascript", "Typescript", "Node.js", "Shopify", "Tailwind", "E-Commerce", "WordPress"]
+      },
+      {
+        "id": "work-experience-2",
+        "period": "Janv. 2024 — Juil. 2025",
+        "role": "Développeur Full-Stack",
+        "company": "Lumenaza GmbH",
+        "location": "Berlin, Allemagne",
+        "summary": "Conception et développement d’applications web et de microservices pilotés par API pour le secteur des énergies renouvelables.",
+        "missions": [
+          "Développement de composants UI réutilisables",
+          "Configuration de produits pour des partenaires B2B",
+          "Mise en place de tarification dynamique et de portails clients en self-service avec gestion des accès par rôles (RBAC, OAuth, JWT)",
+          "Implémentation du suivi en temps réel des prix et de la consommation",
+          "Développement de parcours d’onboarding contractuel multi-étapes pour producteurs et consommateurs",
+          "Collaboration étroite avec les designers et le product owner",
+          "Utilisation d’outils d’IA pour assister le développement et la documentation"
+        ],
+        "stack": ["React", "Django", "TypeScript", "Python", "Redux", "Git", "Docker", "JWT", "Selenium", "Linux"]
+      },
+      {
+        "id": "work-experience-1",
+        "period": "Sept. 2021 — Sept. 2023",
+        "role": "Développeur Concepteur",
+        "company": "Centre de Données Socio-Politiques - Science Po",
+        "location": "Paris, France",
+        "summary": "Maintenance et développement de fonctionnalités pour le Web Panel Sample Service (WPSS), une application web pilotée par API permettant la gestion de larges panels (+13 000 participants) et d’enquêtes en collaboration avec une infrastructure de recherche européenne.",
+        "missions": [
+          "Mise en place d’un accès sécurisé basé sur les rôles pour les chercheurs et les participants",
+          "Développement d’interfaces multilingues pour des enquêtes menées dans 13 pays européens",
+          "Garantie de l’intégrité des données et conformité réglementaire (RGPD)",
+          "Automatisation des envois d’invitations et des relances (emails, SMS)",
+          "Maintenance de bibliothèques de composants",
+          "Suivi de la délivrabilité des messages, détection des échecs et analyse des taux de réponse",
+          "Maintien de la stabilité opérationnelle via une gestion des données basée sur ORM et des workflows de production supportés par CI",
+          "Utilisation d’outils d’IA pour assister le développement et la documentation"
+        ],
+        "stack": ["Django", "Python", "Git", "Docker", "Linux", "Javascript", "HTML", "CSS"]
+      }
+    ]
+  },
+
+  "projects": {
+    "label": "Projets",
+    "title": "Projets réalisés",
+    "seo": {
+      "title": "Projets – Lothaire Epee | Développeur Full Stack",
+      "description": "Découvrez une sélection de projets illustrant des compétences en développement full stack, design d’interface et réalisation d’applications web."
+    },
+    "projectList" :[
+      {
+        "id": "project-2",
+        "title": "Reusable Executive Portfolio SPA",
+        "slug": "reusable-executive-portfolio-spa",
+        "period": "2026",
+        "role": "Design / Développement Frontend & Integration",
+        "layout": "image-left",
+        "summary":
+          "Composant réutilisable de CV et de portfolio pour cadre dirigeant dans une entreprise d’assurance automobile.",
+        "description": [
+          "Conception d'un composant réutilisable de type Single Page Application pour un client, destiné à être intégré dans une application existante, avec des contraintes spécifiques dû à la stack technique.",
+          "Réalisation d'un portfolio dynamique, basé sur du contenu (sans données en dur), avec un design minimaliste d'inspiration éditoriale, avec des animations fluides et une interface responsive intégrant un mode clair/sombre.","Mise en place d’une Single Page Application avec plusieurs routes côté client (/, /about, /contact) via React Router, incluant également une page dédiée à la gestion des erreurs 404."
+          ],
+        "stack": [ "React", "Tailwind", "React Router", "TypeScript", "shadcn/ui", "Framer Motion", "Lucide React", "next-themes", "CSS"],
+        "mainImage": {
+            "id": "reusable-executive-portfolio-spa-main",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+            "alt": "Composant portfolio réutilisable SPA image principale"
+          },
+        "gallery": [
+            {
+              "id": "reusable-executive-portfolio-spa-1",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+              "alt": "Composant portfolio réutilisable SPA image 1"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-2",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.png",
+              "alt": "Composant portfolio réutilisable SPA image 2"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-3",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.png",
+              "alt": "Composant portfolio réutilisable SPA image 3"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-4",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.png",
+              "alt": "Composant portfolio réutilisable SPA image 4"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-5",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.png",
+              "alt": "Composant portfolio réutilisable SPA image 5"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-6",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.png",
+              "alt": "Composant portfolio réutilisable SPA image 6"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-7",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.png",
+              "alt": "Composant portfolio réutilisable SPA image 7"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-8",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.png",
+              "alt": "Composant portfolio réutilisable SPA image 8"
+            }
+          ]
+      },
+      {
+        "id": "project-1",
+        "title": "Ribelmais buch",
+        "slug": "ribelmais-buch",
+        "period": "2025",
+        "role": "Design / Frontend & CMS Development",
+        "layout": "image-left",
+        "summary":
+          "Site web dédié à la publication et au lancement d'un livre, ainsi qu'à sa vente",
+        "description": [
+          "Conception et développement d'un site pour le compte d'un client suisse à l’occasion du lancement de son livre, avec une intégration de Shopify pour la gestion et la vente en ligne.",
+          "L'objectif était de créer un site d' e-commerce au design épuré et minimaliste, conformément à la demande du client."
+         ],
+        "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
+        "mainImage": {
+            "id": "ribelmais-buch-main",
+            "src": "public/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+            "alt": "Ribelmais buch image principale"
+          },
+        "gallery": [
+            {
+              "id": "ribelmais-buch-1",
+              "src": "public/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+              "alt": "Ribelmais buch image 1"
+            },
+            {
+              "id": "ribelmais-buch-2",
+              "src": "public/images/projects/ribelmais-buch/ribelmais-buch-2.png",
+              "alt": "Ribelmais buch image 2"
+            }
+          ]
+      }
+    ]
+  }
+}

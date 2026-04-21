@@ -1,0 +1,321 @@
+{
+   "profile" : {
+    "firstname": "Lothaire",
+    "lastname": "Epee",
+    "profession" : "Full Stack Developer",
+    "locations":[
+      "Paris",
+      "Berlin"
+    ],
+    "phone": "+33 6 98 07 19 53",
+    "email": "lothaire.epee@gmail.com",
+    "portrait": {
+      "src":"/images/profile/lothaire-epee-portrait.png",
+      "alt": "Lothaire Epee's portrait"
+    }
+  },
+  "landing" : {
+    "locationLabel": "Based in",
+    "phoneCta": "Copy",
+    "phoneCopied": "Copied",
+    "emailCta": "Open",
+    "emailOpened": "Mail client opened"
+    },
+  "nav": {
+    "about": "About",
+    "skills": "Skills and Expertise",
+    "experience": "Experience",
+    "projects": "Selected projects"
+  },
+  "errorBoundary": {
+      "fallback": {
+        "title": "An error has occured",
+        "message": "Something didn't go as planned.",
+        "button": "Try again"
+      }
+    },
+  
+  "about": {
+    "label": "About",
+    "title": "About me",
+    "intro": "A confident developer with 5+ years of experience in professional development",
+    "portraitAlt": "Profil picture",
+    "sideText1": "I have contributed to the development of SaaS platforms in the renewable energy sector, as well as to a large-scale survey management system as part of a European open-source project. These experiences allowed me to work on data-driven applications and complex systems used in real-world contexts.",
+    "sideText2": "In addition, I have built commercial websites and solutions for private clients, adapting to specific needs and delivering practical, user-oriented results.",
+    "sideText3": "My focus is on writing clean, well-tested code and our following industry's best practices. I keep learning and enjoy solving technical challenges. My goal is to improve the product and to deliver a better experience for both clients and end users.",
+    "closing": "Throughout my career, I have maintained a consistent direction, aiming to contribute to meaningful projects",
+    "bottomCta": "Contact",
+    "seo": {
+      "title": "About – Lothaire Epee | Full Stack Developer Portfolio",
+      "description": "Learn more about a full stack developer with 5+ years of experience building SaaS platforms, data-driven applications, and user-focused digital products."
+    }
+  },
+  "skillsAndExpertise" : {
+    "label": "Skills and Expertise",
+    "title": "Skills and Expertise",
+    "stackLabel": "Stack",
+    "intro": "A set of frontend and backend technologies to build good interfaces within a targeted area of expertise."
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Skills",
+    "stackLabel": "Stack",
+    "intro": "A set of frontend and backend technologies to build good interfaces.",
+    "closing": "I favor tools that help move fast, keep the codebase clean, and support long-term product quality.",
+    "seo": {
+      "title": "Skills & Technologies – Lothaire Epee | Full Stack Developer",
+      "description": "Explore the technical stack, tools, and development approach used to build scalable, maintainable, and high-quality web applications."
+    },
+    "frontend": {
+      "label": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "Material-UI",
+        "Shadcn/ui",
+        "HTML5",
+        "CSS3 / SCSS",
+        "Framer Motion"
+      ]},
+    "backend": {
+      "label": "Backend",
+      "items": [
+        "Node.js",
+        "Django",
+        "Express",
+        "NestJS",
+        "REST API",
+        "GraphQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Drizzle",
+        "Firebase"
+      ]},
+    "programmingLanguages":{
+      "label": "Languages",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL",
+        "Bash"
+      ]},
+    "tools": {
+      "label": "Tools",
+      "items": [
+        "Git",
+        "GitHub / Gitlab",
+        "Vite",
+        "Figma",
+        "Postman",
+        "Docker",
+        "Vercel",
+        "Netlify",
+        "Notion"
+      ]}
+  },
+  "expertise":{
+    "label": "Expertise",
+    "title": "Expertise",
+    "stackLabel": "Expertise",
+    "items": [
+      "SOLID principles, design patterns, modular & maintainable design",
+      "Enterprise and Software as a Service (SaaS) web application development",
+      "RESTful API Design & Secure Services",
+      "Relational Databases, SQL & ORM Patterns",
+      "Asynchronous Programming & Performance Optimization",
+      "Cloud Services Integration",
+      "Authentication & Authorization (OAuth, JWT)",
+      "Role-Based Access Control (RBAC)",
+      "Agile / SCRUM & Collaborative Development",
+      "AI integration & AI-driven features (LLMs, automation)",
+      "Unit & end-to-end testing"
+    ]
+  },
+
+  "experience": {
+    "label": "Experience",
+    "title": "Experience and career path",
+    "timelineLabel": "Timeline",
+    "stackLabel": "Stack",
+    "closingLabel": "Approach",
+    "intro": "A path shaped by frontend development, interface design, careful implementation, and digital products built with precision.",
+    "seo": {
+      "title": "Experience – Lothaire Epee | Full Stack Developer Career",
+      "description": "Discover professional experience across SaaS platforms, open-source projects, and real-world applications with a focus on scalable and reliable systems."
+    },
+    "experienceList": [
+      {
+        "id": "work-experience-3",
+        "period": "Sept. 2025 — Today",
+        "role": "Freelance Developer",
+        "company": "",
+        "location": "",
+        "summary":
+          "Delivered custom web solutions for business and product websites including product launches and online sales. Development of web interfaces focusing on performance, accessibility while constantly creating elegant design over various digital products.",
+        "missions": [
+          "Creating elegant landing pages and design systems",
+          "Built reusable UI components",
+          "Integration of selling/transaction interfaces",
+          "Integration of responsive pages from Figma",
+          "Improving accessibility and performance",
+          "Working closely with clients",
+          "Implementation of animations and transitions",
+          "Collaboration with art direction teams"
+        ],
+        "stack": ["Javascript", "Typescript", "Node.js", "Shopify", "Tailwind", "E-Commerce", "WordPress"]
+      },
+      {
+        "id": "work-experience-2",
+        "period": "Jan. 2024 — Jul. 2025",
+        "role": "Full-Stack Developer",
+        "company": "Lumenaza GmbH",
+        "location": "Berlin, Germany",
+        "summary":
+          "Designed and developed API-driven web applications and micro-services (SaaS for the renewable energy sector.",
+        "missions": [
+          "Built reusable UI components",
+          "Product configuration for B2B partners",
+          "Dynamic pricing, and customer self-service portals with role-based access control (RBAC, OAuth, JWT)",
+          "Enabling real-time pricing and consumption monitoring",
+          "Multi-step contract onboarding flow and their management for both producers and consumers.",
+          "Worked closely with designer and product owner",
+          "Use of AI tools to support code development and documentation."
+        ],
+        "stack": ["React", "Django", "TypeScript", "Python",    "Redux", "Git", "Docker", "JWT","Selenium", "Linux"]
+      },
+      {
+        "id": "work-experience-1",
+        "period": "Sept. 2021 — Sept. 2023",
+        "role": "Developer Conceptor",
+        "company": "Centre de Données Socio-Politiques - Science Po",
+        "location": "Paris, France",
+        "summary":
+          "Maintained and developed features on Web Panel Sample Service (WPSS), an API-driven web applications for managing large scale samples(+13000 panelists) and surveys in collaboration with the European research infrastructure.",
+        "missions": [
+          "Enabling secure role-based access for both social scientist and panelists",
+          "Providing multilingual interfaces to conduct surveys throughout 13 European countries",
+          "Ensured data integrity and their regulatory compliance (GDPR)",
+          "Automatization of invitation sendings and follow-up messages (emails, SMS)",
+          "Maintained component libraries",
+          "Tracking of message delivery, failures detection, and response rates monitoring.",
+          "Ensure operational stability through ORM-based data management and CI-supported production workflows",
+          "Use of AI tools to support code development and documentation."
+        ],
+        "stack": ["Django", "Python", "Git", "Docker", "Linux", "Javascript", "HTML", "CSS"]
+      }
+    ]
+  },
+
+  "projects": {
+    "label": "Projects",
+    "title": "Selected projects",
+    "seo": {
+      "title": "Projects – Lothaire Epee | Full Stack Developer",
+      "description": "Browse selected projects showcasing full stack development, UI design, and production-ready web applications built for real clients and use cases."
+    },
+    "projectList" :[
+      {
+        "id": "project-2",
+        "title": "Reusable Executive Portfolio SPA",
+        "slug": "reusable-executive-portfolio-spa",
+        "period": "2026",
+        "role": "Design / Frontend Development & Integration",
+        "layout": "image-left",
+        "summary":
+          "Reusable CV and Portfolio component for executive in car insurance company.",
+        "description": [
+          "Design a Single Page Application reusable component for a client to integrate within their existing application, therefore entailing certain specific constraints regarding the technical stack",
+          "The task was to build a content-driven porfolio (no hardcoded data) with a minimalist editorialistic like design with smooth animations and a responsive layout featuring a light/dark mode.",
+          "Implemented a Single Page Application with 4 client-side routes using React Router ('/', '/about', '/contact') including a 404 handling page"
+          ],
+        "stack": [ "React", "Tailwind", "React Router", "TypeScript", "shadcn/ui", "Framer Motion", "Lucide React", "next-themes", "CSS"],
+        "mainImage": {
+            "id": "reusable-executive-portfolio-spa-main",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+            "alt": "Reusable Executive Portfolio SPA main image"
+          },
+        "gallery": [
+            {
+              "id": "reusable-executive-portfolio-spa-1",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+              "alt": "Reusable Executive Portfolio SPA image 1"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-2",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.png",
+              "alt": "Reusable Executive Portfolio SPA image 2"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-3",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.png",
+              "alt": "Reusable Executive Portfolio SPA image 3"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-4",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.png",
+              "alt": "Reusable Executive Portfolio SPA image 4"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-5",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.png",
+              "alt": "Reusable Executive Portfolio SPA image 5"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-6",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.png",
+              "alt": "Reusable Executive Portfolio SPA image 6"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-7",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.png",
+              "alt": "Reusable Executive Portfolio SPA image 7"
+            },
+            {
+              "id": "reusable-executive-portfolio-spa-8",
+              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.png",
+              "alt": "Reusable Executive Portfolio SPA image 8"
+            }
+          ]
+      },
+      {
+        "id": "project-1",
+        "title": "Ribelmais buch",
+        "slug": "ribelmais-buch",
+        "period": "2025",
+        "role": "Design / Frontend & CMS Development",
+        "layout": "image-right",
+        "summary":
+          "Website dedicated to the publication and launch of a book, as well as its sale",
+        "description": [
+          "Design and development of a website for a Swiss client to coincide with the launch of their book, including Shopify integration for online management and sales.",
+          "The goal was to build a e-commerce website that feels precise, with a minimalistic design as per requested from client."
+         ],
+        "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
+        "mainImage": {
+            "id": "ribelmais-buch-main",
+            "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+            "alt": "Ribelmais buch main image"
+          },
+        "gallery": [
+            {
+              "id": "ribelmais-buch-1",
+              "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+              "alt": "Ribelmais buch image 1"
+            },
+            {
+              "id": "ribelmais-buch-2",
+              "src": "/images/projects/ribelmais-buch/ribelmais-buch-2.png",
+              "alt": "Ribelmais buch image 2"
+            }
+          ]
+      }
+    ]
+  }
+}
+
+
