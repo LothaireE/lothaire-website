@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react"
 
 type ScrollCTAProps = {
-  targetId?: string
+  targetId: string
   label?: string
 }
 
