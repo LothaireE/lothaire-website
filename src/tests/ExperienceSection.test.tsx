@@ -30,13 +30,13 @@ vi.mock("@/context/appContext", () => ({
 }));
 
 
-describe("About component", () => {
+describe("Experience component", () => {
 
     beforeEach(() => {
     vi.clearAllMocks();
     });
 
-    it("should render the about section properly", () => {
+    it("should render the experience section properly", () => {
         render(<ExperienceSection />);
 
         expect(screen.getByRole("heading", {
@@ -44,7 +44,6 @@ describe("About component", () => {
             name: "Experience and career path",
             })).toBeInTheDocument()    
 
-        // expect(screen.getByRole("img", { name: "Lothaire Epee's portrait" })).toBeInTheDocument()    
         const stackEl = screen.getAllByText("Stack")
         expect(stackEl).length(3);
 

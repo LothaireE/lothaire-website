@@ -41,3 +41,5 @@ export type SingleExperienceProps = {
   isFirstItem: boolean
   item: SingleExperienceItem
 }
+
+export type LegalSection = "impressum" | "privacy" | null;
