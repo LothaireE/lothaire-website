@@ -12,6 +12,13 @@
     "portrait": {
       "src":"/images/profile/lothaire-epee-portrait.png",
       "alt": "Portrait de Lothaire Epee"
+    },
+    "address":{
+      "street": "Wiener Strasse",
+      "streetNumber": "60",
+      "zipcode": "10999",
+      "city": "Berlin",
+      "country": "Allemagne"
     }
   },
   "landing" : {

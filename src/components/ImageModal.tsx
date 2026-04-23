@@ -1,16 +1,15 @@
-import { useEffect } from "react"
-import type { ProjectImage } from "@/types/portfolioTypes"
-import { ChevronLeft, ChevronRight  } from "lucide-react"
-
+import { useEffect } from "react";
+import type { ProjectImage } from "@/types/portfolioTypes";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type ImageModalProps = {
-  images: ProjectImage[]
-  activeIndex: number
-  open: boolean
-  onClose: () => void
-  onPrev: () => void
-  onNext: () => void
-}
+  images: ProjectImage[];
+  activeIndex: number;
+  open: boolean;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+};
 
 const ImageModal = ({
   images,
@@ -21,28 +20,29 @@ const ImageModal = ({
   onNext,
 }: ImageModalProps) => {
   useEffect(() => {
-    if (!open) return
+    if (!open) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose()
-      if (event.key === "ArrowLeft") onPrev()
-      if (event.key === "ArrowRight") onNext()
-    }
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") onPrev();
+      if (event.key === "ArrowRight") onNext();
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [open, onClose, onPrev, onNext])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open, onClose, onPrev, onNext]);
 
-  if (!open) return null
+  if (!open) return null;
 
-  const activeImage = images[activeIndex]
+  const activeImage = images[activeIndex];
 
-  const currentRange = String(activeIndex + 1).padStart(2, "0") + "/" + String(images.length).padStart(2, "0")
+  const currentRange =
+    String(activeIndex + 1).padStart(2, "0") +
+    "/" +
+    String(images.length).padStart(2, "0");
 
   return (
-    <div 
-    className="h-full fixed inset-0 z-100 bg-background/80 backdrop-blur-[1px] text-foreground"
-    >
+    <div className="h-full fixed inset-0 z-100 bg-background/80 backdrop-blur-[1px] text-foreground">
       <button
         type="button"
         aria-label="Close lightbox"
@@ -69,7 +69,7 @@ const ImageModal = ({
             aria-label="Previous image"
             className="absolute left-6 z-100 text-[2rem] leading-none tracking-[-0.08em] text-foreground/70 transition-opacity duration-200 hover:opacity-60 sm:left-8 md:left-10"
           >
-            <ChevronLeft className="h-10 w-10 hover:cursor-pointer"/>
+            <ChevronLeft className="h-10 w-10 hover:cursor-pointer" />
           </button>
           <div className="relative z-10 flex h-full w-full items-center justify-center">
             <img
@@ -89,19 +89,14 @@ const ImageModal = ({
         </div>
         <div className="flex flex-wrap gap-2 px-6 pb-4 sm:px-8 md:px-10">
           {images.map((image, index) => {
-            const isActive = index === activeIndex
-            const activeClassName = `h-0.5 w-10 transition-opacity duration-200 ${isActive ? "bg-foreground" : "bg-foreground/20"}`
-            return (
-              <div
-                key={image.id}
-                className={activeClassName}
-              />
-            )
+            const isActive = index === activeIndex;
+            const activeClassName = `h-0.5 w-10 transition-opacity duration-200 ${isActive ? "bg-foreground" : "bg-foreground/20"}`;
+            return <div key={image.id} className={activeClassName} />;
           })}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ImageModal
+export default ImageModal;

@@ -1,20 +1,19 @@
-import { useState } from "react"
-import { useTheme } from "next-themes"
-import { useLanguageContext } from "@/context/appContext"
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import { useLanguageContext } from "@/context/appContext";
 
 type DropdownProps = {
-  label: string
-  value: string
-  options: { label: string; value: string; onSelect: () => void }[]
-}
+  label: string;
+  value: string;
+  options: { label: string; value: string; onSelect: () => void }[];
+};
 
 const ItemDropdown = ({ label, value, options }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const arrowClassName = `text-[1rem] transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`
-  const itemClassName = `grid overflow-hidden transition-all duration-200 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`
+  const arrowClassName = `text-[1rem] transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`;
+  const itemClassName = `grid overflow-hidden transition-all duration-200 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`;
 
- 
   return (
     <div
       className="relative w-full border-b border-foreground/20"
@@ -34,13 +33,11 @@ const ItemDropdown = ({ label, value, options }: DropdownProps) => {
           <span className="text-[1rem] tracking-[-0.04em] text-foreground">
             {value}
           </span>
-          <span className={arrowClassName} >
-            ↓
-          </span>
+          <span className={arrowClassName}>↓</span>
         </span>
       </button>
 
-      <div className={itemClassName} >
+      <div className={itemClassName}>
         <div className="overflow-hidden">
           <div className="pb-2 pt-1">
             {options.map((option) => (
@@ -57,15 +54,15 @@ const ItemDropdown = ({ label, value, options }: DropdownProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-const SettingsMenu= () => {
-  const { theme, setTheme } = useTheme()
-  const { locale, setLocale } = useLanguageContext()
+const SettingsMenu = () => {
+  const { theme, setTheme } = useTheme();
+  const { locale, setLocale } = useLanguageContext();
 
-  const currentLanguageLabel = locale === "fr" ? "Français" : "English"
-  const currentThemeLabel = theme === "dark" ? "Dark" : "Light"
+  const currentLanguageLabel = locale === "fr" ? "Français" : "English";
+  const currentThemeLabel = theme === "dark" ? "Dark" : "Light";
 
   return (
     <div className="w-full max-w-55 space-y-2">
@@ -103,7 +100,7 @@ const SettingsMenu= () => {
         ]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default SettingsMenu
+export default SettingsMenu;

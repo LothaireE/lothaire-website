@@ -3,8 +3,6 @@ import { describe, it } from "vitest";
 import en from "@/locales/en.json";
 import PortfolioGridSection from "@/components/PortfolioGridSection";
 
-
-
 const translations: Record<string, string | string[]> = {
   "about.intro": en.about.intro,
   "profile.portrait.src": en.profile.portrait.src,
@@ -17,7 +15,6 @@ const translations: Record<string, string | string[]> = {
 
 const mockT = vi.fn((key: string) => translations[key] ?? key);
 
-
 vi.mock("@/context/appContext", () => ({
   useLanguageContext: () => ({
     t: mockT,
@@ -25,18 +22,12 @@ vi.mock("@/context/appContext", () => ({
   }),
 }));
 
-
-
 describe("PortfolioGridSection component", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
-    beforeEach(() => {
-      vi.clearAllMocks();
-    });
-
-
-    it("should render the landing section and main content properly", () => {
-      render(<PortfolioGridSection />);
-
-    });
-
+  it("should render the landing section and main content properly", () => {
+    render(<PortfolioGridSection />);
+  });
 });
