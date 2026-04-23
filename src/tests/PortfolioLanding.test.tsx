@@ -3,8 +3,6 @@ import { describe, it, expect } from "vitest";
 import en from "@/locales/en.json";
 import PortfolioLanding from "@/components/PortfolioLanding";
 
-
-
 const translations: Record<string, string | string[]> = {
   "profile.firstname": en.profile.firstname,
   "profile.lastname": en.profile.lastname,
@@ -21,7 +19,6 @@ const translations: Record<string, string | string[]> = {
 
 const mockT = vi.fn((key: string) => translations[key] ?? key);
 
-
 vi.mock("@/context/appContext", () => ({
   useLanguageContext: () => ({
     t: mockT,
@@ -33,10 +30,7 @@ vi.mock("@/components/common/SeoHead", () => ({
   SeoHead: () => <div data-testid="seo-head" />,
 }));
 
-
 describe("PortfolioLanding component", () => {
-
-
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -50,17 +44,18 @@ describe("PortfolioLanding component", () => {
       expect(screen.getByText("Language")).toBeInTheDocument();
       expect(screen.getByText("Theme")).toBeInTheDocument();
 
-      expect(screen.getByRole("heading", {
-            level: 1,
-            name: /Lothaire/i,
-          })
-        ).toBeInTheDocument();
-      expect(screen.getByRole("heading", {
-            level: 1,
-            name: /Epee/i,
-          })
-        ).toBeInTheDocument();
-
+      expect(
+        screen.getByRole("heading", {
+          level: 1,
+          name: /Lothaire/i,
+        }),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("heading", {
+          level: 1,
+          name: /Epee/i,
+        }),
+      ).toBeInTheDocument();
 
       expect(screen.getByText("About")).toBeInTheDocument();
       expect(screen.getByText("Skills and Expertise")).toBeInTheDocument();

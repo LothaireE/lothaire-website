@@ -1,60 +1,60 @@
-import { Component, type ErrorInfo, type ReactNode } from "react"
-import fr from "@/locales/fr.json"
-import en from "@/locales/en.json"
+import { Component, type ErrorInfo, type ReactNode } from "react";
+import fr from "@/locales/fr.json";
+import en from "@/locales/en.json";
 
-type Locale = "fr" | "en"
+type Locale = "fr" | "en";
 
-const messages = { fr, en } as const
+const messages = { fr, en } as const;
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 interface State {
-  hasError: boolean
-  locale: Locale
+  hasError: boolean;
+  locale: Locale;
 }
 
 function getNestedValue(obj: unknown, path: string): string {
-  if (!obj || typeof obj !== "object") return path
+  if (!obj || typeof obj !== "object") return path;
 
   const value = path.split(".").reduce<unknown>((acc, key) => {
     if (acc && typeof acc === "object" && key in acc) {
-      return (acc as Record<string, unknown>)[key]
+      return (acc as Record<string, unknown>)[key];
     }
-    return undefined
-  }, obj)
+    return undefined;
+  }, obj);
 
-  return typeof value === "string" ? value : path
+  return typeof value === "string" ? value : path;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
-    super(props)
+    super(props);
     this.state = {
       hasError: false,
       locale: (localStorage.getItem("locale") as Locale) || "fr",
-    }
+    };
   }
 
   static getDerivedStateFromError() {
-    return { hasError: true }
+    return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary caught an error:", error, errorInfo)
+    console.error("ErrorBoundary caught an error:", error, errorInfo);
   }
 
   handleReset = () => {
     this.setState({
       hasError: false,
       locale: (localStorage.getItem("locale") as Locale) || "fr",
-    })
-  }
+    });
+  };
 
   t = (path: string) => {
-    return getNestedValue(messages[this.state.locale], path)
-  }
+    return getNestedValue(messages[this.state.locale], path);
+  };
 
   render() {
     if (this.state.hasError) {
@@ -67,14 +67,14 @@ export class ErrorBoundary extends Component<Props, State> {
             <p className="text-muted-foreground">
               {this.t("errorBoundary.fallback.message")}
             </p>
-            <button onClick={this.handleReset} >
+            <button onClick={this.handleReset}>
               {this.t("errorBoundary.fallback.button")}
             </button>
           </div>
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }

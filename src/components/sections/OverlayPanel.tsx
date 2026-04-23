@@ -28,9 +28,7 @@ const OverlayPanel = ({
         <div
           id="legal-overlay-panel"
           className={`pointer-events-auto w-full max-w-5xl transform transition-all duration-500 ease-out ${
-            isOpen
-              ? "translate-y-0 opacity-100"
-              : "translate-y-6 opacity-0"
+            isOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
           <div className="overflow-hidden rounded-t-[28px] border border-(--border) bg-(--card) text-(--foreground) shadow-2xl">

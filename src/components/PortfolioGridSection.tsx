@@ -5,14 +5,13 @@ import AboutSection from "./sections/AboutSection";
 import ExperienceSection from "./sections/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import SkillsSection from "./sections/SkillsSection";
-import FooterSection from "./sections/FooterSection";
-import ImpressumSection from "./sections/ImpressumSection";
-import PrivacySection from "./sections/PrivacySection";
+import FooterSection from "./footer/FooterSection";
+import ImpressumSection from "./footer/Impressum";
+import PrivacyPolicy from "./footer/PrivacyPolicy";
 import OverlayPanel from "./sections/OverlayPanel";
 import type { LegalSection } from "@/types/portfolioTypes";
 
 export const gridSectionId = "portfolio-grid-section";
-
 
 const PortfolioGridSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -23,11 +22,9 @@ const PortfolioGridSection = () => {
     setOpenSection((prev) => (prev === section ? null : section));
   };
 
-
   const handleCloseLegalSection = () => {
     setOpenSection(null);
   };
-
 
   return (
     <>
@@ -44,16 +41,16 @@ const PortfolioGridSection = () => {
         <ExperienceSection />
         <ProjectsSection />
 
-        <div className="relative" >
-        <OverlayPanel
-          isOpen={openSection !== null}
-          title={openSection === "impressum" ? "Impressum" : "Privacy"}
-          onClose={handleCloseLegalSection}
-        >
-          {openSection === "impressum" && <ImpressumSection />}
-          {openSection === "privacy" && <PrivacySection />}
-        </OverlayPanel>
-         <FooterSection
+        <div className="relative">
+          <OverlayPanel
+            isOpen={openSection !== null}
+            title={openSection === "impressum" ? "Impressum" : "Privacy"}
+            onClose={handleCloseLegalSection}
+          >
+            {openSection === "impressum" && <ImpressumSection />}
+            {openSection === "privacy" && <PrivacyPolicy />}
+          </OverlayPanel>
+          <FooterSection
             openSection={openSection}
             onFooterClick={handleFooterClick}
           />
