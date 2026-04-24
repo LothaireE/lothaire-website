@@ -11,14 +11,7 @@ type ImageModalProps = {
   onNext: () => void;
 };
 
-const ImageModal = ({
-  images,
-  activeIndex,
-  open,
-  onClose,
-  onPrev,
-  onNext,
-}: ImageModalProps) => {
+const ImageModal = ({ images, activeIndex, open, onClose, onPrev, onNext }: ImageModalProps) => {
   useEffect(() => {
     if (!open) return;
 
@@ -37,9 +30,7 @@ const ImageModal = ({
   const activeImage = images[activeIndex];
 
   const currentRange =
-    String(activeIndex + 1).padStart(2, "0") +
-    "/" +
-    String(images.length).padStart(2, "0");
+    String(activeIndex + 1).padStart(2, "0") + "/" + String(images.length).padStart(2, "0");
 
   return (
     <div className="h-full fixed inset-0 z-100 bg-background/80 backdrop-blur-[1px] text-foreground">

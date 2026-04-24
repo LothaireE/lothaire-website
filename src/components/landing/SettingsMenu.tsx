@@ -30,9 +30,7 @@ const ItemDropdown = ({ label, value, options }: DropdownProps) => {
         </span>
 
         <span className="flex items-center gap-3">
-          <span className="text-[1rem] tracking-[-0.04em] text-foreground">
-            {value}
-          </span>
+          <span className="text-[1rem] tracking-[-0.04em] text-foreground">{value}</span>
           <span className={arrowClassName}>↓</span>
         </span>
       </button>

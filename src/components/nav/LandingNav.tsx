@@ -13,14 +13,10 @@ const LandingNav = () => {
     <nav className="max-w-4xl text-right leading-[0.88]">
       <ul>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("about")}>
-            {t("nav.about")}
-          </NavLinkButton>
+          <NavLinkButton onClick={() => scrollToSection("about")}>{t("nav.about")}</NavLinkButton>
         </li>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("skills")}>
-            {t("nav.skills")}
-          </NavLinkButton>
+          <NavLinkButton onClick={() => scrollToSection("skills")}>{t("nav.skills")}</NavLinkButton>
         </li>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
           <NavLinkButton onClick={() => scrollToSection("experience")}>

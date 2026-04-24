@@ -1,19 +1,16 @@
 {
-   "profile" : {
+  "profile": {
     "firstname": "Lothaire",
     "lastname": "Epee",
-    "profession" : "Full Stack Developer",
-    "locations":[
-      "Paris",
-      "Berlin"
-    ],
+    "profession": "Full Stack Developer",
+    "locations": ["Paris", "Berlin"],
     "phone": "+33 6 98 07 19 53",
     "email": "lothaire.epee@gmail.com",
     "portrait": {
-      "src":"/images/profile/lothaire-epee-portrait.png",
+      "src": "/images/profile/lothaire-epee-portrait.png",
       "alt": "Lothaire Epee's portrait"
     },
-    "address":{
+    "address": {
       "street": "Wiener Strasse",
       "streetNumber": "60",
       "zipcode": "10999",
@@ -21,13 +18,13 @@
       "country": "Germany"
     }
   },
-  "landing" : {
+  "landing": {
     "locationLabel": "Based in",
     "phoneCta": "Copy",
     "phoneCopied": "Copied",
     "emailCta": "Open",
     "emailOpened": "Mail client opened"
-    },
+  },
   "nav": {
     "about": "About",
     "skills": "Skills and Expertise",
@@ -35,13 +32,13 @@
     "projects": "Selected projects"
   },
   "errorBoundary": {
-      "fallback": {
-        "title": "An error has occured",
-        "message": "Something didn't go as planned.",
-        "button": "Try again"
-      }
-    },
-  
+    "fallback": {
+      "title": "An error has occured",
+      "message": "Something didn't go as planned.",
+      "button": "Try again"
+    }
+  },
+
   "about": {
     "label": "About",
     "title": "About me",
@@ -57,7 +54,7 @@
       "description": "Learn more about a full stack developer with 5+ years of experience building SaaS platforms, data-driven applications, and user-focused digital products."
     }
   },
-  "skillsAndExpertise" : {
+  "skillsAndExpertise": {
     "label": "Skills and Expertise",
     "title": "Skills and Expertise",
     "stackLabel": "Stack",
@@ -87,7 +84,8 @@
         "HTML5",
         "CSS3 / SCSS",
         "Framer Motion"
-      ]},
+      ]
+    },
     "backend": {
       "label": "Backend",
       "items": [
@@ -101,16 +99,12 @@
         "MongoDB",
         "Drizzle",
         "Firebase"
-      ]},
-    "programmingLanguages":{
+      ]
+    },
+    "programmingLanguages": {
       "label": "Languages",
-      "items": [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "SQL",
-        "Bash"
-      ]},
+      "items": ["TypeScript", "JavaScript", "Python", "SQL", "Bash"]
+    },
     "tools": {
       "label": "Tools",
       "items": [
@@ -123,9 +117,10 @@
         "Vercel",
         "Netlify",
         "Notion"
-      ]}
+      ]
+    }
   },
-  "expertise":{
+  "expertise": {
     "label": "Expertise",
     "title": "Expertise",
     "stackLabel": "Expertise",
@@ -162,8 +157,7 @@
         "role": "Freelance Developer",
         "company": "",
         "location": "",
-        "summary":
-          "Delivered custom web solutions for business and product websites including product launches and online sales. Development of web interfaces focusing on performance, accessibility while constantly creating elegant design over various digital products.",
+        "summary": "Delivered custom web solutions for business and product websites including product launches and online sales. Development of web interfaces focusing on performance, accessibility while constantly creating elegant design over various digital products.",
         "missions": [
           "Creating elegant landing pages and design systems",
           "Built reusable UI components",
@@ -174,7 +168,15 @@
           "Implementation of animations and transitions",
           "Collaboration with art direction teams"
         ],
-        "stack": ["Javascript", "Typescript", "Node.js", "Shopify", "Tailwind", "E-Commerce", "WordPress"]
+        "stack": [
+          "Javascript",
+          "Typescript",
+          "Node.js",
+          "Shopify",
+          "Tailwind",
+          "E-Commerce",
+          "WordPress"
+        ]
       },
       {
         "id": "work-experience-2",
@@ -182,8 +184,7 @@
         "role": "Full-Stack Developer",
         "company": "Lumenaza GmbH",
         "location": "Berlin, Germany",
-        "summary":
-          "Designed and developed API-driven web applications and micro-services (SaaS for the renewable energy sector.",
+        "summary": "Designed and developed API-driven web applications and micro-services (SaaS for the renewable energy sector.",
         "missions": [
           "Built reusable UI components",
           "Product configuration for B2B partners",
@@ -193,7 +194,18 @@
           "Worked closely with designer and product owner",
           "Use of AI tools to support code development and documentation."
         ],
-        "stack": ["React", "Django", "TypeScript", "Python",    "Redux", "Git", "Docker", "JWT","Selenium", "Linux"]
+        "stack": [
+          "React",
+          "Django",
+          "TypeScript",
+          "Python",
+          "Redux",
+          "Git",
+          "Docker",
+          "JWT",
+          "Selenium",
+          "Linux"
+        ]
       },
       {
         "id": "work-experience-1",
@@ -201,8 +213,7 @@
         "role": "Developer Conceptor",
         "company": "Centre de Données Socio-Politiques - Science Po",
         "location": "Paris, France",
-        "summary":
-          "Maintained and developed features on Web Panel Sample Service (WPSS), an API-driven web applications for managing large scale samples(+13000 panelists) and surveys in collaboration with the European research infrastructure.",
+        "summary": "Maintained and developed features on Web Panel Sample Service (WPSS), an API-driven web applications for managing large scale samples(+13000 panelists) and surveys in collaboration with the European research infrastructure.",
         "missions": [
           "Enabling secure role-based access for both social scientist and panelists",
           "Providing multilingual interfaces to conduct surveys throughout 13 European countries",
@@ -225,7 +236,7 @@
       "title": "Projects – Lothaire Epee | Full Stack Developer",
       "description": "Browse selected projects showcasing full stack development, UI design, and production-ready web applications built for real clients and use cases."
     },
-    "projectList" :[
+    "projectList": [
       {
         "id": "project-2",
         "title": "Reusable Executive Portfolio SPA",
@@ -233,61 +244,70 @@
         "period": "2026",
         "role": "Design / Frontend Development & Integration",
         "layout": "image-left",
-        "summary":
-          "Reusable CV and Portfolio component for executive in car insurance company.",
+        "summary": "Reusable CV and Portfolio component for executive in car insurance company.",
         "description": [
           "Design a Single Page Application reusable component for a client to integrate within their existing application, therefore entailing certain specific constraints regarding the technical stack",
           "The task was to build a content-driven porfolio (no hardcoded data) with a minimalist editorialistic like design with smooth animations and a responsive layout featuring a light/dark mode.",
           "Implemented a Single Page Application with 4 client-side routes using React Router ('/', '/about', '/contact') including a 404 handling page"
-          ],
-        "stack": [ "React", "Tailwind", "React Router", "TypeScript", "shadcn/ui", "Framer Motion", "Lucide React", "next-themes", "CSS"],
+        ],
+        "stack": [
+          "React",
+          "Tailwind",
+          "React Router",
+          "TypeScript",
+          "shadcn/ui",
+          "Framer Motion",
+          "Lucide React",
+          "next-themes",
+          "CSS"
+        ],
         "mainImage": {
-            "id": "reusable-executive-portfolio-spa-main",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
-            "alt": "Reusable Executive Portfolio SPA main image"
-          },
+          "id": "reusable-executive-portfolio-spa-main",
+          "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+          "alt": "Reusable Executive Portfolio SPA main image"
+        },
         "gallery": [
-            {
-              "id": "reusable-executive-portfolio-spa-1",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
-              "alt": "Reusable Executive Portfolio SPA image 1"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-2",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.png",
-              "alt": "Reusable Executive Portfolio SPA image 2"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-3",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.png",
-              "alt": "Reusable Executive Portfolio SPA image 3"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-4",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.png",
-              "alt": "Reusable Executive Portfolio SPA image 4"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-5",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.png",
-              "alt": "Reusable Executive Portfolio SPA image 5"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-6",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.png",
-              "alt": "Reusable Executive Portfolio SPA image 6"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-7",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.png",
-              "alt": "Reusable Executive Portfolio SPA image 7"
-            },
-            {
-              "id": "reusable-executive-portfolio-spa-8",
-              "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.png",
-              "alt": "Reusable Executive Portfolio SPA image 8"
-            }
-          ]
+          {
+            "id": "reusable-executive-portfolio-spa-1",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+            "alt": "Reusable Executive Portfolio SPA image 1"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-2",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.png",
+            "alt": "Reusable Executive Portfolio SPA image 2"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-3",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.png",
+            "alt": "Reusable Executive Portfolio SPA image 3"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-4",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.png",
+            "alt": "Reusable Executive Portfolio SPA image 4"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-5",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.png",
+            "alt": "Reusable Executive Portfolio SPA image 5"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-6",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.png",
+            "alt": "Reusable Executive Portfolio SPA image 6"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-7",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.png",
+            "alt": "Reusable Executive Portfolio SPA image 7"
+          },
+          {
+            "id": "reusable-executive-portfolio-spa-8",
+            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.png",
+            "alt": "Reusable Executive Portfolio SPA image 8"
+          }
+        ]
       },
       {
         "id": "project-1",
@@ -296,33 +316,30 @@
         "period": "2025",
         "role": "Design / Frontend & CMS Development",
         "layout": "image-right",
-        "summary":
-          "Website dedicated to the publication and launch of a book, as well as its sale",
+        "summary": "Website dedicated to the publication and launch of a book, as well as its sale",
         "description": [
           "Design and development of a website for a Swiss client to coincide with the launch of their book, including Shopify integration for online management and sales.",
           "The goal was to build a e-commerce website that feels precise, with a minimalistic design as per requested from client."
-         ],
+        ],
         "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
         "mainImage": {
-            "id": "ribelmais-buch-main",
-            "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
-            "alt": "Ribelmais buch main image"
-          },
+          "id": "ribelmais-buch-main",
+          "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+          "alt": "Ribelmais buch main image"
+        },
         "gallery": [
-            {
-              "id": "ribelmais-buch-1",
-              "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
-              "alt": "Ribelmais buch image 1"
-            },
-            {
-              "id": "ribelmais-buch-2",
-              "src": "/images/projects/ribelmais-buch/ribelmais-buch-2.png",
-              "alt": "Ribelmais buch image 2"
-            }
-          ]
+          {
+            "id": "ribelmais-buch-1",
+            "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+            "alt": "Ribelmais buch image 1"
+          },
+          {
+            "id": "ribelmais-buch-2",
+            "src": "/images/projects/ribelmais-buch/ribelmais-buch-2.png",
+            "alt": "Ribelmais buch image 2"
+          }
+        ]
       }
     ]
   }
 }
-
-

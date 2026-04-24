@@ -46,25 +46,24 @@ const ImpressumSection = () => {
           <div className="py-1 md:py-2 text-foreground/80">
             <p>Haftung für Inhalte</p>
             <p>
-              Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
-              Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
-              können wir jedoch keine Gewähr übernehmen.
+              Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+              Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
             </p>
           </div>
 
           <div className="py-1 md:py-2 text-foreground/80">
             <p>Haftung für Links</p>
             <p>
-              Unser Angebot enthält Links zu externen Websites Dritter, auf
-              deren Inhalte wir keinen Einfluss haben.
+              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+              Einfluss haben.
             </p>
           </div>
 
           <div className="py-1 md:py-2 text-foreground/80">
             <p>Urheberrecht</p>
             <p>
-              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf
-              diesen Seiten unterliegen dem Urheberrecht.
+              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+              unterliegen dem Urheberrecht.
             </p>
           </div>
         </div>

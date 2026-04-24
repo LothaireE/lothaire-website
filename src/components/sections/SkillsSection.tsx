@@ -2,13 +2,7 @@ import { useLanguageContext } from "@/context/appContext";
 import en from "@/locales/en.json";
 import fr from "@/locales/fr.json";
 
-const SkillCategory = ({
-  label,
-  items,
-}: {
-  label?: string;
-  items: string[];
-}) => {
+const SkillCategory = ({ label, items }: { label?: string; items: string[] }) => {
   return (
     <div key={label} className="border-t border-foreground/15 pt-4">
       {label && (
@@ -40,11 +34,7 @@ const SkillsSection = () => {
 
   return (
     <>
-      <section
-        id="skills"
-        data-testid="skills"
-        className="bg-background text-foreground"
-      >
+      <section id="skills" data-testid="skills" className="bg-background text-foreground">
         <div className="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
           <div className="border-t border-foreground/15 flex flex-col gap-8 lg:gap-10">
             <div className="mx-auto w-full max-w-400 py-4 md:pt-8">
@@ -63,22 +53,13 @@ const SkillsSection = () => {
                 {t("skillsAndExpertise.stackLabel")}
               </div>
               <div className="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4">
-                <SkillCategory
-                  label={skills.frontend.label}
-                  items={skills.frontend.items}
-                />
-                <SkillCategory
-                  label={skills.backend.label}
-                  items={skills.backend.items}
-                />
+                <SkillCategory label={skills.frontend.label} items={skills.frontend.items} />
+                <SkillCategory label={skills.backend.label} items={skills.backend.items} />
                 <SkillCategory
                   label={skills.programmingLanguages.label}
                   items={skills.programmingLanguages.items}
                 />
-                <SkillCategory
-                  label={skills.tools.label}
-                  items={skills.tools.items}
-                />
+                <SkillCategory label={skills.tools.label} items={skills.tools.items} />
               </div>
             </div>
             {/* expert */}

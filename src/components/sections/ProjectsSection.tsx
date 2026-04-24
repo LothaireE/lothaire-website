@@ -22,27 +22,20 @@ export const SingleProject = ({
   const [activeImageIndex, setActiveImageIndex] = useState(initialImageIndex);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const activeImage: ProjectImage =
-    project.gallery[activeImageIndex] ?? project.mainImage;
+  const activeImage: ProjectImage = project.gallery[activeImageIndex] ?? project.mainImage;
 
   const handlePrev = () => {
-    setActiveImageIndex((prev) =>
-      prev === 0 ? project.gallery.length - 1 : prev - 1,
-    );
+    setActiveImageIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setActiveImageIndex((prev) =>
-      prev === project.gallery.length - 1 ? 0 : prev + 1,
-    );
+    setActiveImageIndex((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1));
   };
 
   const reverseLayout = project.layout === "image-right";
 
   const spClassName = `grid grid-cols-1 gap-8 md:grid-cols-5 lg:gap-10 xl:gap-10 2:xlgap-14 ${
-    reverseLayout
-      ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
-      : ""
+    reverseLayout ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
   }`;
 
   const containerClassName = `${isFirstItem ? "" : "border-t border-foreground/20"} pt-5`;
@@ -58,11 +51,7 @@ export const SingleProject = ({
               onClick={() => setIsModalOpen(true)}
               className="aspect-5/3 overflow-hidden bg-foreground/5 hover:cursor-zoom-in shadow-lg "
             >
-              <img
-                src={activeImage.src}
-                alt={activeImage.alt}
-                className="w-full object-cover"
-              />
+              <img src={activeImage.src} alt={activeImage.alt} className="w-full object-cover" />
             </button>
 
             <div className="grid grid-cols-4 xl:grid-cols-2 gap-1 border-t border-foreground/15 pt-5 md:pt-10">
@@ -153,15 +142,10 @@ export const SingleProject = ({
 const ProjectsSection = () => {
   const { t, locale } = useLanguageContext();
 
-  const projectList =
-    locale === "fr" ? fr.projects.projectList : en.projects.projectList;
+  const projectList = locale === "fr" ? fr.projects.projectList : en.projects.projectList;
 
   return (
-    <section
-      id="projects"
-      data-testid="projects"
-      className="bg-background text-foreground"
-    >
+    <section id="projects" data-testid="projects" className="bg-background text-foreground">
       <div className="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
         <div className="mx-auto w-full max-w-400 py-4 md:pt-8 border-t border-foreground/15">
           <h2 className="font-black uppercase text-[2.5rem] xl:text-[3.4rem] 2xl:text-[4rem] leading-[0.97] tracking-[-0.02em]">
@@ -172,13 +156,7 @@ const ProjectsSection = () => {
           <div className="space-y-20 md:space-y-28">
             {projectList.map((project, index) => {
               const isFirstItem = index === 0;
-              return (
-                <SingleProject
-                  key={project.id}
-                  isFirstItem={isFirstItem}
-                  project={project}
-                />
-              );
+              return <SingleProject key={project.id} isFirstItem={isFirstItem} project={project} />;
             })}
           </div>
         </div>

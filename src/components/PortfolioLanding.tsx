@@ -43,8 +43,7 @@ const PortfolioLanding = () => {
 
   useEffect(() => {
     return () => {
-      if (copiedTimeoutRef.current)
-        window.clearTimeout(copiedTimeoutRef.current);
+      if (copiedTimeoutRef.current) window.clearTimeout(copiedTimeoutRef.current);
 
       if (emailTimeoutRef.current) window.clearTimeout(emailTimeoutRef.current);
     };
