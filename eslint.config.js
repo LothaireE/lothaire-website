@@ -4,8 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
-// import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import prettierRecommended from "eslint-config-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default defineConfig([
   globalIgnores(["dist", "node_modules", "coverage", ".github"]),
@@ -14,10 +13,9 @@ export default defineConfig([
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      // eslintPluginPrettier,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
-      prettierRecommended,
+      eslintConfigPrettier,
     ],
     languageOptions: {
       ecmaVersion: 2020,
