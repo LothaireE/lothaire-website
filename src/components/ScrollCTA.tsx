@@ -17,9 +17,7 @@ const ScrollCTA = ({ targetId, label }: ScrollCTAProps) => {
       onClick={handleScroll}
       className="group flex items-end gap-4 transition-opacity duration-200 hover:opacity-70 hover:cursor-pointer"
     >
-      {label && (
-        <span className="text-[1.1rem] tracking-[-0.04em]">{label}</span>
-      )}
+      {label && <span className="text-[1.1rem] tracking-[-0.04em]">{label}</span>}
       <ChevronDown className="h-6 w-6 transition-transform duration-300 group-hover:translate-y-1" />
     </button>
   );

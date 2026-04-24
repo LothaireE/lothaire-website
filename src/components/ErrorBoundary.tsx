@@ -61,15 +61,9 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="flex min-h-screen items-center justify-center px-6">
           <div className="max-w-md space-y-4 text-center">
-            <h1 className="text-2xl font-semibold">
-              {this.t("errorBoundary.fallback.title")}
-            </h1>
-            <p className="text-muted-foreground">
-              {this.t("errorBoundary.fallback.message")}
-            </p>
-            <button onClick={this.handleReset}>
-              {this.t("errorBoundary.fallback.button")}
-            </button>
+            <h1 className="text-2xl font-semibold">{this.t("errorBoundary.fallback.title")}</h1>
+            <p className="text-muted-foreground">{this.t("errorBoundary.fallback.message")}</p>
+            <button onClick={this.handleReset}>{this.t("errorBoundary.fallback.button")}</button>
           </div>
         </div>
       );

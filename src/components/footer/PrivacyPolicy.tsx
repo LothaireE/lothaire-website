@@ -11,8 +11,8 @@ const PrivacyPolicy = () => {
           <div className="py-2 md:py-4 text-foreground/80">
             <h4 className="pb-0.5">1. Allgemeine Hinweise</h4>
             <p>
-              Diese Website dient der Präsentation eines persönlichen
-              Portfolios. Der Schutz Ihrer persönlichen Daten ist uns wichtig.
+              Diese Website dient der Präsentation eines persönlichen Portfolios. Der Schutz Ihrer
+              persönlichen Daten ist uns wichtig.
             </p>
           </div>
 
@@ -35,27 +35,22 @@ const PrivacyPolicy = () => {
           <div className="py-2 md:py-4 text-foreground/80">
             <h4 className="pb-0.5">3. Hosting</h4>
             <p>
-              Diese Website wird über Vercel Inc., 340 S Lemon Ave #4133,
-              Walnut, CA 91789, USA gehostet.
+              Diese Website wird über Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA
+              gehostet.
             </p>
             <p>
-              Vercel verarbeitet personenbezogene Daten wie IP-Adressen zur
-              Bereitstellung der Website. Dabei kann es zu einer Übertragung von
-              Daten in die USA kommen.
+              Vercel verarbeitet personenbezogene Daten wie IP-Adressen zur Bereitstellung der
+              Website. Dabei kann es zu einer Übertragung von Daten in die USA kommen.
             </p>
             <p>
-              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f
-              DSGVO (berechtigtes Interesse an einem sicheren und effizienten
-              Betrieb der Website).
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+              Interesse an einem sicheren und effizienten Betrieb der Website).
             </p>
           </div>
 
           <div className="py-2 md:py-4 text-foreground/80">
             <h4 className="pb-0.5">4. Zugriffsdaten (Server-Logfiles)</h4>
-            <p>
-              Beim Besuch dieser Website werden automatisch Informationen
-              erfasst:
-            </p>
+            <p>Beim Besuch dieser Website werden automatisch Informationen erfasst:</p>
             <ul className="py-0.5 pl-5">
               <li>- IP-Adresse</li>
               <li>- Datum und Uhrzeit der Anfrage</li>
@@ -63,20 +58,20 @@ const PrivacyPolicy = () => {
               <li>- Betriebssystem</li>
             </ul>
             <p>
-              Diese Daten dienen der Sicherstellung eines störungsfreien
-              Betriebs und der Sicherheit der Website.
+              Diese Daten dienen der Sicherstellung eines störungsfreien Betriebs und der Sicherheit
+              der Website.
             </p>
           </div>
 
           <div className="py-2 md:py-4 text-foreground/80">
             <h4 className="pb-0.5">5. Kontaktaufnahme</h4>
             <p>
-              Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur
-              Bearbeitung Ihrer Anfrage gespeichert.
+              Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung Ihrer
+              Anfrage gespeichert.
             </p>
             <p>
-              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b
-              DSGVO (Vertrag oder vorvertragliche Maßnahmen).
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertrag oder
+              vorvertragliche Maßnahmen).
             </p>
           </div>
 
@@ -101,13 +96,8 @@ const PrivacyPolicy = () => {
           </div>
 
           <div className="py-2 md:py-4 text-foreground/80">
-            <h4 className="pb-0.5">
-              8. Beschwerderecht bei der Aufsichtsbehörde
-            </h4>
-            <p>
-              Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde
-              zu beschweren.
-            </p>
+            <h4 className="pb-0.5">8. Beschwerderecht bei der Aufsichtsbehörde</h4>
+            <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
           </div>
 
           <div className="py-2 md:py-4 text-foreground/80">

@@ -11,9 +11,7 @@ const AboutSection = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const portraitStyle =
-    theme === "dark"
-      ? "h-full w-full object-cover grayscale"
-      : "h-full w-full object-cover";
+    theme === "dark" ? "h-full w-full object-cover grayscale" : "h-full w-full object-cover";
 
   const scrollBoxClassName = `hidden md:flex justify-center transition-all duration-700 ${
     isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"

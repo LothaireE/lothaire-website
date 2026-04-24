@@ -41,11 +41,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     };
   }, [locale]);
 
-  return (
-    <LanguageContext.Provider value={contextValue}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={contextValue}>{children}</LanguageContext.Provider>;
 }
 
 interface LanguageContextValue {

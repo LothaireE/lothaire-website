@@ -23,8 +23,7 @@ const BackToTopButton = ({ targetRef }: BackToTopButtonProps) => {
     return () => scrollContainer.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToTop = () =>
-    targetRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => targetRef.current?.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <button

@@ -8,12 +8,7 @@ type OverlayPanelProps = {
   children: ReactNode;
 };
 
-const OverlayPanel = ({
-  isOpen,
-  title,
-  onClose,
-  children,
-}: OverlayPanelProps) => {
+const OverlayPanel = ({ isOpen, title, onClose, children }: OverlayPanelProps) => {
   return (
     <>
       <div

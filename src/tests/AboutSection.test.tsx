@@ -37,9 +37,7 @@ describe("About component", () => {
       }),
     ).toBeInTheDocument();
 
-    expect(
-      screen.getByRole("img", { name: "Lothaire Epee's portrait" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "Lothaire Epee's portrait" })).toBeInTheDocument();
 
     expect(
       screen.getByText(

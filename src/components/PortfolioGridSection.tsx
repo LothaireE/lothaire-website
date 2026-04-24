@@ -50,10 +50,7 @@ const PortfolioGridSection = () => {
             {openSection === "impressum" && <ImpressumSection />}
             {openSection === "privacy" && <PrivacyPolicy />}
           </OverlayPanel>
-          <FooterSection
-            openSection={openSection}
-            onFooterClick={handleFooterClick}
-          />
+          <FooterSection openSection={openSection} onFooterClick={handleFooterClick} />
         </div>
       </section>
       <BackToTopButton targetRef={sectionRef} />
