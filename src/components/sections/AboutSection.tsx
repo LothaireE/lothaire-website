@@ -42,9 +42,9 @@ const AboutSection = () => {
         <div className="flex flex-col justify-between gap-8 lg:h-full lg:gap-8">
           <div>
             {/* <p className="text-[2rem] md:text-[3rem] lg:text-[3.8rem] leading-[0.97] tracking-[-0.06em]"> */}
-            <h2 className="text-[2rem] md:text-[3rem] lg:text-[3.5rem] 2xl:text-[3.8rem] leading-[0.97] tracking-[-0.06em]">
+            {/* <h2 className="text-[2rem] md:text-[3rem] lg:text-[3.5rem] 2xl:text-[3.8rem] leading-[0.97] tracking-[-0.06em]">
               {t("about.intro")}
-            </h2>
+            </h2> */}
           </div>
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,0.9fr)] lg:gap-14">
