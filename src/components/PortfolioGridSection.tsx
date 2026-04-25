@@ -56,7 +56,10 @@ const PortfolioGridSection = () => {
           <FooterSection openSection={openSection} onFooterClick={handleFooterClick} />
         </div>
       </section>
-      <BackToTopButton />
+      <div className="hidden md:flex">
+        <BackToTopButton />
+      </div>
+
       <MobileMenu />
     </>
   );
