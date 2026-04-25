@@ -9,9 +9,11 @@ import FooterSection from "./footer/FooterSection";
 import ImpressumSection from "./footer/Impressum";
 import PrivacyPolicy from "./footer/PrivacyPolicy";
 import OverlayPanel from "./sections/OverlayPanel";
+import MobileMenu from "./nav/MobileMenu";
 import type { LegalSection } from "@/types/portfolioTypes";
 
 export const gridSectionId = "portfolio-grid-section";
+export const topSentinelId = "grid-top-sentinel";
 
 const PortfolioGridSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -36,6 +38,7 @@ const PortfolioGridSection = () => {
         ref={sectionRef}
         className="relative h-full overflow-y-auto scroll-smooth bg-(--background)"
       >
+        <div id="grid-top-sentinel" data-testid="grid-top-sentinel" />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
@@ -53,7 +56,8 @@ const PortfolioGridSection = () => {
           <FooterSection openSection={openSection} onFooterClick={handleFooterClick} />
         </div>
       </section>
-      <BackToTopButton targetRef={sectionRef} />
+      <BackToTopButton />
+      <MobileMenu />
     </>
   );
 };
