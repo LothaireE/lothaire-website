@@ -6,6 +6,8 @@ import en from "@/locales/en.json";
 import fr from "@/locales/fr.json";
 import { InlineInfoTip } from "./InlineInfoTip";
 
+export const landingNavID = "landing-nav";
+
 const PortfolioLanding = () => {
   const { t, locale } = useLanguageContext();
   const profileData = locale === "fr" ? fr.profile : en.profile;
@@ -95,7 +97,10 @@ const PortfolioLanding = () => {
         <div className="min-h-50 w-full col-span-1 flex items-center">
           <SettingsMenu />
         </div>
-        <div className="min-h-50 w-full  col-span-1 md:col-span-2 flex items-center justify-end">
+        <div
+          id={landingNavID}
+          className="min-h-50 w-full  col-span-1 md:col-span-2 flex items-center justify-end"
+        >
           <LandingNav />
         </div>
       </div>
