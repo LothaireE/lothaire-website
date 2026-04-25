@@ -32,6 +32,19 @@
     "experience": "Expérience",
     "projects": "Projets réalisés"
   },
+  "mobileSettings": {
+    "language": "Langue",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "mobileNav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "projects": "Projets"
+  },
   "errorBoundary": {
     "fallback": {
       "title": "Une erreur est survenue",
@@ -312,7 +325,7 @@
       },
       {
         "id": "project-1",
-        "title": "Ribelmais buch",
+        "title": "Ribelmais Buch",
         "slug": "ribelmais-buch",
         "period": "2025",
         "role": "Design / Frontend & CMS Development",

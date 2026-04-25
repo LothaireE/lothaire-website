@@ -45,7 +45,11 @@ const FooterSection = ({
   };
 
   return (
-    <footer className="border-t border-(--border) bg-(--background) px-18 py-8">
+    <footer
+      id="footer"
+      data-testid="footer"
+      className="border-t border-(--border) bg-(--background) px-18 py-8"
+    >
       <div className="flex items-center justify-between">
         <span className="text-sm text-(--foreground)/70">© 2026 Lothaire</span>
 
