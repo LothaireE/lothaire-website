@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, it } from "vitest";
 import en from "@/locales/en.json";
 import PortfolioGridSection from "@/components/PortfolioGridSection";
@@ -27,7 +27,25 @@ describe("PortfolioGridSection component", () => {
     vi.clearAllMocks();
   });
 
-  it("should render the landing section and main content properly", () => {
+  it("should render the grid section and main content properly", () => {
     render(<PortfolioGridSection />);
+
+    const topSentinel = screen.getByTestId("grid-top-sentinel");
+    const backToTopButton = screen.getByTestId("back-to-top-button");
+
+    expect(backToTopButton).toBeInTheDocument();
+    expect(topSentinel).toBeInTheDocument();
+
+    const about = screen.getByTestId("about");
+    const skills = screen.getByTestId("skills");
+    const experience = screen.getByTestId("experience");
+    const projects = screen.getByTestId("projects");
+    const footer = screen.getByTestId("footer");
+
+    expect(about).toBeInTheDocument();
+    expect(skills).toBeInTheDocument();
+    expect(experience).toBeInTheDocument();
+    expect(projects).toBeInTheDocument();
+    expect(footer).toBeInTheDocument();
   });
 });

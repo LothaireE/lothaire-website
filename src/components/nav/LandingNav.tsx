@@ -1,30 +1,34 @@
 import { useLanguageContext } from "@/context/appContext";
 import NavLinkButton from "./NavLinkButton";
+import { scrollToSection } from "@/utils/utils";
 
 const LandingNav = () => {
   const { t } = useLanguageContext();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleSectionClick = (id: string) => {
+    scrollToSection(id);
   };
 
   return (
     <nav className="max-w-4xl text-right leading-[0.88]">
       <ul>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("about")}>{t("nav.about")}</NavLinkButton>
+          <NavLinkButton onClick={() => handleSectionClick("about")}>
+            {t("nav.about")}
+          </NavLinkButton>
         </li>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("skills")}>{t("nav.skills")}</NavLinkButton>
+          <NavLinkButton onClick={() => handleSectionClick("skills")}>
+            {t("nav.skills")}
+          </NavLinkButton>
         </li>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("experience")}>
+          <NavLinkButton onClick={() => handleSectionClick("experience")}>
             {t("nav.experience")}
           </NavLinkButton>
         </li>
         <li className="mt-2 text-[32px] font-medium italic tracking-[-0.05em] md:text-[40px]">
-          <NavLinkButton onClick={() => scrollToSection("projects")}>
+          <NavLinkButton onClick={() => handleSectionClick("projects")}>
             {t("nav.projects")}
           </NavLinkButton>
         </li>
