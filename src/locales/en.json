@@ -251,6 +251,84 @@
     },
     "projectList": [
       {
+        "id": "project-3",
+        "title": "De Nouveau",
+        "slug": "de-nouveau",
+        "period": "2026",
+        "role": "Product Design / Full Stack Development / CMS Architecture / Deployment",
+        "layout": "image-left",
+        "summary": "Portfolio website for an architecture studio, built around project showcases, a headless CMS, and an efficient media management system.",
+        "description": [
+          "Designed and developed a premium portfolio website for an architecture studio, featuring a minimalist editorial aesthetic focused on showcasing architectural projects.",
+          "Implemented a headless CMS using Payload CMS, enabling the client to manage pages, projects, categories, images, videos, and SEO metadata through a dedicated administration interface.",
+          "Built a full-stack architecture using Next.js, PostgreSQL via Neon, Cloudflare R2 media storage through an S3-compatible setup, Vercel deployment, and automatic cache revalidation after content updates.",
+          "Created reusable project layouts — default, editorial, gallery focused, and minimal — allowing each project to be presented according to its visual or narrative requirements.",
+          "Configured a CI workflow with GitHub Actions to automatically run linting, formatting checks, tests, and production builds before deployment."
+        ],
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Payload CMS",
+          "PostgreSQL",
+          "Neon",
+          "Cloudflare R2",
+          "S3 Storage",
+          "Vercel",
+          "Vitest",
+          "GitHub Actions",
+          "ESLint",
+          "Prettier"
+        ],
+        "links": {
+          "live": "https://www.denouveau.fr",
+          "github": "https://github.com/LothaireE/De-Nouveau-Website"
+        },
+        "mainImage": {
+          "id": "de-nouveau-main",
+          "src": "/images/projects/de-nouveau/homepage.png",
+          "alt": "De Nouveau portfolio website main image"
+        },
+        "gallery": [
+          {
+            "id": "de-nouveau-1",
+            "src": "/images/projects/de-nouveau/homepage.png",
+            "alt": "De Nouveau homepage"
+          },
+          {
+            "id": "de-nouveau-2",
+            "src": "/images/projects/de-nouveau/project-gallery-1.png",
+            "alt": "De Nouveau project gallery"
+          },
+          {
+            "id": "de-nouveau-3",
+            "src": "/images/projects/de-nouveau/open-nav.png",
+            "alt": "Navigation tab open"
+          },
+          {
+            "id": "de-nouveau-4",
+            "src": "/images/projects/de-nouveau/project-1.png",
+            "alt": "De Nouveau project detail page 1"
+          },
+          {
+            "id": "de-nouveau-5",
+            "src": "/images/projects/de-nouveau/project-2.png",
+            "alt": "De Nouveau project detail page 2"
+          },
+          {
+            "id": "de-nouveau-6",
+            "src": "/images/projects/de-nouveau/admin-project.png",
+            "alt": "Payload CMS administration project interface"
+          },
+          {
+            "id": "de-nouveau-7",
+            "src": "/images/projects/de-nouveau/admin-medias.png",
+            "alt": "Payload CMS administration medias collection"
+          }
+        ]
+      },
+      {
         "id": "project-2",
         "title": "Reusable Executive Portfolio SPA",
         "slug": "reusable-executive-portfolio-spa",
@@ -263,6 +341,10 @@
           "The task was to build a content-driven porfolio (no hardcoded data) with a minimalist editorialistic like design with smooth animations and a responsive layout featuring a light/dark mode.",
           "Implemented a Single Page Application with 4 client-side routes using React Router ('/', '/about', '/contact') including a 404 handling page"
         ],
+        "links": {
+          "live": "",
+          "github": ""
+        },
         "stack": [
           "React",
           "Tailwind",
@@ -334,6 +416,10 @@
           "Design and development of a website for a Swiss client to coincide with the launch of their book, including Shopify integration for online management and sales.",
           "The goal was to build a e-commerce website that feels precise, with a minimalistic design as per requested from client."
         ],
+        "links": {
+          "live": "https://ribelmaisbuch.ch/",
+          "github": ""
+        },
         "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
         "mainImage": {
           "id": "ribelmais-buch-main",

@@ -252,6 +252,84 @@
     },
     "projectList": [
       {
+        "id": "project-3",
+        "title": "De Nouveau",
+        "slug": "de-nouveau",
+        "period": "2026",
+        "role": "Design / Développement Full Stack / CMS / Déploiement",
+        "layout": "image-left",
+        "summary": "Site portfolio administrable pour un studio d’architecture, conçu autour d’une galerie de projets, d’un CMS headless et d’une gestion média performante.",
+        "description": [
+          "Conception et développement d’un site vitrine premium pour un studio d’architecture, avec une direction artistique minimaliste, éditoriale et centrée sur la mise en valeur des projets.",
+          "Mise en place d’un CMS headless avec Payload CMS permettant au client de gérer les pages, projets, catégories, images, vidéos et métadonnées SEO depuis une interface d’administration.",
+          "Développement d’une architecture full stack avec Next.js, PostgreSQL via Neon, stockage média Cloudflare R2 compatible S3, déploiement Vercel et système de revalidation automatique du cache après modification du contenu.",
+          "Création de layouts de projets réutilisables — default, editorial, gallery focused et minimal — afin d’adapter la présentation selon la nature visuelle ou narrative de chaque projet.",
+          "Configuration d’un pipeline d’intégration continue (CI) avec GitHub Actions afin d’automatiser les contrôles de qualité du code (linting, formatage), l’exécution des tests et la validation des builds de production avant chaque déploiement."
+        ],
+        "links": {
+          "live": "https://www.denouveau.fr",
+          "github": "https://github.com/LothaireE/De-Nouveau-Website"
+        },
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Payload CMS",
+          "PostgreSQL",
+          "Neon",
+          "Cloudflare R2",
+          "S3 Storage",
+          "Vercel",
+          "Vitest",
+          "GitHub Actions",
+          "ESLint",
+          "Prettier"
+        ],
+        "mainImage": {
+          "id": "de-nouveau-main",
+          "src": "/images/projects/de-nouveau/homepage.png",
+          "alt": "Image principale du site portfolio De Nouveau"
+        },
+        "gallery": [
+          {
+            "id": "de-nouveau-1",
+            "src": "/images/projects/de-nouveau/homepage.png",
+            "alt": "Page d'accueil de De Nouveau"
+          },
+          {
+            "id": "de-nouveau-2",
+            "src": "/images/projects/de-nouveau/project-gallery-1.png",
+            "alt": "Galerie de projets De Nouveau"
+          },
+          {
+            "id": "de-nouveau-3",
+            "src": "/images/projects/de-nouveau/open-nav.png",
+            "alt": "Menu de navigation ouvert"
+          },
+          {
+            "id": "de-nouveau-4",
+            "src": "/images/projects/de-nouveau/project-1.png",
+            "alt": "Page détail d'un projet De Nouveau"
+          },
+          {
+            "id": "de-nouveau-5",
+            "src": "/images/projects/de-nouveau/project-2.png",
+            "alt": "Page détail d'un projet De Nouveau"
+          },
+          {
+            "id": "de-nouveau-6",
+            "src": "/images/projects/de-nouveau/admin-project.png",
+            "alt": "Interface d'administration des projets dans Payload CMS"
+          },
+          {
+            "id": "de-nouveau-7",
+            "src": "/images/projects/de-nouveau/admin-medias.png",
+            "alt": "Collection de médias dans l'interface d'administration Payload CMS"
+          }
+        ]
+      },
+      {
         "id": "project-2",
         "title": "Reusable Executive Portfolio SPA",
         "slug": "reusable-executive-portfolio-spa",
@@ -264,6 +342,10 @@
           "Réalisation d'un portfolio dynamique, basé sur du contenu (sans données en dur), avec un design minimaliste d'inspiration éditoriale, avec des animations fluides et une interface responsive intégrant un mode clair/sombre.",
           "Mise en place d’une Single Page Application avec plusieurs routes côté client (/, /about, /contact) via React Router, incluant également une page dédiée à la gestion des erreurs 404."
         ],
+        "links": {
+          "live": "",
+          "github": ""
+        },
         "stack": [
           "React",
           "Tailwind",
@@ -335,6 +417,10 @@
           "Conception et développement d'un site pour le compte d'un client suisse à l’occasion du lancement de son livre, avec une intégration de Shopify pour la gestion et la vente en ligne.",
           "L'objectif était de créer un site d' e-commerce au design épuré et minimaliste, conformément à la demande du client."
         ],
+        "links": {
+          "live": "https://ribelmaisbuch.ch/",
+          "github": ""
+        },
         "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
         "mainImage": {
           "id": "ribelmais-buch-main",
