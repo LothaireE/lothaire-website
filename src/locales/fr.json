@@ -250,6 +250,10 @@
       "title": "Projets – Lothaire Epee | Développeur Full Stack",
       "description": "Découvrez une sélection de projets illustrant des compétences en développement full stack, design d’interface et réalisation d’applications web."
     },
+    "linkLabels": {
+      "live": "Visiter",
+      "github": "Github"
+    },
     "projectList": [
       {
         "id": "project-3",

@@ -14,6 +14,10 @@ export type Project = {
   role: string;
   layout?: string; // ProjectLayout
   summary: string;
+  links: {
+    live: string;
+    github: string;
+  };
   description: string[];
   stack: string[];
   mainImage: ProjectImage;

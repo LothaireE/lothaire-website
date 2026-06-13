@@ -249,6 +249,10 @@
       "title": "Projects – Lothaire Epee | Full Stack Developer",
       "description": "Browse selected projects showcasing full stack development, UI design, and production-ready web applications built for real clients and use cases."
     },
+    "linkLabels": {
+      "live": "Visit",
+      "github": "Github"
+    },
     "projectList": [
       {
         "id": "project-3",
