@@ -4,6 +4,7 @@ import type { Project, ProjectImage } from "@/types/portfolioTypes";
 import en from "@/locales/en.json";
 import fr from "@/locales/fr.json";
 import ImageModal from "../ImageModal";
+import NavLinkButton from "../nav/NavLinkButton";
 
 export const SingleProject = ({
   isFirstItem,
@@ -30,6 +31,11 @@ export const SingleProject = ({
 
   const handleNext = () => {
     setActiveImageIndex((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleClick = (url: string) => {
+    if (!url || !url.startsWith("https")) return;
+    window.open(url, "_blank", "noopener noreferrer");
   };
 
   const reverseLayout = project.layout === "image-right";
@@ -75,6 +81,22 @@ export const SingleProject = ({
                   </button>
                 );
               })}
+            </div>
+            <div className="px-2 py-0 md:py-2 md:px-4 flex gap-4">
+              {project.links.live && (
+                <div>
+                  <NavLinkButton onClick={() => handleClick(project.links.live)}>
+                    {t("projects.linkLabels.live")}
+                  </NavLinkButton>
+                </div>
+              )}
+              {project.links.github && (
+                <div>
+                  <NavLinkButton onClick={() => handleClick(project.links.github)}>
+                    {t("projects.linkLabels.github")}
+                  </NavLinkButton>
+                </div>
+              )}
             </div>
           </div>
 
