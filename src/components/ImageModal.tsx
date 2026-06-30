@@ -33,7 +33,7 @@ const ImageModal = ({ images, activeIndex, open, onClose, onPrev, onNext }: Imag
     String(activeIndex + 1).padStart(2, "0") + "/" + String(images.length).padStart(2, "0");
 
   return (
-    <div className="h-full fixed inset-0 z-100 bg-background/80 backdrop-blur-[1px] text-foreground">
+    <div className="fixed inset-0 z-100 h-full bg-(--background) text-foreground sm:bg-transparent sm:backdrop-blur-[2px]">
       <button
         type="button"
         aria-label="Close lightbox"
@@ -53,30 +53,32 @@ const ImageModal = ({ images, activeIndex, open, onClose, onPrev, onNext }: Imag
             Close
           </button>
         </div>
-        <div className="relative flex min-h-0 flex-1 items-center justify-center px-6 pb-6 sm:px-8 md:px-10">
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Previous image"
-            className="absolute left-6 z-100 text-[2rem] leading-none tracking-[-0.08em] text-foreground/70 transition-opacity duration-200 hover:opacity-60 sm:left-8 md:left-10"
-          >
-            <ChevronLeft className="h-10 w-10 hover:cursor-pointer" />
-          </button>
-          <div className="relative z-10 flex h-full w-full items-center justify-center">
+        <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-0 pb-6 sm:block sm:px-8 md:px-10">
+          <div className="relative z-10 flex min-h-0 w-full items-center justify-center sm:h-full">
             <img
               src={activeImage.src}
               alt={activeImage.alt}
-              className="max-h-full max-w-full object-contain"
+              className="max-h-full w-screen max-w-none object-contain sm:w-auto sm:max-w-[92vw] lg:max-w-full"
             />
           </div>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Next image"
-            className="absolute right-6 z-100 text-[2rem] leading-none tracking-[-0.08em] text-foreground/70 transition-opacity duration-200 hover:opacity-60 sm:right-8 md:right-10"
-          >
-            <ChevronRight className="h-10 w-10 hover:cursor-pointer" />
-          </button>
+          <div className="relative z-20 flex w-full items-center justify-center gap-8 px-6 sm:contents">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Previous image"
+              className="text-[2rem] leading-none tracking-[-0.08em] text-foreground/70 transition-opacity duration-200 hover:opacity-60 sm:absolute sm:top-1/2 sm:left-8 sm:z-100 sm:-translate-y-1/2 md:left-10"
+            >
+              <ChevronLeft className="h-10 w-10 hover:cursor-pointer" />
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              aria-label="Next image"
+              className="text-[2rem] leading-none tracking-[-0.08em] text-foreground/70 transition-opacity duration-200 hover:opacity-60 sm:absolute sm:top-1/2 sm:right-8 sm:z-100 sm:-translate-y-1/2 md:right-10"
+            >
+              <ChevronRight className="h-10 w-10 hover:cursor-pointer" />
+            </button>
+          </div>
         </div>
         <div className="flex flex-wrap gap-2 px-6 pb-4 sm:px-8 md:px-10">
           {images.map((image, index) => {
