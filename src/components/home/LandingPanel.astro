@@ -1,0 +1,165 @@
+---
+import type { Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+const location = data.profile.locations.join(" - ");
+const themeSelection = lang === "fr" ? "Thème" : "Theme";
+const languageSelection = lang === "fr" ? "Langue" : "Language";
+const currentLanguageLabel = lang === "fr" ? "Français" : "English";
+const phoneHref = data.profile.phone.replace(/\s/g, "");
+---
+
+<section class="min-h-screen w-full lg:h-screen lg:w-1/2">
+  <div
+    id="portfolio-landing"
+    class="mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 py-8 sm:px-10 md:px-8 lg:h-screen lg:px-8"
+  >
+    <div class="flex justify-end">
+      <div class="w-full max-w-4xl text-right leading-[0.88]">
+        <h1
+          class="text-[56px] font-black uppercase italic leading-[0.82] tracking-[-0.08em] sm:text-[72px] md:text-[96px] lg:text-[110px] xl:text-[132px] 2xl:text-[148px]"
+        >
+          <span class="block">{data.profile.firstname}</span>
+          <span class="block">{data.profile.lastname}</span>
+        </h1>
+        <p class="text-[34px] font-semibold italic tracking-tighter sm:text-[48px] md:text-[56px]">
+          {data.profile.profession}
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3" data-landing-controls>
+      <div class="col-span-1 flex min-h-50 w-full items-center">
+        <div class="w-full max-w-55 space-y-2">
+          <div class="relative w-full border-b border-(--foreground)" data-settings-dropdown>
+            <button type="button" class="flex w-full items-center justify-between gap-4 py-2 text-left">
+              <span class="text-[0.85rem] uppercase tracking-[0.04rem] text-(--foreground)">{languageSelection}</span>
+              <span class="flex items-center gap-3">
+                <span class="text-[1rem] tracking-[-0.04em] text-(--foreground)">{currentLanguageLabel}</span>
+                <span class="text-[1rem] transition-transform duration-200" data-dropdown-arrow>↓</span>
+              </span>
+            </button>
+            <div
+              class="grid grid-rows-[0fr] overflow-hidden opacity-0 transition-all duration-200 ease-out"
+              data-dropdown-panel
+            >
+              <div class="overflow-hidden">
+                <div class="pb-2 pt-1">
+                  <a href="/fr/" class="block py-1 text-left text-[0.95rem] tracking-[-0.03em] text-(--foreground)/72 transition-opacity duration-150 hover:opacity-60">
+                    Français
+                  </a>
+                  <a href="/" class="block py-1 text-left text-[0.95rem] tracking-[-0.03em] text-(--foreground)/72 transition-opacity duration-150 hover:opacity-60">
+                    English
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative w-full border-b border-(--foreground)" data-settings-dropdown>
+            <button type="button" class="flex w-full items-center justify-between gap-4 py-2 text-left">
+              <span class="text-[0.85rem] uppercase tracking-[0.04rem] text-(--foreground)">{themeSelection}</span>
+              <span class="flex items-center gap-3">
+                <span class="text-[1rem] tracking-[-0.04em] text-(--foreground)" data-theme-label>Light</span>
+                <span class="text-[1rem] transition-transform duration-200" data-dropdown-arrow>↓</span>
+              </span>
+            </button>
+            <div
+              class="grid grid-rows-[0fr] overflow-hidden opacity-0 transition-all duration-200 ease-out"
+              data-dropdown-panel
+            >
+              <div class="overflow-hidden">
+                <div class="pb-2 pt-1">
+                  <button type="button" data-theme-choice="light" class="block py-1 text-left text-[0.95rem] tracking-[-0.03em] text-(--foreground)/72 transition-opacity duration-150 hover:cursor-pointer hover:opacity-60">
+                    Light
+                  </button>
+                  <button type="button" data-theme-choice="dark" class="block py-1 text-left text-[0.95rem] tracking-[-0.03em] text-(--foreground)/72 transition-opacity duration-150 hover:cursor-pointer hover:opacity-60">
+                    Dark
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-1 flex min-h-50 w-full items-center justify-end md:col-span-2">
+        <nav class="max-w-4xl text-right leading-[0.88]" aria-label="Main navigation">
+          <ul>
+            {[
+              [data.nav.about, "about"],
+              [data.nav.skills, "skills"],
+              [data.nav.experience, "experience"],
+              [data.nav.projects, "projects"],
+            ].map(([label, target]) => (
+              <li class="mt-2 text-[32px] font-medium italic tracking-tighter md:text-[40px]">
+                <button
+                  type="button"
+                  data-scroll-target={target}
+                  class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:cursor-pointer hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]"
+                >
+                  {label}
+                  <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between gap-6 pt-8 md:flex-row md:items-end">
+      <div class="max-w-fit border border-current px-3 py-2 text-[13px] uppercase tracking-tight sm:text-[15px]">
+        <span class="block">{data.landing.locationLabel}</span>
+        <span class="block">{location}</span>
+      </div>
+
+      <address class="w-full text-right not-italic leading-none md:w-fit">
+        <button type="button" data-copy-phone={phoneHref} class="hover:cursor-pointer">
+          <span class="group relative inline-flex">
+            <span class="text-[36px] font-black tracking-[-0.07em] md:text-[56px] 2xl:text-[72px]">
+              {data.profile.phone}
+            </span>
+            <span
+              class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-0 whitespace-nowrap border border-(--foreground)/10 bg-(--foreground)/90 px-2 py-1 text-[11px] uppercase tracking-[0.04em] text-(--background) opacity-0 backdrop-blur-sm transition-all duration-200 group-hover:opacity-100"
+              data-phone-hover
+            >
+              {data.landing.phoneCta}
+            </span>
+            <span
+              aria-live="polite"
+              class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap border border-(--foreground)/10 bg-(--foreground)/90 px-2 py-1 text-[11px] uppercase tracking-[0.04em] text-(--background) opacity-0 backdrop-blur-sm transition-all duration-300"
+              data-phone-active
+            >
+              {data.landing.phoneCopied}
+            </span>
+          </span>
+        </button>
+        <a href={`mailto:${data.profile.email}`} class="block transition-opacity hover:opacity-70" data-email-link>
+          <span class="group relative inline-flex">
+            <span class="text-[28px] font-semibold tracking-tighter sm:text-[36px] md:text-[42px] 2xl:text-[56px]">
+              {data.profile.email}
+            </span>
+            <span
+              class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-0 whitespace-nowrap border border-(--foreground)/10 bg-(--foreground)/90 px-2 py-1 text-[11px] uppercase tracking-[0.04em] text-(--background) opacity-0 backdrop-blur-sm transition-all duration-200 group-hover:opacity-100"
+              data-email-hover
+            >
+              {data.landing.emailCta}
+            </span>
+            <span
+              aria-live="polite"
+              class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap border border-(--foreground)/10 bg-(--foreground)/90 px-2 py-1 text-[11px] uppercase tracking-[0.04em] text-(--background) opacity-0 backdrop-blur-sm transition-all duration-300"
+              data-email-active
+            >
+              {data.landing.emailOpened}
+            </span>
+          </span>
+        </a>
+      </address>
+    </div>
+  </div>
+</section>

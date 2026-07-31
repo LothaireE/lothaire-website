@@ -1,0 +1,72 @@
+---
+import type { Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<div class="hidden md:flex">
+  <button
+    type="button"
+    data-back-to-top
+    class="pointer-events-none fixed bottom-25 right-6 z-50 flex h-10 w-10 translate-y-4 items-center justify-center rounded-full text-sm font-medium opacity-0 shadow-lg transition-all duration-300 hover:cursor-pointer"
+    aria-label="Back to top"
+  >
+    <span class="text-[1.4rem] text-(--foreground) transition-transform duration-300">⌃</span>
+  </button>
+</div>
+
+<div
+  class="pointer-events-none fixed right-4 top-4 z-90 translate-y-2 opacity-0 transition-all duration-300 md:hidden"
+  data-mobile-menu
+>
+  <button
+    type="button"
+    class="flex h-10 w-10 items-center justify-center rounded-full bg-(--background) shadow backdrop-blur-sm transition-opacity hover:opacity-70 dark:border dark:border-amber-50"
+    data-mobile-toggle
+    aria-label="Menu"
+    aria-expanded="false"
+  >
+    <span data-mobile-icon-open>☰</span>
+    <span class="hidden" data-mobile-icon-close>×</span>
+  </button>
+
+  <div
+    class="pointer-events-none absolute right-0 mt-4 w-45 translate-y-2 bg-(--background) opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 dark:border dark:border-(--foreground)/15"
+    data-mobile-panel
+  >
+    <nav>
+      <ul class="flex flex-col flex-wrap p-3 text-right">
+        <li class="py-1"><button type="button" data-scroll-target="portfolio-landing">{data.mobileNav.home}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="about">{data.mobileNav.about}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="skills">{data.mobileNav.skills}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="experience">{data.mobileNav.experience}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="projects">{data.mobileNav.projects}</button></li>
+      </ul>
+    </nav>
+    <div class="border-t border-(--border) px-3 py-1 text-right">
+      <ul class="flex flex-col">
+        <li class="py-2">
+          <label class="flex cursor-pointer items-center justify-end gap-2">
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">EN</span>
+            <input type="checkbox" class="peer sr-only" data-mobile-language-toggle checked={lang === "fr"} />
+            <span class="relative h-4 w-8 rounded-full bg-(--muted) transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-3 after:w-3 after:rounded-full after:bg-(--foreground) after:transition-transform after:duration-300 peer-checked:bg-(--foreground)/30 peer-checked:after:translate-x-4"></span>
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">FR</span>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex cursor-pointer items-center justify-end gap-2">
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">{data.mobileSettings.light}</span>
+            <input type="checkbox" class="peer sr-only" data-mobile-theme-toggle />
+            <span class="relative h-4 w-8 rounded-full bg-(--muted) transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-3 after:w-3 after:rounded-full after:bg-(--foreground) after:transition-transform after:duration-300 peer-checked:bg-(--foreground)/30 peer-checked:after:translate-x-4"></span>
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">{data.mobileSettings.dark}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,423 @@
+---
+import { getProjectPath, type Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<section
+  id="portfolio-grid-section"
+  class="relative min-h-screen w-full scroll-smooth bg-(--background) lg:h-screen lg:w-1/2 lg:overflow-y-auto"
+>
+  <div id="grid-top-sentinel"></div>
+
+  <section id="about" class="min-h-screen bg-(--background) text-(--foreground)">
+    <div class="mx-auto w-full max-w-350 px-6 py-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+      <div class="flex flex-col justify-between gap-8">
+        <h2 class="text-[2rem] leading-[0.97] tracking-[-0.06em] md:text-[3rem] lg:text-[3.5rem] 2xl:text-[3.8rem]">
+          {data.about.intro}
+        </h2>
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,0.9fr)] lg:gap-14">
+          <div class="overflow-hidden">
+            <div class="md:max-h-110 lg:max-h-130 xl:max-h-145 2xl:max-h-160">
+              <img
+                src={data.profile.portrait.src}
+                alt={data.profile.portrait.alt}
+                width="600"
+                height="850"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+                data-portrait-image
+              />
+            </div>
+          </div>
+          <div class="my-auto flex flex-col justify-between gap-10">
+            <div class="space-y-5">
+              <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{data.about.sideText1}</p>
+              <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{data.about.sideText2}</p>
+              <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{data.about.sideText3}</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-[1.9rem] italic leading-[0.97] tracking-[-0.06em] sm:text-[2rem]">{data.about.closing}</p>
+        <div class="hidden justify-center transition-all duration-700 md:flex" data-about-scroll-cta>
+          <button
+            type="button"
+            data-scroll-target="skills"
+            class="group flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:cursor-pointer hover:opacity-70"
+            aria-label={data.mobileNav.skills}
+          >
+            <span class="scale-x-125 text-[1.6rem] leading-none text-(--foreground) transition-transform duration-300 group-hover:translate-y-1">
+              ⌄
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-(--background) text-(--foreground)">
+    <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+      <div class="flex flex-col gap-8 border-t border-(--foreground)/15 lg:gap-10">
+        <div class="mx-auto w-full max-w-400 py-4 md:pt-8">
+          <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+            {data.skillsAndExpertise.title}
+          </h2>
+        </div>
+        <p class="text-[2rem] leading-[0.97] tracking-[-0.06em] md:text-[3rem] lg:text-[3.8rem]">
+          {data.skillsAndExpertise.intro}
+        </p>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[120px_minmax(0,1fr)] lg:gap-x-12">
+          <p class="pt-0 text-center text-[0.85rem] uppercase tracking-[0.04em] text-(--foreground)/60 md:pt-3 md:text-left">
+            {data.skillsAndExpertise.stackLabel}
+          </p>
+          <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4">
+            {[data.skills.frontend, data.skills.backend, data.skills.programmingLanguages, data.skills.tools].map((category) => (
+              <div class="border-t border-(--foreground)/15 pt-4">
+                <h3 class="mb-4 text-[1.1rem] font-medium leading-none tracking-[-0.04em]">{category.label}</h3>
+                <ul class="space-y-1.5">
+                  {category.items.map((item) => (
+                    <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[120px_minmax(0,1fr)] lg:gap-x-12">
+          <p class="pt-0 text-center text-[0.85rem] uppercase tracking-[0.04em] text-(--foreground)/60 md:pt-3 md:text-left">
+            {data.expertise.stackLabel}
+          </p>
+          <div>
+            <div class="border-t border-(--foreground)/15 pt-4">
+              <ul class="space-y-1.5">
+                {data.expertise.items.map((item) => (
+                  <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="bg-(--background) text-(--foreground)">
+    <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+      <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
+        <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+          {data.experience.title}
+        </h2>
+      </div>
+      <div class="mx-auto w-full max-w-400 py-8">
+        <div class="space-y-14">
+          {data.experience.experienceList.map((item, index) => (
+            <article class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}>
+              <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+                <div class="col-span-1 space-y-3">
+                  <p class="text-[15px] leading-[1.1] tracking-[-0.03em] text-(--foreground)/70">{item.period}</p>
+                  <div class="leading-none">
+                    <h3 class="text-[1.8rem] font-medium tracking-[-0.06em] sm:text-[2.2rem]">{item.role}</h3>
+                    {item.company && <p class="mt-1 text-[1.1rem] tracking-[-0.04em] text-(--foreground)/85">{item.company}</p>}
+                    {item.location && <p class="mt-1 text-[15px] tracking-[-0.03em] text-(--foreground)/60">{item.location}</p>}
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 gap-8 lg:col-span-2 lg:grid-cols-3">
+                  <div class="col-span-1 space-y-5 xl:col-span-2">
+                    <p class="max-w-full text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 md:max-w-54 lg:max-w-60 2xl:max-w-65">
+                      {item.summary}
+                    </p>
+                    <ul class="max-w-full space-y-1.5 md:max-w-54 lg:max-w-60 2xl:max-w-65">
+                      {item.missions.map((mission) => (
+                        <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/75">{mission}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="space-y-3">
+                    <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                    <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:space-y-1.5">
+                      {item.stack.map((tech) => (
+                        <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="bg-(--background) text-(--foreground)">
+    <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+      <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
+        <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+          {data.projects.title}
+        </h2>
+      </div>
+      <div class="mx-auto w-full max-w-400 py-8">
+        <div class="space-y-20 md:space-y-28">
+          {data.projects.projectList.map((project, index) => (
+            <article
+              id={`project_${project.slug}`}
+              class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}
+              data-project-preview
+              data-project-images={JSON.stringify(project.gallery)}
+            >
+              <div class={`grid grid-cols-1 gap-8 md:grid-cols-5 lg:gap-10 xl:gap-10 ${project.layout === "image-right" ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""}`}>
+                <div class="col-span-1 space-y-4 gap-10 md:col-span-3 md:space-y-10">
+                  <button type="button" class="aspect-5/3 overflow-hidden bg-(--foreground)/5 shadow-lg hover:cursor-zoom-in" data-project-preview-open>
+                    <img src={project.mainImage.src} alt={project.mainImage.alt} loading="lazy" decoding="async" class="w-full object-cover" data-project-preview-main />
+                  </button>
+                  <div class="grid grid-cols-4 gap-1 border-t border-(--foreground)/15 pt-5 md:pt-10 xl:grid-cols-2">
+                    {project.gallery.map((image, imageIndex) => (
+                      <button
+                        type="button"
+                        data-project-thumb={imageIndex}
+                        class={`flex w-full items-center justify-center overflow-hidden shadow-md transition-opacity hover:cursor-pointer hover:opacity-70 ${image.src === project.mainImage.src ? "border-(--foreground)" : "border-(--foreground)/15"}`}
+                      >
+                        <img src={image.src} alt={image.alt} loading="lazy" decoding="async" class="aspect-5/3 w-full object-contain" />
+                      </button>
+                    ))}
+                  </div>
+                  <div class="flex gap-4 px-2 py-0 md:px-4 md:py-2">
+                    {project.links.live && (
+                      <a href={project.links.live} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
+                        {data.projects.linkLabels.live}
+                        <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
+                      </a>
+                    )}
+                    {project.links.github && (
+                      <a href={project.links.github} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
+                        {data.projects.linkLabels.github}
+                        <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div class="grid gap-2 sm:grid-cols-1 md:col-span-2 md:grid-cols-5 md:gap-2.5 xl:gap-3.5 2xl:grid-cols-7">
+                  <div class="space-y-5 sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-5 2xl:col-span-5">
+                    <div class="space-y-2">
+                      <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{project.period}</p>
+                      <h3 class="max-w-[12ch] text-[2.2rem] font-medium leading-[0.95] tracking-[-0.07em] sm:text-[2.8rem] lg:text-[3.4rem]">
+                        <a href={getProjectPath(lang, project.slug)}>{project.title}</a>
+                      </h3>
+                      <p class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/75">{project.role}</p>
+                    </div>
+                    <p class="max-w-[40ch] text-[1.1rem] leading-[1.05] tracking-tighter">{project.summary}</p>
+                    <div class="space-y-3">
+                      {project.description.map((paragraph) => (
+                        <p class="max-w-[58ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/80">{paragraph}</p>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="space-y-3 pt-2 sm:col-span-1 xl:col-span-5 2xl:col-span-2 2xl:pt-0">
+                    <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                    <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:gap-0 md:space-y-1.5 md:space-x-1.5">
+                      {project.stack.map((tech) => (
+                        <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="fixed inset-0 z-50 hidden bg-(--background)/96 text-(--foreground) backdrop-blur-none data-[open=true]:flex sm:bg-(--background)/80 sm:backdrop-blur-xl"
+                data-preview-modal
+                data-open="false"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Project image gallery"
+              >
+                <div class="relative z-10 flex h-full w-full flex-col">
+                  <div class="flex items-center justify-between px-6 py-4 sm:px-8 md:px-10">
+                    <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/60" data-preview-count></p>
+                    <button type="button" class="text-[15px] tracking-[-0.03em] text-(--foreground)/80 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60" data-preview-close>
+                      {lang === "fr" ? "Fermer" : "Close"}
+                    </button>
+                  </div>
+                  <div class="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-0 pb-6 sm:block sm:px-8 md:px-10">
+                    <div class="relative flex min-h-0 w-full flex-1 items-center justify-center sm:h-full">
+                      <img src="" alt="" decoding="async" class="max-h-full w-screen max-w-none object-contain sm:w-auto sm:max-w-[92vw] lg:max-w-full" data-preview-modal-image />
+                    </div>
+                    <div class="relative z-20 flex w-full items-center justify-center gap-8 px-6 sm:contents">
+                      <button type="button" aria-label={lang === "fr" ? "Image precedente" : "Previous image"} class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:left-8 sm:top-1/2 sm:-translate-y-1/2 md:left-10" data-preview-prev>
+                        &lsaquo;
+                      </button>
+                      <button type="button" aria-label={lang === "fr" ? "Image suivante" : "Next image"} class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:right-8 sm:top-1/2 sm:-translate-y-1/2 md:right-10" data-preview-next>
+                        &rsaquo;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-300" data-legal-scrim></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-full z-25 flex justify-center px-4 md:px-6">
+      <div id="legal-overlay-panel" class="pointer-events-auto w-full max-w-5xl translate-y-6 transform opacity-0 transition-all duration-500 ease-out" data-legal-panel>
+        <div class="overflow-hidden rounded-t-[28px] border border-(--border) bg-(--card) text-(--foreground) shadow-2xl">
+          <div class="flex items-center justify-between border-b border-(--border) bg-(--card) px-5 py-4 md:px-6">
+            <button type="button" aria-label="Close legal panel" class="group flex items-center gap-2 transition-opacity hover:cursor-pointer hover:opacity-70" data-legal-close>
+              <span class="flex h-5 w-5 scale-x-125 items-center justify-center text-[1.2rem] leading-none transition-transform duration-300 group-hover:translate-y-0.5 md:h-6 md:w-6">
+                ⌄
+              </span>
+              <span class="text-[0.78rem] uppercase tracking-[0.08em] text-(--foreground)/70" data-legal-title>
+                Impressum
+              </span>
+            </button>
+          </div>
+          <div class="max-h-[65vh] overflow-y-auto bg-(--card) px-5 py-5 md:px-6 md:py-6">
+            <article class="mx-auto hidden w-full max-w-4xl px-6 py-8" data-legal-content="impressum">
+              <h2 class="text-3xl font-semibold tracking-[-0.04em]">Impressum</h2>
+              <div class="mt-6 space-y-4 text-(--foreground)/80">
+                <p>Angaben gemäß § 5 TMG</p>
+                <div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <p>{data.profile.firstname} {data.profile.lastname}</p>
+                    <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
+                    <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
+                    <p>{data.profile.address.country}</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <p>Kontakt</p>
+                    <p>E-Mail: {data.profile.email}</p>
+                    <p>Telefon: {data.profile.phone}</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
+                    <p>{data.profile.firstname} {data.profile.lastname}</p>
+                    <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
+                    <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
+                    <p>{data.profile.address.country}</p>
+                  </div>
+                  <div class="py-1 text-(--foreground)/80 md:py-2">
+                    <p>Haftung für Inhalte</p>
+                    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+                  </div>
+                  <div class="py-1 text-(--foreground)/80 md:py-2">
+                    <p>Haftung für Links</p>
+                    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.</p>
+                  </div>
+                  <div class="py-1 text-(--foreground)/80 md:py-2">
+                    <p>Urheberrecht</p>
+                    <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <section class="mx-auto hidden w-full max-w-4xl px-6" data-legal-content="privacy">
+              <h2 class="text-3xl font-semibold tracking-[-0.04em]">Privacy</h2>
+              <div class="mt-6 space-y-4 text-(--foreground)/80">
+                <p>Datenschutzerklärung</p>
+                <div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">1. Allgemeine Hinweise</h4>
+                    <p>Diese Website dient der Präsentation eines persönlichen Portfolios. Der Schutz Ihrer persönlichen Daten ist uns wichtig.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">2. Verantwortlicher</h4>
+                    <p>{data.profile.firstname} {data.profile.lastname}</p>
+                    <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
+                    <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
+                    <p>{data.profile.address.country}</p>
+                    <p class="pt-2">E-Mail: {data.profile.email}</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">3. Hosting</h4>
+                    <p>Diese Website wird über Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA gehostet.</p>
+                    <p>Vercel verarbeitet personenbezogene Daten wie IP-Adressen zur Bereitstellung der Website. Dabei kann es zu einer Übertragung von Daten in die USA kommen.</p>
+                    <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">4. Zugriffsdaten (Server-Logfiles)</h4>
+                    <p>Beim Besuch dieser Website werden automatisch Informationen erfasst:</p>
+                    <ul class="py-0.5 pl-5">
+                      <li>- IP-Adresse</li>
+                      <li>- Datum und Uhrzeit der Anfrage</li>
+                      <li>- Browsertyp und Version</li>
+                      <li>- Betriebssystem</li>
+                    </ul>
+                    <p>Diese Daten dienen der Sicherstellung eines störungsfreien Betriebs und der Sicherheit der Website.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">5. Kontaktaufnahme</h4>
+                    <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung Ihrer Anfrage gespeichert.</p>
+                    <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">6. Cookies</h4>
+                    <p>Diese Website verwendet keine Cookies zu Tracking-Zwecken.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">7. Ihre Rechte</h4>
+                    <p>Sie haben jederzeit das Recht auf:</p>
+                    <ul class="py-0.5 pl-5">
+                      <li>- Auskunft (Art. 15 DSGVO)</li>
+                      <li>- Berichtigung (Art. 16 DSGVO)</li>
+                      <li>- Löschung (Art. 17 DSGVO)</li>
+                      <li>- Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                      <li>- Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                      <li>- Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+                    </ul>
+                    <p>Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:</p>
+                    <p>{data.profile.email}</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <h4 class="pb-0.5">8. Beschwerderecht bei der Aufsichtsbehörde</h4>
+                    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+                  </div>
+                  <div class="py-2 text-(--foreground)/80 md:py-4">
+                    <p>Zuständige Behörde in Berlin:</p>
+                    <p>Berliner Beauftragte für Datenschutz und Informationsfreiheit</p>
+                    <p>Alt-Moabit 59-61</p>
+                    <p>10555 Berlin</p>
+                    <p>https://www.datenschutz-berlin.de/</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="border-t border-(--border) bg-(--background) px-18 py-8">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-(--foreground)/70">© 2026 Lothaire</span>
+        <div class="flex items-center gap-8">
+          {["impressum", "privacy"].map((section) => (
+            <button
+              type="button"
+              value={section}
+              class="group relative flex items-center hover:cursor-pointer"
+              aria-expanded="false"
+              aria-controls="legal-overlay-panel"
+              data-legal-trigger={section}
+            >
+              <span
+                class="pointer-events-none absolute -top-6 left-1/2 h-5 w-5 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                data-legal-chevron
+              >
+                ⌃
+              </span>
+              <span class="text-sm text-(--foreground)">{section}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </footer>
+  </div>
+</section>

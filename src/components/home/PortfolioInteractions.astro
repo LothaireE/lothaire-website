@@ -1,0 +1,269 @@
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const grid = document.querySelector("#portfolio-grid-section");
+    const landingControls = document.querySelector("[data-landing-controls]");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobilePanel = document.querySelector("[data-mobile-panel]");
+    const mobileToggle = document.querySelector("[data-mobile-toggle]");
+    const mobileOpenIcon = document.querySelector("[data-mobile-icon-open]");
+    const mobileCloseIcon = document.querySelector("[data-mobile-icon-close]");
+    const backToTop = document.querySelector("[data-back-to-top]");
+    const aboutScrollCta = document.querySelector("[data-about-scroll-cta]");
+    const themeLabel = document.querySelector("[data-theme-label]");
+    const mobileThemeToggle = document.querySelector("[data-mobile-theme-toggle]");
+    const portraitImage = document.querySelector("[data-portrait-image]");
+
+    const setTheme = (theme) => {
+      root.classList.toggle("dark", theme === "dark");
+      localStorage.setItem("theme", theme);
+      if (themeLabel) themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
+      if (mobileThemeToggle) mobileThemeToggle.checked = theme === "dark";
+      portraitImage?.classList.toggle("grayscale", theme === "dark");
+    };
+
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(storedTheme === "dark" || (!storedTheme && prefersDark) ? "dark" : "light");
+
+    document.querySelectorAll("[data-settings-dropdown]").forEach((dropdown) => {
+      const panel = dropdown.querySelector("[data-dropdown-panel]");
+      const arrow = dropdown.querySelector("[data-dropdown-arrow]");
+      const setOpen = (open) => {
+        panel?.classList.toggle("grid-rows-[1fr]", open);
+        panel?.classList.toggle("grid-rows-[0fr]", !open);
+        panel?.classList.toggle("opacity-100", open);
+        panel?.classList.toggle("opacity-0", !open);
+        arrow?.classList.toggle("rotate-180", open);
+      };
+
+      dropdown.addEventListener("mouseenter", () => setOpen(true));
+      dropdown.addEventListener("mouseleave", () => setOpen(false));
+      dropdown.querySelector("button")?.addEventListener("click", () => {
+        setOpen(!panel?.classList.contains("grid-rows-[1fr]"));
+      });
+    });
+
+    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+      button.addEventListener("click", () => setTheme(button.getAttribute("data-theme-choice")));
+    });
+
+    const closeMobileMenu = () => {
+      mobileToggle?.setAttribute("aria-expanded", "false");
+      mobilePanel?.classList.add("pointer-events-none", "translate-y-2", "opacity-0");
+      mobilePanel?.classList.remove("translate-y-0", "opacity-100");
+      mobileOpenIcon?.classList.remove("hidden");
+      mobileCloseIcon?.classList.add("hidden");
+    };
+
+    const setMobileMenuVisible = (visible) => {
+      mobileMenu?.classList.toggle("pointer-events-none", !visible);
+      mobileMenu?.classList.toggle("opacity-0", !visible);
+      mobileMenu?.classList.toggle("translate-y-2", !visible);
+      mobileMenu?.classList.toggle("opacity-100", visible);
+      mobileMenu?.classList.toggle("translate-y-0", visible);
+      if (!visible) closeMobileMenu();
+    };
+
+    const scrollToTarget = (id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      closeMobileMenu();
+    };
+
+    document.querySelectorAll("[data-scroll-target]").forEach((button) => {
+      button.addEventListener("click", () => scrollToTarget(button.getAttribute("data-scroll-target")));
+    });
+
+    mobileToggle?.addEventListener("click", () => {
+      const willOpen = mobileToggle.getAttribute("aria-expanded") !== "true";
+      mobileToggle.setAttribute("aria-expanded", String(willOpen));
+      mobilePanel?.classList.toggle("pointer-events-none", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-2", !willOpen);
+      mobilePanel?.classList.toggle("opacity-0", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-0", willOpen);
+      mobilePanel?.classList.toggle("opacity-100", willOpen);
+      mobileOpenIcon?.classList.toggle("hidden", willOpen);
+      mobileCloseIcon?.classList.toggle("hidden", !willOpen);
+    });
+
+    document.querySelector("[data-mobile-language-toggle]")?.addEventListener("change", (event) => {
+      window.location.href = event.currentTarget.checked ? "/fr/" : "/";
+    });
+
+    mobileThemeToggle?.addEventListener("change", (event) => {
+      setTheme(event.currentTarget.checked ? "dark" : "light");
+    });
+
+    if (landingControls && "IntersectionObserver" in window) {
+      const mobileMenuObserver = new IntersectionObserver(
+        ([entry]) => {
+          setMobileMenuVisible(!entry.isIntersecting);
+        },
+        { threshold: 0.05 },
+      );
+      mobileMenuObserver.observe(landingControls);
+    } else {
+      const updateMobileMenuVisibility = () => {
+        const bottom = landingControls?.getBoundingClientRect().bottom ?? 0;
+        setMobileMenuVisible(bottom <= 0);
+      };
+      window.addEventListener("scroll", updateMobileMenuVisibility);
+      updateMobileMenuVisibility();
+    }
+
+    const updateScrollControls = () => {
+      const scrolled = grid ? grid.scrollTop > 24 : window.scrollY > 24;
+      backToTop?.classList.toggle("pointer-events-none", !scrolled);
+      backToTop?.classList.toggle("opacity-0", !scrolled);
+      backToTop?.classList.toggle("translate-y-4", !scrolled);
+      backToTop?.classList.toggle("opacity-100", scrolled);
+      backToTop?.classList.toggle("translate-y-0", scrolled);
+      aboutScrollCta?.classList.toggle("pointer-events-none", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-0", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-100", !scrolled);
+    };
+
+    grid?.addEventListener("scroll", updateScrollControls);
+    window.addEventListener("scroll", updateScrollControls);
+    updateScrollControls();
+
+    backToTop?.addEventListener("click", () => scrollToTarget("grid-top-sentinel"));
+
+    const showTemporaryTip = (active, hover) => {
+      hover?.classList.add("opacity-0", "translate-y-1");
+      active?.classList.remove("opacity-0", "translate-y-1");
+      active?.classList.add("opacity-100", "translate-y-0");
+      window.setTimeout(() => {
+        active?.classList.add("opacity-0", "translate-y-1");
+        active?.classList.remove("opacity-100", "translate-y-0");
+        hover?.classList.remove("translate-y-1");
+      }, 1800);
+    };
+
+    document.querySelector("[data-copy-phone]")?.addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText(button.getAttribute("data-copy-phone"));
+        showTemporaryTip(document.querySelector("[data-phone-active]"), document.querySelector("[data-phone-hover]"));
+      } catch (error) {
+        window.location.href = `tel:${button.getAttribute("data-copy-phone")}`;
+      }
+    });
+
+    document.querySelector("[data-email-link]")?.addEventListener("click", () => {
+      showTemporaryTip(document.querySelector("[data-email-active]"), document.querySelector("[data-email-hover]"));
+    });
+
+    document.querySelectorAll("[data-project-preview]").forEach((project) => {
+      const images = JSON.parse(project.getAttribute("data-project-images") ?? "[]");
+      const mainImage = project.querySelector("[data-project-preview-main]");
+      const modal = project.querySelector("[data-preview-modal]");
+      const modalImage = project.querySelector("[data-preview-modal-image]");
+      const count = project.querySelector("[data-preview-count]");
+      let activeIndex = Math.max(0, images.findIndex((image) => image.src === mainImage?.getAttribute("src")));
+
+      const update = () => {
+        const active = images[activeIndex];
+        if (!active) return;
+        if (mainImage instanceof HTMLImageElement) {
+          mainImage.src = active.src;
+          mainImage.alt = active.alt;
+        }
+        if (modalImage instanceof HTMLImageElement) {
+          modalImage.src = active.src;
+          modalImage.alt = active.alt;
+        }
+        if (count) count.textContent = `${activeIndex + 1} / ${images.length}`;
+      };
+
+      const open = () => {
+        update();
+        modal?.classList.remove("hidden");
+        modal?.setAttribute("data-open", "true");
+        root.classList.add("overflow-hidden");
+      };
+
+      const close = () => {
+        modal?.classList.add("hidden");
+        modal?.setAttribute("data-open", "false");
+        root.classList.remove("overflow-hidden");
+      };
+
+      const previous = () => {
+        activeIndex = (activeIndex - 1 + images.length) % images.length;
+        update();
+      };
+
+      const next = () => {
+        activeIndex = (activeIndex + 1) % images.length;
+        update();
+      };
+
+      project.querySelectorAll("[data-project-thumb]").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeIndex = Number(button.getAttribute("data-project-thumb"));
+          update();
+        });
+      });
+
+      project.querySelector("[data-project-preview-open]")?.addEventListener("click", open);
+      project.querySelector("[data-preview-close]")?.addEventListener("click", close);
+      project.querySelector("[data-preview-prev]")?.addEventListener("click", previous);
+      project.querySelector("[data-preview-next]")?.addEventListener("click", next);
+      modal?.addEventListener("click", (event) => {
+        if (event.target === modal) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (modal?.getAttribute("data-open") !== "true") return;
+        if (event.key === "Escape") close();
+        if (event.key === "ArrowLeft") previous();
+        if (event.key === "ArrowRight") next();
+      });
+    });
+
+    const legalPanel = document.querySelector("[data-legal-panel]");
+    const legalScrim = document.querySelector("[data-legal-scrim]");
+    const legalTitle = document.querySelector("[data-legal-title]");
+    let activeLegalSection = null;
+
+    const setLegalSection = (section) => {
+      activeLegalSection = activeLegalSection === section ? null : section;
+      const isOpen = activeLegalSection !== null;
+      legalPanel?.classList.toggle("translate-y-0", isOpen);
+      legalPanel?.classList.toggle("opacity-100", isOpen);
+      legalPanel?.classList.toggle("translate-y-6", !isOpen);
+      legalPanel?.classList.toggle("opacity-0", !isOpen);
+      legalScrim?.classList.toggle("pointer-events-none", !isOpen);
+      legalScrim?.classList.toggle("opacity-0", !isOpen);
+      legalScrim?.classList.toggle("opacity-100", isOpen);
+      if (legalTitle) legalTitle.textContent = activeLegalSection === "privacy" ? "Privacy" : "Impressum";
+
+      document.querySelectorAll("[data-legal-content]").forEach((content) => {
+        content.classList.toggle("hidden", content.getAttribute("data-legal-content") !== activeLegalSection);
+      });
+
+      document.querySelectorAll("[data-legal-trigger]").forEach((button) => {
+        const active = button.getAttribute("data-legal-trigger") === activeLegalSection;
+        button.setAttribute("aria-expanded", String(active));
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("opacity-100", active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("translate-y-0", active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("opacity-0", !active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("translate-y-2", !active);
+      });
+    };
+
+    document.querySelectorAll("[data-legal-trigger]").forEach((button) => {
+      button.addEventListener("click", () => setLegalSection(button.getAttribute("data-legal-trigger")));
+    });
+    document.querySelector("[data-legal-close]")?.addEventListener("click", () => {
+      activeLegalSection = null;
+      setLegalSection(null);
+    });
+    legalScrim?.addEventListener("click", () => {
+      activeLegalSection = null;
+      setLegalSection(null);
+    });
+  })();
+</script>
