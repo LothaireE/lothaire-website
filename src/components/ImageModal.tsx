@@ -66,6 +66,7 @@ const ImageModal = ({ images, activeIndex, open, onClose, onPrev, onNext }: Imag
             <img
               src={activeImage.src}
               alt={activeImage.alt}
+              decoding="async"
               className="max-h-full max-w-full object-contain"
             />
           </div>
