@@ -11,7 +11,9 @@
     "format:fix": "prettier . --write",
     "format:check": "prettier . --check",
     "typecheck": "tsc --noEmit",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node --test tests/*.test.mjs",
+    "test:ci": "npm run build && npm test"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
