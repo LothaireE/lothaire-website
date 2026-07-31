@@ -1,0 +1,176 @@
+---
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
+type Props = {
+  images: GalleryImage[];
+  closeLabel: string;
+  previousLabel: string;
+  nextLabel: string;
+};
+
+const { images, closeLabel, previousLabel, nextLabel } = Astro.props;
+const galleryJson = JSON.stringify(images);
+---
+
+<section class="mt-12" data-project-gallery data-gallery-images={galleryJson}>
+  <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+    {
+      images.map((image, index) => (
+        <button
+          type="button"
+          class="group block w-full overflow-hidden text-left hover:cursor-pointer"
+          data-gallery-open={index}
+          aria-label={`${image.alt} - open image`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+            class="aspect-5/3 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </button>
+      ))
+    }
+  </div>
+
+  <div
+    class="fixed inset-0 z-50 hidden bg-(--background)/96 text-(--foreground) backdrop-blur-none data-[open=true]:flex sm:bg-(--background)/80 sm:backdrop-blur-xl"
+    data-gallery-modal
+    data-open="false"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Project image gallery"
+  >
+    <div class="relative z-10 flex h-full w-full flex-col">
+      <div class="flex items-center justify-between px-6 py-4 sm:px-8 md:px-10">
+        <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/60" data-gallery-count></p>
+        <button
+          type="button"
+          class="text-[15px] tracking-[-0.03em] text-(--foreground)/80 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60"
+          data-gallery-close
+        >
+          {closeLabel}
+        </button>
+      </div>
+
+      <div class="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-0 pb-6 sm:block sm:px-8 md:px-10">
+        <div class="relative flex min-h-0 w-full flex-1 items-center justify-center sm:h-full">
+          <img
+            src=""
+            alt=""
+            decoding="async"
+            class="max-h-full w-screen max-w-none object-contain sm:w-auto sm:max-w-[92vw] lg:max-w-full"
+            data-gallery-image
+          />
+        </div>
+        <div class="relative z-20 flex w-full items-center justify-center gap-8 px-6 sm:contents">
+          <button
+            type="button"
+            aria-label={previousLabel}
+            class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:left-8 sm:top-1/2 sm:-translate-y-1/2 md:left-10"
+            data-gallery-prev
+          >
+            &lsaquo;
+          </button>
+          <button
+            type="button"
+            aria-label={nextLabel}
+            class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:right-8 sm:top-1/2 sm:-translate-y-1/2 md:right-10"
+            data-gallery-next
+          >
+            &rsaquo;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll("[data-project-gallery]").forEach((gallery) => {
+    const images = JSON.parse(gallery.getAttribute("data-gallery-images") ?? "[]");
+    const modal = gallery.querySelector("[data-gallery-modal]");
+    const image = gallery.querySelector("[data-gallery-image]");
+    const count = gallery.querySelector("[data-gallery-count]");
+    const closeButton = gallery.querySelector("[data-gallery-close]");
+    const previousButton = gallery.querySelector("[data-gallery-prev]");
+    const nextButton = gallery.querySelector("[data-gallery-next]");
+    let activeIndex = 0;
+
+    if (!(modal instanceof HTMLElement) || !(image instanceof HTMLImageElement) || images.length === 0) {
+      return;
+    }
+
+    const updateImage = () => {
+      const activeImage = images[activeIndex];
+      image.src = activeImage.src;
+      image.alt = activeImage.alt;
+
+      if (count) {
+        count.textContent = `${activeIndex + 1} / ${images.length}`;
+      }
+    };
+
+    const openModal = (index) => {
+      activeIndex = index;
+      updateImage();
+      modal.dataset.open = "true";
+      modal.classList.remove("hidden");
+      document.documentElement.classList.add("overflow-hidden");
+    };
+
+    const closeModal = () => {
+      modal.dataset.open = "false";
+      modal.classList.add("hidden");
+      document.documentElement.classList.remove("overflow-hidden");
+    };
+
+    const showPrevious = () => {
+      activeIndex = (activeIndex - 1 + images.length) % images.length;
+      updateImage();
+    };
+
+    const showNext = () => {
+      activeIndex = (activeIndex + 1) % images.length;
+      updateImage();
+    };
+
+    gallery.querySelectorAll("[data-gallery-open]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = Number(button.getAttribute("data-gallery-open"));
+        openModal(index);
+      });
+    });
+
+    closeButton?.addEventListener("click", closeModal);
+    previousButton?.addEventListener("click", showPrevious);
+    nextButton?.addEventListener("click", showNext);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (modal.dataset.open !== "true") {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeModal();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+    });
+  });
+</script>

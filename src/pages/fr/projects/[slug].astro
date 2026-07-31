@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectGallery from "@/components/ProjectGallery.astro";
+import { getCanonicalUrl, getProjectPath, locales } from "@/data/portfolio";
+
+export function getStaticPaths() {
+  return locales.fr.projects.projectList.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const title = `${project.title} | Lothaire Epee`;
+const description = project.summary;
+const canonicalPath = getProjectPath("fr", project.slug);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.title,
+  description: project.summary,
+  url: getCanonicalUrl(canonicalPath),
+  image: getCanonicalUrl(project.mainImage.src),
+  creator: {
+    "@type": "Person",
+    name: "Lothaire Epee",
+  },
+  dateCreated: project.period,
+  keywords: project.stack.join(", "),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="fr"
+  canonicalPath={canonicalPath}
+  alternatePath={getProjectPath("en", project.slug)}
+  image={project.mainImage.src}
+  imageAlt={project.mainImage.alt}
+  structuredData={structuredData}
+>
+  <main class="min-h-screen bg-(--background) px-6 py-8 text-(--foreground) sm:px-8 md:px-10 lg:px-12 xl:px-16">
+    <article class="mx-auto max-w-350">
+      <nav class="mb-10 text-[15px] tracking-[-0.03em]">
+        <a href="/fr/#projects" class="underline underline-offset-4">Retour aux projets</a>
+      </nav>
+
+      <header class="grid gap-8 border-t border-(--foreground)/15 pt-6 md:grid-cols-5">
+        <div class="md:col-span-3">
+          <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{project.period}</p>
+          <h1 class="mt-2 max-w-[12ch] text-[3rem] font-medium leading-[0.92] tracking-[-0.07em] md:text-[5rem]">
+            {project.title}
+          </h1>
+        </div>
+        <div class="space-y-4 md:col-span-2">
+          <p class="text-[1.25rem] leading-[1.05] tracking-[-0.05em]">{project.summary}</p>
+          <p class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/75">{project.role}</p>
+          <div class="flex gap-4">
+            {project.links.live && <a href={project.links.live} class="underline underline-offset-4">Visiter</a>}
+            {project.links.github && <a href={project.links.github} class="underline underline-offset-4">Github</a>}
+          </div>
+        </div>
+      </header>
+
+      <img
+        src={project.mainImage.src}
+        alt={project.mainImage.alt}
+        width="1600"
+        height="903"
+        class="mt-10 aspect-5/3 w-full object-cover shadow-lg"
+      />
+
+      <div class="mt-12 grid gap-10 md:grid-cols-5">
+        <div class="space-y-4 md:col-span-3">
+          {project.description.map((paragraph) => (
+            <p class="max-w-[64ch] text-[17px] leading-[1.35] tracking-[-0.03em] text-(--foreground)/85">{paragraph}</p>
+          ))}
+        </div>
+        <aside class="space-y-3 md:col-span-2">
+          <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">Stack</p>
+          <ul class="flex flex-wrap gap-2">
+            {project.stack.map((tech) => (
+              <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+
+      <ProjectGallery
+        images={project.gallery}
+        closeLabel="Fermer"
+        previousLabel="Image precedente"
+        nextLabel="Image suivante"
+      />
+    </article>
+  </main>
+</BaseLayout>
