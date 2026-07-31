@@ -1,12 +1,25 @@
 {
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
-    "types": ["node"],
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["astro/client", "node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.astro"],
+  "exclude": ["node_modules", "dist", ".astro"]
 }

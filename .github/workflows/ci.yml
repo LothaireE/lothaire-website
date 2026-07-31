@@ -35,9 +35,5 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
         
-      - name: Run tests
-        run: npm test -- --run
-
-      - name: Build
-        run: npm run build
-
+      - name: Build and test static site
+        run: npm run test:ci

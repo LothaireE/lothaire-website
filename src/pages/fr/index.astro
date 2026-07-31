@@ -1,0 +1,14 @@
+---
+import StaticPortfolio from "@/components/StaticPortfolio.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { locales } from "@/data/portfolio";
+
+const data = locales.fr;
+const title = "Lothaire Epee | Developpeur Full Stack";
+const description =
+  "Portfolio de Lothaire Epee, developpeur full stack specialise dans les applications web, le design d'interface et les produits digitaux.";
+---
+
+<BaseLayout title={title} description={description} lang="fr" canonicalPath="/fr/">
+  <StaticPortfolio data={data} lang="fr" />
+</BaseLayout>
