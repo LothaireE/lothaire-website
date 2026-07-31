@@ -53,6 +53,10 @@ const AboutSection = () => {
                 <img
                   src={t("profile.portrait.src")}
                   alt={t("profile.portrait.alt")}
+                  width="600"
+                  height="850"
+                  loading="lazy"
+                  decoding="async"
                   className={portraitStyle}
                 />
               </div>

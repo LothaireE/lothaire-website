@@ -7,7 +7,7 @@
     "phone": "+33 6 98 07 19 53",
     "email": "lothaire.epee@gmail.com",
     "portrait": {
-      "src": "/images/profile/lothaire-epee-portrait.png",
+      "src": "/images/optimized/profile/lothaire-epee-portrait.jpg",
       "alt": "Lothaire Epee's portrait"
     },
     "address": {
@@ -291,43 +291,43 @@
         },
         "mainImage": {
           "id": "de-nouveau-main",
-          "src": "/images/projects/de-nouveau/homepage.png",
+          "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
           "alt": "De Nouveau portfolio website main image"
         },
         "gallery": [
           {
             "id": "de-nouveau-1",
-            "src": "/images/projects/de-nouveau/homepage.png",
+            "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
             "alt": "De Nouveau homepage"
           },
           {
             "id": "de-nouveau-2",
-            "src": "/images/projects/de-nouveau/project-gallery-3.png",
+            "src": "/images/optimized/projects/de-nouveau/project-gallery-3.jpg",
             "alt": "De Nouveau project gallery"
           },
           {
             "id": "de-nouveau-3",
-            "src": "/images/projects/de-nouveau/open-nav.png",
+            "src": "/images/optimized/projects/de-nouveau/open-nav.jpg",
             "alt": "Navigation tab open"
           },
           {
             "id": "de-nouveau-4",
-            "src": "/images/projects/de-nouveau/project-1.png",
+            "src": "/images/optimized/projects/de-nouveau/project-1.jpg",
             "alt": "De Nouveau project detail page 1"
           },
           {
             "id": "de-nouveau-5",
-            "src": "/images/projects/de-nouveau/project-2.png",
+            "src": "/images/optimized/projects/de-nouveau/project-2.jpg",
             "alt": "De Nouveau project detail page 2"
           },
           {
             "id": "de-nouveau-6",
-            "src": "/images/projects/de-nouveau/admin-project.png",
+            "src": "/images/optimized/projects/de-nouveau/admin-project.jpg",
             "alt": "Payload CMS administration project interface"
           },
           {
             "id": "de-nouveau-7",
-            "src": "/images/projects/de-nouveau/admin-medias.png",
+            "src": "/images/optimized/projects/de-nouveau/admin-medias.jpg",
             "alt": "Payload CMS administration medias collection"
           }
         ]
@@ -362,48 +362,48 @@
         ],
         "mainImage": {
           "id": "reusable-executive-portfolio-spa-main",
-          "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+          "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
           "alt": "Reusable Executive Portfolio SPA main image"
         },
         "gallery": [
           {
             "id": "reusable-executive-portfolio-spa-1",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
             "alt": "Reusable Executive Portfolio SPA image 1"
           },
           {
             "id": "reusable-executive-portfolio-spa-2",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.jpg",
             "alt": "Reusable Executive Portfolio SPA image 2"
           },
           {
             "id": "reusable-executive-portfolio-spa-3",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.jpg",
             "alt": "Reusable Executive Portfolio SPA image 3"
           },
           {
             "id": "reusable-executive-portfolio-spa-4",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.jpg",
             "alt": "Reusable Executive Portfolio SPA image 4"
           },
           {
             "id": "reusable-executive-portfolio-spa-5",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.jpg",
             "alt": "Reusable Executive Portfolio SPA image 5"
           },
           {
             "id": "reusable-executive-portfolio-spa-6",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.jpg",
             "alt": "Reusable Executive Portfolio SPA image 6"
           },
           {
             "id": "reusable-executive-portfolio-spa-7",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.jpg",
             "alt": "Reusable Executive Portfolio SPA image 7"
           },
           {
             "id": "reusable-executive-portfolio-spa-8",
-            "src": "/images/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.png",
+            "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.jpg",
             "alt": "Reusable Executive Portfolio SPA image 8"
           }
         ]
@@ -427,18 +427,18 @@
         "stack": ["JavaScript", "WordPress", "Shopify", "E-Commerce"],
         "mainImage": {
           "id": "ribelmais-buch-main",
-          "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+          "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
           "alt": "Ribelmais buch main image"
         },
         "gallery": [
           {
             "id": "ribelmais-buch-1",
-            "src": "/images/projects/ribelmais-buch/ribelmais-buch-1.png",
+            "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
             "alt": "Ribelmais buch image 1"
           },
           {
             "id": "ribelmais-buch-2",
-            "src": "/images/projects/ribelmais-buch/ribelmais-buch-2.png",
+            "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-2.jpg",
             "alt": "Ribelmais buch image 2"
           }
         ]

@@ -8,8 +8,8 @@ function App() {
       <SEOHead
         title="Lothaire Epee | Full-Stack Developer"
         description="Lothaire Epee's portfolio: a full-stack developer specializing in web applications, user interface design, and digital products. Explore his projects, skills, and experience."
-        image="/preview.png"
-        url="https://lothaire-epee.com"
+        image="https://lothaire-epee.com/preview.jpg"
+        url="https://lothaire-epee.com/"
       />
       <main
         data-testid="main-component"
