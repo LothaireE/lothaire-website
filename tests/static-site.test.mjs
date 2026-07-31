@@ -16,6 +16,14 @@ const routes = [
   ...fr.projects.projectList.map((project) => `/fr/projects/${project.slug}/`),
 ];
 
+const localizedProjectPairs = en.projects.projectList.map((project) => {
+  const localizedProject = fr.projects.projectList.find(
+    (candidate) => candidate.slug === project.slug,
+  );
+  assert.ok(localizedProject, `Missing French project for slug: ${project.slug}`);
+  return [project, localizedProject];
+});
+
 const readDistPage = (route) => {
   const filePath = join(dist, route, "index.html");
   assert.equal(existsSync(filePath), true, `Missing generated page: ${route}`);
@@ -23,6 +31,39 @@ const readDistPage = (route) => {
 };
 
 describe("Astro static output", () => {
+  it("keeps English and French project data aligned", () => {
+    assert.deepEqual(
+      en.projects.projectList.map((project) => project.slug).sort(),
+      fr.projects.projectList.map((project) => project.slug).sort(),
+    );
+
+    for (const [englishProject, frenchProject] of localizedProjectPairs) {
+      assert.equal(frenchProject.gallery.length, englishProject.gallery.length);
+      assert.equal(frenchProject.stack.length, englishProject.stack.length);
+      assert.equal(Boolean(frenchProject.mainImage.src), true);
+      assert.equal(Boolean(frenchProject.mainImage.alt), true);
+    }
+  });
+
+  it("references existing public image assets", () => {
+    const imagePaths = new Set([
+      en.profile.portrait.src,
+      fr.profile.portrait.src,
+      ...[...en.projects.projectList, ...fr.projects.projectList].flatMap((project) => [
+        project.mainImage.src,
+        ...project.gallery.map((image) => image.src),
+      ]),
+    ]);
+
+    for (const imagePath of imagePaths) {
+      assert.equal(
+        existsSync(join(root, "public", imagePath)),
+        true,
+        `Missing public image asset: ${imagePath}`,
+      );
+    }
+  });
+
   it("generates every localized route", () => {
     for (const route of routes) {
       readDistPage(route);
