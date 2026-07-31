@@ -57,7 +57,13 @@ export const SingleProject = ({
               onClick={() => setIsModalOpen(true)}
               className="aspect-5/3 overflow-hidden bg-foreground/5 hover:cursor-zoom-in shadow-lg "
             >
-              <img src={activeImage.src} alt={activeImage.alt} className="w-full object-cover" />
+              <img
+                src={activeImage.src}
+                alt={activeImage.alt}
+                loading="lazy"
+                decoding="async"
+                className="w-full object-cover"
+              />
             </button>
 
             <div className="grid grid-cols-4 xl:grid-cols-2 gap-1 border-t border-foreground/15 pt-5 md:pt-10">
@@ -76,6 +82,8 @@ export const SingleProject = ({
                     <img
                       src={image.src}
                       alt={image.alt}
+                      loading="lazy"
+                      decoding="async"
                       className="aspect-5/3 w-full object-contain"
                     />
                   </button>
