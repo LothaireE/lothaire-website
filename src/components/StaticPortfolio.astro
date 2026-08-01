@@ -3,7 +3,6 @@ import type { Locale } from "@/data/portfolio";
 import LandingPanel from "@/components/home/LandingPanel.astro";
 import ScrollablePortfolioContent from "@/components/home/ScrollablePortfolioContent.astro";
 import FloatingControls from "@/components/home/FloatingControls.astro";
-import PortfolioInteractions from "@/components/home/PortfolioInteractions.astro";
 
 type Props = {
   data: typeof import("@/locales/en.json");
@@ -20,5 +19,3 @@ const { data, lang } = Astro.props;
   <ScrollablePortfolioContent data={data} lang={lang} />
   <FloatingControls data={data} lang={lang} />
 </main>
-
-<PortfolioInteractions />

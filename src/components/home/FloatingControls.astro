@@ -70,3 +70,112 @@ const { data, lang } = Astro.props;
     </div>
   </div>
 </div>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const grid = document.querySelector("#portfolio-grid-section");
+    const landingControls = document.querySelector("[data-landing-controls]");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobilePanel = document.querySelector("[data-mobile-panel]");
+    const mobileToggle = document.querySelector("[data-mobile-toggle]");
+    const mobileOpenIcon = document.querySelector("[data-mobile-icon-open]");
+    const mobileCloseIcon = document.querySelector("[data-mobile-icon-close]");
+    const backToTop = document.querySelector("[data-back-to-top]");
+    const aboutScrollCta = document.querySelector("[data-about-scroll-cta]");
+    const themeLabel = document.querySelector("[data-theme-label]");
+    const mobileThemeToggle = document.querySelector("[data-mobile-theme-toggle]");
+    const portraitImage = document.querySelector("[data-portrait-image]");
+
+    const setTheme = (theme) => {
+      root.classList.toggle("dark", theme === "dark");
+      localStorage.setItem("theme", theme);
+      if (themeLabel) themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
+      if (mobileThemeToggle) mobileThemeToggle.checked = theme === "dark";
+      portraitImage?.classList.toggle("grayscale", theme === "dark");
+    };
+
+    const closeMobileMenu = () => {
+      mobileToggle?.setAttribute("aria-expanded", "false");
+      mobilePanel?.classList.add("pointer-events-none", "translate-y-2", "opacity-0");
+      mobilePanel?.classList.remove("translate-y-0", "opacity-100");
+      mobileOpenIcon?.classList.remove("hidden");
+      mobileCloseIcon?.classList.add("hidden");
+    };
+
+    const setMobileMenuVisible = (visible) => {
+      mobileMenu?.classList.toggle("pointer-events-none", !visible);
+      mobileMenu?.classList.toggle("opacity-0", !visible);
+      mobileMenu?.classList.toggle("translate-y-2", !visible);
+      mobileMenu?.classList.toggle("opacity-100", visible);
+      mobileMenu?.classList.toggle("translate-y-0", visible);
+      if (!visible) closeMobileMenu();
+    };
+
+    const scrollToTarget = (id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      closeMobileMenu();
+    };
+
+    document.querySelectorAll("[data-scroll-target]").forEach((button) => {
+      button.addEventListener("click", () => scrollToTarget(button.getAttribute("data-scroll-target")));
+    });
+
+    mobileToggle?.addEventListener("click", () => {
+      const willOpen = mobileToggle.getAttribute("aria-expanded") !== "true";
+      mobileToggle.setAttribute("aria-expanded", String(willOpen));
+      mobilePanel?.classList.toggle("pointer-events-none", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-2", !willOpen);
+      mobilePanel?.classList.toggle("opacity-0", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-0", willOpen);
+      mobilePanel?.classList.toggle("opacity-100", willOpen);
+      mobileOpenIcon?.classList.toggle("hidden", willOpen);
+      mobileCloseIcon?.classList.toggle("hidden", !willOpen);
+    });
+
+    document.querySelector("[data-mobile-language-toggle]")?.addEventListener("change", (event) => {
+      window.location.href = event.currentTarget.checked ? "/fr/" : "/";
+    });
+
+    mobileThemeToggle?.addEventListener("change", (event) => {
+      setTheme(event.currentTarget.checked ? "dark" : "light");
+    });
+
+    if (landingControls && "IntersectionObserver" in window) {
+      const mobileMenuObserver = new IntersectionObserver(
+        ([entry]) => {
+          setMobileMenuVisible(!entry.isIntersecting);
+        },
+        { threshold: 0.05 },
+      );
+      mobileMenuObserver.observe(landingControls);
+    } else {
+      const updateMobileMenuVisibility = () => {
+        const bottom = landingControls?.getBoundingClientRect().bottom ?? 0;
+        setMobileMenuVisible(bottom <= 0);
+      };
+      window.addEventListener("scroll", updateMobileMenuVisibility);
+      updateMobileMenuVisibility();
+    }
+
+    const updateScrollControls = () => {
+      const scrolled = grid ? grid.scrollTop > 24 : window.scrollY > 24;
+      backToTop?.classList.toggle("pointer-events-none", !scrolled);
+      backToTop?.classList.toggle("opacity-0", !scrolled);
+      backToTop?.classList.toggle("translate-y-4", !scrolled);
+      backToTop?.classList.toggle("opacity-100", scrolled);
+      backToTop?.classList.toggle("translate-y-0", scrolled);
+      aboutScrollCta?.classList.toggle("pointer-events-none", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-0", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-100", !scrolled);
+    };
+
+    grid?.addEventListener("scroll", updateScrollControls);
+    window.addEventListener("scroll", updateScrollControls);
+    updateScrollControls();
+
+    backToTop?.addEventListener("click", () => scrollToTarget("grid-top-sentinel"));
+  })();
+</script>

@@ -421,3 +421,119 @@ const { data, lang } = Astro.props;
     </footer>
   </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+
+    document.querySelectorAll("[data-project-preview]").forEach((project) => {
+      const images = JSON.parse(project.getAttribute("data-project-images") ?? "[]");
+      const mainImage = project.querySelector("[data-project-preview-main]");
+      const modal = project.querySelector("[data-preview-modal]");
+      const modalImage = project.querySelector("[data-preview-modal-image]");
+      const count = project.querySelector("[data-preview-count]");
+      let activeIndex = Math.max(0, images.findIndex((image) => image.src === mainImage?.getAttribute("src")));
+
+      const update = () => {
+        const active = images[activeIndex];
+        if (!active) return;
+        if (mainImage instanceof HTMLImageElement) {
+          mainImage.src = active.src;
+          mainImage.alt = active.alt;
+        }
+        if (modalImage instanceof HTMLImageElement) {
+          modalImage.src = active.src;
+          modalImage.alt = active.alt;
+        }
+        if (count) count.textContent = `${activeIndex + 1} / ${images.length}`;
+      };
+
+      const open = () => {
+        update();
+        modal?.classList.remove("hidden");
+        modal?.setAttribute("data-open", "true");
+        root.classList.add("overflow-hidden");
+      };
+
+      const close = () => {
+        modal?.classList.add("hidden");
+        modal?.setAttribute("data-open", "false");
+        root.classList.remove("overflow-hidden");
+      };
+
+      const previous = () => {
+        activeIndex = (activeIndex - 1 + images.length) % images.length;
+        update();
+      };
+
+      const next = () => {
+        activeIndex = (activeIndex + 1) % images.length;
+        update();
+      };
+
+      project.querySelectorAll("[data-project-thumb]").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeIndex = Number(button.getAttribute("data-project-thumb"));
+          update();
+        });
+      });
+
+      project.querySelector("[data-project-preview-open]")?.addEventListener("click", open);
+      project.querySelector("[data-preview-close]")?.addEventListener("click", close);
+      project.querySelector("[data-preview-prev]")?.addEventListener("click", previous);
+      project.querySelector("[data-preview-next]")?.addEventListener("click", next);
+      modal?.addEventListener("click", (event) => {
+        if (event.target === modal) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (modal?.getAttribute("data-open") !== "true") return;
+        if (event.key === "Escape") close();
+        if (event.key === "ArrowLeft") previous();
+        if (event.key === "ArrowRight") next();
+      });
+    });
+
+    const legalPanel = document.querySelector("[data-legal-panel]");
+    const legalScrim = document.querySelector("[data-legal-scrim]");
+    const legalTitle = document.querySelector("[data-legal-title]");
+    let activeLegalSection = null;
+
+    const setLegalSection = (section) => {
+      activeLegalSection = activeLegalSection === section ? null : section;
+      const isOpen = activeLegalSection !== null;
+      legalPanel?.classList.toggle("translate-y-0", isOpen);
+      legalPanel?.classList.toggle("opacity-100", isOpen);
+      legalPanel?.classList.toggle("translate-y-6", !isOpen);
+      legalPanel?.classList.toggle("opacity-0", !isOpen);
+      legalScrim?.classList.toggle("pointer-events-none", !isOpen);
+      legalScrim?.classList.toggle("opacity-0", !isOpen);
+      legalScrim?.classList.toggle("opacity-100", isOpen);
+      if (legalTitle) legalTitle.textContent = activeLegalSection === "privacy" ? "Privacy" : "Impressum";
+
+      document.querySelectorAll("[data-legal-content]").forEach((content) => {
+        content.classList.toggle("hidden", content.getAttribute("data-legal-content") !== activeLegalSection);
+      });
+
+      document.querySelectorAll("[data-legal-trigger]").forEach((button) => {
+        const active = button.getAttribute("data-legal-trigger") === activeLegalSection;
+        button.setAttribute("aria-expanded", String(active));
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("opacity-100", active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("translate-y-0", active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("opacity-0", !active);
+        button.querySelector("[data-legal-chevron]")?.classList.toggle("translate-y-2", !active);
+      });
+    };
+
+    document.querySelectorAll("[data-legal-trigger]").forEach((button) => {
+      button.addEventListener("click", () => setLegalSection(button.getAttribute("data-legal-trigger")));
+    });
+    document.querySelector("[data-legal-close]")?.addEventListener("click", () => {
+      activeLegalSection = null;
+      setLegalSection(null);
+    });
+    legalScrim?.addEventListener("click", () => {
+      activeLegalSection = null;
+      setLegalSection(null);
+    });
+  })();
+</script>

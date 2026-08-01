@@ -163,3 +163,71 @@ const phoneHref = data.profile.phone.replace(/\s/g, "");
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const themeLabel = document.querySelector("[data-theme-label]");
+    const mobileThemeToggle = document.querySelector("[data-mobile-theme-toggle]");
+    const portraitImage = document.querySelector("[data-portrait-image]");
+
+    const setTheme = (theme) => {
+      root.classList.toggle("dark", theme === "dark");
+      localStorage.setItem("theme", theme);
+      if (themeLabel) themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
+      if (mobileThemeToggle) mobileThemeToggle.checked = theme === "dark";
+      portraitImage?.classList.toggle("grayscale", theme === "dark");
+    };
+
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(storedTheme === "dark" || (!storedTheme && prefersDark) ? "dark" : "light");
+
+    document.querySelectorAll("[data-settings-dropdown]").forEach((dropdown) => {
+      const panel = dropdown.querySelector("[data-dropdown-panel]");
+      const arrow = dropdown.querySelector("[data-dropdown-arrow]");
+      const setOpen = (open) => {
+        panel?.classList.toggle("grid-rows-[1fr]", open);
+        panel?.classList.toggle("grid-rows-[0fr]", !open);
+        panel?.classList.toggle("opacity-100", open);
+        panel?.classList.toggle("opacity-0", !open);
+        arrow?.classList.toggle("rotate-180", open);
+      };
+
+      dropdown.addEventListener("mouseenter", () => setOpen(true));
+      dropdown.addEventListener("mouseleave", () => setOpen(false));
+      dropdown.querySelector("button")?.addEventListener("click", () => {
+        setOpen(!panel?.classList.contains("grid-rows-[1fr]"));
+      });
+    });
+
+    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+      button.addEventListener("click", () => setTheme(button.getAttribute("data-theme-choice")));
+    });
+
+    const showTemporaryTip = (active, hover) => {
+      hover?.classList.add("opacity-0", "translate-y-1");
+      active?.classList.remove("opacity-0", "translate-y-1");
+      active?.classList.add("opacity-100", "translate-y-0");
+      window.setTimeout(() => {
+        active?.classList.add("opacity-0", "translate-y-1");
+        active?.classList.remove("opacity-100", "translate-y-0");
+        hover?.classList.remove("translate-y-1");
+      }, 1800);
+    };
+
+    document.querySelector("[data-copy-phone]")?.addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText(button.getAttribute("data-copy-phone"));
+        showTemporaryTip(document.querySelector("[data-phone-active]"), document.querySelector("[data-phone-hover]"));
+      } catch (error) {
+        window.location.href = `tel:${button.getAttribute("data-copy-phone")}`;
+      }
+    });
+
+    document.querySelector("[data-email-link]")?.addEventListener("click", () => {
+      showTemporaryTip(document.querySelector("[data-email-active]"), document.querySelector("[data-email-hover]"));
+    });
+  })();
+</script>
