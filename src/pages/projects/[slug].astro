@@ -11,22 +11,26 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const title = `${project.title} | Lothaire Epee`;
-const description = project.summary;
+const title = project.seoTitle ?? `${project.title} | Lothaire Epee`;
+const description = project.seoDescription ?? project.summary;
 const canonicalPath = getProjectPath("en", project.slug);
+const keywords = project.seoKeywords ?? project.stack;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   name: project.title,
-  description: project.summary,
+  headline: title,
+  description,
   url: getCanonicalUrl(canonicalPath),
   image: getCanonicalUrl(project.mainImage.src),
+  inLanguage: "en",
   creator: {
     "@type": "Person",
     name: "Lothaire Epee",
   },
   dateCreated: project.period,
-  keywords: project.stack.join(", "),
+  keywords: keywords.join(", "),
+  about: keywords,
 };
 ---
 
@@ -72,10 +76,21 @@ const structuredData = {
       />
 
       <div class="mt-12 grid gap-10 md:grid-cols-5">
-        <div class="space-y-4 md:col-span-3">
-          {project.description.map((paragraph) => (
-            <p class="max-w-[64ch] text-[17px] leading-[1.35] tracking-[-0.03em] text-(--foreground)/85">{paragraph}</p>
-          ))}
+        <div class="space-y-10 md:col-span-3">
+          <section class="space-y-4">
+            <h2 class="text-[2rem] font-medium leading-[0.95] tracking-[-0.06em]">Project overview</h2>
+            {project.description.map((paragraph) => (
+              <p class="max-w-[64ch] text-[17px] leading-[1.35] tracking-[-0.03em] text-(--foreground)/85">{paragraph}</p>
+            ))}
+          </section>
+          <div class="space-y-8">
+            {project.detailSections.map((section) => (
+              <section class="border-t border-(--foreground)/15 pt-5">
+                <h2 class="text-[1.8rem] font-medium leading-[0.95] tracking-[-0.06em]">{section.title}</h2>
+                <p class="mt-3 max-w-[64ch] text-[17px] leading-[1.35] tracking-[-0.03em] text-(--foreground)/85">{section.body}</p>
+              </section>
+            ))}
+          </div>
         </div>
         <aside class="space-y-3 md:col-span-2">
           <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">Stack</p>
@@ -84,6 +99,14 @@ const structuredData = {
               <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
             ))}
           </ul>
+          <div class="border-t border-(--foreground)/15 pt-5">
+            <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">Focus</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {keywords.map((keyword) => (
+                <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{keyword}</li>
+              ))}
+            </ul>
+          </div>
         </aside>
       </div>
 

@@ -71,7 +71,7 @@
     "label": "Skills and Expertise",
     "title": "Skills and Expertise",
     "stackLabel": "Stack",
-    "intro": "A set of frontend and backend technologies, including React, TypeScript, Node.js and Django, to build good interfaces and reliable web applications."
+    "intro": "A frontend and backend toolkit centered on React, TypeScript, Node.js and Django to build clear interfaces and reliable web applications."
   },
   "skills": {
     "label": "Skills",
@@ -170,7 +170,7 @@
         "role": "Freelance Developer",
         "company": "",
         "location": "",
-        "summary": "Delivered custom web solutions for business and product websites including product launches and online sales. Development of web interfaces focusing on performance, accessibility while constantly creating elegant design over various digital products.",
+        "summary": "Delivered custom web solutions for business and product websites, including product launches and online sales. Built responsive interfaces with JavaScript, TypeScript and Node.js, focusing on performance, accessibility and elegant design.",
         "missions": [
           "Creating elegant landing pages and design systems",
           "Built reusable UI components",
@@ -197,7 +197,7 @@
         "role": "Full-Stack Developer",
         "company": "Lumenaza GmbH",
         "location": "Berlin, Germany",
-        "summary": "Designed and developed API-driven web applications and micro-services (SaaS for the renewable energy sector.",
+        "summary": "Designed and developed API-driven SaaS applications and microservices for the renewable energy sector, using React, TypeScript, Django and Python.",
         "missions": [
           "Built reusable UI components",
           "Product configuration for B2B partners",
@@ -226,7 +226,7 @@
         "role": "Developer Conceptor",
         "company": "Centre de Données Socio-Politiques - Science Po",
         "location": "Paris, France",
-        "summary": "Maintained and developed features on Web Panel Sample Service (WPSS), an API-driven web applications for managing large scale samples(+13000 panelists) and surveys in collaboration with the European research infrastructure.",
+        "summary": "Maintained and developed features for the Web Panel Sample Service (WPSS), a Django and Python application used to manage large-scale samples of more than 13,000 panelists and surveys across Europe.",
         "missions": [
           "Enabling secure role-based access for both social scientist and panelists",
           "Providing multilingual interfaces to conduct surveys throughout 13 European countries",
@@ -262,12 +262,39 @@
         "role": "Product Design / Full Stack Development / CMS Architecture / Deployment",
         "layout": "image-left",
         "summary": "Portfolio website for an architecture studio, built around project showcases, a headless CMS, and an efficient media management system.",
+        "seoTitle": "De Nouveau architecture portfolio website | Full Stack CMS project",
+        "seoDescription": "Case study for De Nouveau, an architecture portfolio website built with Next.js, Payload CMS, PostgreSQL, Cloudflare R2 and Vercel to publish projects, media and SEO content.",
+        "seoKeywords": [
+          "architecture portfolio website",
+          "Next.js",
+          "Payload CMS",
+          "headless CMS",
+          "PostgreSQL",
+          "Cloudflare R2",
+          "full stack development",
+          "SEO metadata"
+        ],
         "description": [
           "Designed and developed a premium portfolio website for an architecture studio, featuring a minimalist editorial aesthetic focused on showcasing architectural projects.",
           "Implemented a headless CMS using Payload CMS, enabling the client to manage pages, projects, categories, images, videos, and SEO metadata through a dedicated administration interface.",
           "Built a full-stack architecture using Next.js, PostgreSQL via Neon, Cloudflare R2 media storage through an S3-compatible setup, Vercel deployment, and automatic cache revalidation after content updates.",
           "Created reusable project layouts — default, editorial, gallery focused, and minimal — allowing each project to be presented according to its visual or narrative requirements.",
-          "Configured a CI workflow with GitHub Actions to automatically run linting, formatting checks, tests, and production builds before deployment."
+          "Configured a CI workflow with GitHub Actions to automatically run linting, formatting checks, tests, and production builds before deployment.",
+          "The resulting editorial workflow gives the studio direct control over its content and media while keeping each project presentation consistent."
+        ],
+        "detailSections": [
+          {
+            "title": "Project context",
+            "body": "De Nouveau needed a refined architecture portfolio website that could present projects with strong visual direction while remaining easy to update without developer intervention."
+          },
+          {
+            "title": "Technical approach",
+            "body": "The project combines a Next.js frontend, a Payload CMS administration layer, PostgreSQL data storage, Cloudflare R2 media hosting and Vercel deployment to support structured content and reliable publishing."
+          },
+          {
+            "title": "SEO and maintainability",
+            "body": "The CMS was designed to manage project pages, images, categories and SEO metadata, making the website easier to maintain and giving each architecture project its own crawlable content surface."
+          }
         ],
         "stack": [
           "Next.js",
@@ -340,10 +367,37 @@
         "role": "Design / Frontend Development & Integration",
         "layout": "image-left",
         "summary": "Reusable React and TypeScript CV portfolio for an executive in a car insurance company.",
+        "seoTitle": "Reusable executive portfolio SPA | React TypeScript case study",
+        "seoDescription": "Case study for a reusable executive portfolio single page application built with React, TypeScript, React Router, Tailwind CSS and component-driven content integration.",
+        "seoKeywords": [
+          "React portfolio",
+          "TypeScript",
+          "single page application",
+          "React Router",
+          "Tailwind CSS",
+          "component integration",
+          "responsive UI",
+          "dark mode"
+        ],
         "description": [
-          "Design a Single Page Application reusable component for a client to integrate within their existing application, therefore entailing certain specific constraints regarding the technical stack",
-          "The task was to build a content-driven porfolio (no hardcoded data) with a minimalist editorialistic like design with smooth animations and a responsive layout featuring a light/dark mode.",
-          "Implemented a Single Page Application with 4 client-side routes using React Router ('/', '/about', '/contact') including a 404 handling page"
+          "Designed a reusable Single Page Application for integration into an existing client application, while respecting its technical stack and integration constraints.",
+          "The objective was to build a content-driven portfolio without hardcoded data, combining a minimalist editorial design, smooth animations, a responsive layout, and light and dark themes.",
+          "Implemented the portfolio with React, TypeScript and React Router, including client-side routes and a dedicated 404 page.",
+          "The result is a reusable component whose content and presentation can be adapted to different executive profiles without rebuilding the interface."
+        ],
+        "detailSections": [
+          {
+            "title": "Project context",
+            "body": "The client needed a reusable executive profile and portfolio experience that could be integrated inside an existing application without hardcoded content."
+          },
+          {
+            "title": "Frontend implementation",
+            "body": "The interface was built with React, TypeScript, React Router and Tailwind CSS, with reusable UI patterns, responsive layouts, animated transitions and light and dark theme support."
+          },
+          {
+            "title": "Content structure",
+            "body": "The component was designed around structured content so the profile, experience, routes and portfolio sections could evolve without requiring layout-level changes."
+          }
         ],
         "links": {
           "live": "",
@@ -416,9 +470,35 @@
         "role": "Design / Frontend & CMS Development",
         "layout": "image-right",
         "summary": "WordPress and Shopify e-commerce website dedicated to the publication, launch, and online sale of a book.",
+        "seoTitle": "Ribelmais Buch e-commerce website | WordPress Shopify project",
+        "seoDescription": "Case study for Ribelmais Buch, a responsive WordPress and Shopify website created for a Swiss book launch, online sales, editorial presentation and product discovery.",
+        "seoKeywords": [
+          "WordPress website",
+          "Shopify integration",
+          "book launch website",
+          "e-commerce website",
+          "responsive web design",
+          "frontend development",
+          "Swiss client"
+        ],
         "description": [
           "Design and development of a website for a Swiss client to coincide with the launch of their book, including Shopify integration for online management and sales.",
-          "The goal was to build a e-commerce website that feels precise, with a minimalistic design as per requested from client."
+          "The goal was to build a precise e-commerce website with the minimalist design requested by the client.",
+          "Combined WordPress for editorial content with Shopify for product and order management, resulting in a clear path from discovering the book to purchasing it online."
+        ],
+        "detailSections": [
+          {
+            "title": "Project context",
+            "body": "Ribelmais Buch required a clear product website to support the publication of a book, present the project and guide visitors toward online purchase."
+          },
+          {
+            "title": "Implementation",
+            "body": "The website combines a WordPress content foundation with Shopify integration for sales management, allowing editorial content and commerce flows to work together."
+          },
+          {
+            "title": "User experience",
+            "body": "The design keeps the interface minimal and direct, with responsive layouts, readable product information and a focused path from discovery to purchase."
+          }
         ],
         "links": {
           "live": "https://ribelmaisbuch.ch/",
