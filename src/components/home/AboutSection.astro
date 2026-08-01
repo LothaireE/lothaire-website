@@ -1,0 +1,57 @@
+---
+type PortfolioData = typeof import("@/locales/en.json");
+
+type Props = {
+  about: PortfolioData["about"];
+  profile: PortfolioData["profile"];
+  skillsLabel: PortfolioData["mobileNav"]["skills"];
+};
+
+const { about, profile, skillsLabel } = Astro.props;
+---
+
+<section id="about" class="min-h-screen bg-(--background) text-(--foreground)">
+  <div class="mx-auto w-full max-w-350 px-6 py-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+    <div class="flex flex-col justify-between gap-8">
+      <h2 class="text-[2rem] leading-[0.97] tracking-[-0.06em] md:text-[3rem] lg:text-[3.5rem] 2xl:text-[3.8rem]">
+        {about.intro}
+      </h2>
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,0.9fr)] lg:gap-14">
+        <div class="overflow-hidden">
+          <div class="md:max-h-110 lg:max-h-130 xl:max-h-145 2xl:max-h-160">
+            <img
+              src={profile.portrait.src}
+              alt={profile.portrait.alt}
+              width="600"
+              height="850"
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover"
+              data-portrait-image
+            />
+          </div>
+        </div>
+        <div class="my-auto flex flex-col justify-between gap-10">
+          <div class="space-y-5">
+            <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{about.sideText1}</p>
+            <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{about.sideText2}</p>
+            <p class="max-w-[42ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 2xl:text-[18px]">{about.sideText3}</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-[1.9rem] italic leading-[0.97] tracking-[-0.06em] sm:text-[2rem]">{about.closing}</p>
+      <div class="hidden justify-center transition-all duration-700 md:flex" data-about-scroll-cta>
+        <button
+          type="button"
+          data-scroll-target="skills"
+          class="group flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:cursor-pointer hover:opacity-70"
+          aria-label={skillsLabel}
+        >
+          <span class="scale-x-125 text-[1.6rem] leading-none text-(--foreground) transition-transform duration-300 group-hover:translate-y-1">
+            ⌄
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+import AboutSection from "@/components/home/AboutSection.astro";
+import ExperienceSection from "@/components/home/ExperienceSection.astro";
+import Footer from "@/components/home/Footer.astro";
+import ProjectsSection from "@/components/home/ProjectsSection.astro";
+import SkillsSection from "@/components/home/SkillsSection.astro";
+import type { Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<section
+  id="portfolio-grid-section"
+  class="relative min-h-screen w-full scroll-smooth bg-(--background) lg:h-screen lg:w-1/2 lg:overflow-y-auto"
+>
+  <div id="grid-top-sentinel"></div>
+
+  <AboutSection about={data.about} profile={data.profile} skillsLabel={data.mobileNav.skills} />
+  <SkillsSection skillsAndExpertise={data.skillsAndExpertise} skills={data.skills} expertise={data.expertise} />
+  <ExperienceSection experience={data.experience} />
+  <ProjectsSection projects={data.projects} stackLabel={data.experience.stackLabel} lang={lang} />
+  <Footer profile={data.profile} />
+</section>

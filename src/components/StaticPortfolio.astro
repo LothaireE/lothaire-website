@@ -1,0 +1,21 @@
+---
+import type { Locale } from "@/data/portfolio";
+import LandingPanel from "@/components/home/LandingPanel.astro";
+import ScrollablePortfolioContent from "@/components/home/ScrollablePortfolioContent.astro";
+import FloatingControls from "@/components/home/FloatingControls.astro";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<main
+  class="flex min-h-screen w-full flex-col overflow-x-hidden bg-(--background) text-(--foreground) md:flex-row lg:h-screen lg:overflow-hidden"
+>
+  <LandingPanel data={data} lang={lang} />
+  <ScrollablePortfolioContent data={data} lang={lang} />
+  <FloatingControls data={data} lang={lang} />
+</main>
