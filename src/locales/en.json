@@ -55,11 +55,11 @@
   "about": {
     "label": "About",
     "title": "About me",
-    "intro": "A confident developer with 5+ years of experience in professional development",
+    "intro": "A full-stack developer with 5+ years of experience building web applications and digital products",
     "portraitAlt": "Profil picture",
-    "sideText1": "I have contributed to the development of SaaS platforms in the renewable energy sector, as well as to a large-scale survey management system as part of a European open-source project. These experiences allowed me to work on data-driven applications and complex systems used in real-world contexts.",
-    "sideText2": "In addition, I have built commercial websites and solutions for private clients, adapting to specific needs and delivering practical, user-oriented results.",
-    "sideText3": "My focus is on writing clean, well-tested code and our following industry's best practices. I keep learning and enjoy solving technical challenges. My goal is to improve the product and to deliver a better experience for both clients and end users.",
+    "sideText1": "I have contributed to the development of SaaS platforms in the renewable energy sector, as well as to a large-scale survey management system as part of a European open-source project. These experiences allowed me to work with React, TypeScript, Django and Python on data-driven applications and complex systems used in real-world contexts.",
+    "sideText2": "In addition, I have built responsive commercial websites and e-commerce solutions for private clients, adapting to specific needs and delivering practical, user-oriented results.",
+    "sideText3": "My focus is on writing clean, well-tested code and following industry best practices. I keep learning and enjoy solving technical challenges. My goal is to improve the product and to deliver a better experience for both clients and end users.",
     "closing": "Throughout my career, I have maintained a consistent direction, aiming to contribute to meaningful projects",
     "bottomCta": "Contact",
     "seo": {
@@ -71,7 +71,7 @@
     "label": "Skills and Expertise",
     "title": "Skills and Expertise",
     "stackLabel": "Stack",
-    "intro": "A set of frontend and backend technologies to build good interfaces within a targeted area of expertise."
+    "intro": "A set of frontend and backend technologies, including React, TypeScript, Node.js and Django, to build good interfaces and reliable web applications."
   },
   "skills": {
     "label": "Skills",
@@ -158,7 +158,7 @@
     "timelineLabel": "Timeline",
     "stackLabel": "Stack",
     "closingLabel": "Approach",
-    "intro": "A path shaped by frontend development, interface design, careful implementation, and digital products built with precision.",
+    "intro": "A path shaped by full-stack development, SaaS platforms, interface design, careful implementation, and digital products built with precision.",
     "seo": {
       "title": "Experience – Lothaire Epee | Full Stack Developer Career",
       "description": "Discover professional experience across SaaS platforms, open-source projects, and real-world applications with a focus on scalable and reliable systems."
@@ -339,7 +339,7 @@
         "period": "2026",
         "role": "Design / Frontend Development & Integration",
         "layout": "image-left",
-        "summary": "Reusable CV and Portfolio component for executive in car insurance company.",
+        "summary": "Reusable React and TypeScript CV portfolio for an executive in a car insurance company.",
         "description": [
           "Design a Single Page Application reusable component for a client to integrate within their existing application, therefore entailing certain specific constraints regarding the technical stack",
           "The task was to build a content-driven porfolio (no hardcoded data) with a minimalist editorialistic like design with smooth animations and a responsive layout featuring a light/dark mode.",
@@ -415,7 +415,7 @@
         "period": "2025",
         "role": "Design / Frontend & CMS Development",
         "layout": "image-right",
-        "summary": "Website dedicated to the publication and launch of a book, as well as its sale",
+        "summary": "WordPress and Shopify e-commerce website dedicated to the publication, launch, and online sale of a book.",
         "description": [
           "Design and development of a website for a Swiss client to coincide with the launch of their book, including Shopify integration for online management and sales.",
           "The goal was to build a e-commerce website that feels precise, with a minimalistic design as per requested from client."

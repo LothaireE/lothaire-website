@@ -55,11 +55,11 @@
   "about": {
     "label": "À propos",
     "title": "À propos de moi",
-    "intro": "Un développeur confiant avec plus de 5 ans d’expérience en milieu professionnel",
+    "intro": "Un développeur full stack avec plus de 5 ans d’expérience dans la création d’applications web et de produits numériques",
     "portraitAlt": "Photo de profil",
-    "sideText1": "J’ai contribué au développement de plateformes SaaS dans le secteur des énergies renouvelables, ainsi qu’à un système d’enquêtes à grande échelle dans le cadre d’un projet européen open source. Cela m’a permis de travailler sur des applications orientées données et des systèmes complexes utilisés dans des contextes réels.",
-    "sideText2": "Par ailleurs, j’ai développé des sites web et des solutions commerciales pour des clients privés, en m’adaptant à des besoins spécifiques tout en délivrant des résultats concrets, centrés sur l’utilisateur.",
-    "sideText3": "Je porte une grande attention à l’écriture d’un code propre, testé, respectueux des pratiques du métier. Je continue d’apprendre et apprécie relever des défis techniques. Mon objectif est d’améliorer le produit sur lequel je travail et d’offrir une meilleure expérience aux clients comme aux utilisateurs.",
+    "sideText1": "J’ai contribué au développement de plateformes SaaS dans le secteur des énergies renouvelables, ainsi qu’à un système d’enquêtes à grande échelle dans le cadre d’un projet européen open source. Cela m’a permis de travailler avec React, TypeScript, Django et Python sur des applications orientées données et des systèmes complexes utilisés dans des contextes réels.",
+    "sideText2": "Par ailleurs, j’ai développé des sites web responsives et des solutions e-commerce pour des clients privés, en m’adaptant à des besoins spécifiques tout en délivrant des résultats concrets, centrés sur l’utilisateur.",
+    "sideText3": "Je porte une grande attention à l’écriture d’un code propre, testé et respectueux des pratiques du métier. Je continue d’apprendre et apprécie relever des défis techniques. Mon objectif est d’améliorer le produit sur lequel je travaille et d’offrir une meilleure expérience aux clients comme aux utilisateurs.",
     "closing": "Tout au long de ma carrière, j’ai cherché à travailler sur des projets utiles et porteurs de sens.",
     "bottomCta": "Contact",
     "seo": {
@@ -71,7 +71,7 @@
     "label": "Compétences et Expertise",
     "title": "Compétences et Expertise",
     "stackLabel": "Stack",
-    "intro": "Un ensemble de technologies front-end et back-end pour construire de bonnes interfaces dans un domaine d'expertise ciblé."
+    "intro": "Un ensemble de technologies frontend et backend, dont React, TypeScript, Node.js et Django, pour construire de bonnes interfaces et des applications web fiables."
   },
   "skills": {
     "label": "Compétences",
@@ -159,7 +159,7 @@
     "timelineLabel": "Parcours",
     "stackLabel": "Technos",
     "closingLabel": "Approche",
-    "intro": "Un parcours construit autour du développement frontend, du design d’interface et de la création de produits numériques robustes.",
+    "intro": "Un parcours construit autour du développement full stack, des plateformes SaaS, du design d’interface et de la création de produits numériques robustes.",
     "seo": {
       "title": "Expérience – Lothaire Epee | Développeur Full Stack",
       "description": "Parcours professionnel à travers des projets SaaS, des applications complexes et des produits numériques conçus pour des usages réels."
@@ -340,7 +340,7 @@
         "period": "2026",
         "role": "Design / Développement Frontend & Integration",
         "layout": "image-left",
-        "summary": "Composant réutilisable de CV et de portfolio pour cadre dirigeant dans une entreprise d’assurance automobile.",
+        "summary": "Portfolio CV réutilisable en React et TypeScript pour un cadre dirigeant dans une entreprise d’assurance automobile.",
         "description": [
           "Conception d'un composant réutilisable de type Single Page Application pour un client, destiné à être intégré dans une application existante, avec des contraintes spécifiques dû à la stack technique.",
           "Réalisation d'un portfolio dynamique, basé sur du contenu (sans données en dur), avec un design minimaliste d'inspiration éditoriale, avec des animations fluides et une interface responsive intégrant un mode clair/sombre.",
@@ -416,7 +416,7 @@
         "period": "2025",
         "role": "Design / Frontend & CMS Development",
         "layout": "image-left",
-        "summary": "Site web dédié à la publication et au lancement d'un livre, ainsi qu'à sa vente",
+        "summary": "Site e-commerce WordPress et Shopify dédié à la publication, au lancement et à la vente en ligne d’un livre.",
         "description": [
           "Conception et développement d'un site pour le compte d'un client suisse à l’occasion du lancement de son livre, avec une intégration de Shopify pour la gestion et la vente en ligne.",
           "L'objectif était de créer un site d' e-commerce au design épuré et minimaliste, conformément à la demande du client."
