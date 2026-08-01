@@ -1,0 +1,181 @@
+---
+import type { Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<div class="hidden md:flex">
+  <button
+    type="button"
+    data-back-to-top
+    class="pointer-events-none fixed bottom-25 right-6 z-50 flex h-10 w-10 translate-y-4 items-center justify-center rounded-full text-sm font-medium opacity-0 shadow-lg transition-all duration-300 hover:cursor-pointer"
+    aria-label="Back to top"
+  >
+    <span class="text-[1.4rem] text-(--foreground) transition-transform duration-300">⌃</span>
+  </button>
+</div>
+
+<div
+  class="pointer-events-none fixed right-4 top-4 z-90 translate-y-2 opacity-0 transition-all duration-300 md:hidden"
+  data-mobile-menu
+>
+  <button
+    type="button"
+    class="flex h-10 w-10 items-center justify-center rounded-full bg-(--background) shadow backdrop-blur-sm transition-opacity hover:opacity-70 dark:border dark:border-amber-50"
+    data-mobile-toggle
+    aria-label="Menu"
+    aria-expanded="false"
+  >
+    <span data-mobile-icon-open>☰</span>
+    <span class="hidden" data-mobile-icon-close>×</span>
+  </button>
+
+  <div
+    class="pointer-events-none absolute right-0 mt-4 w-45 translate-y-2 bg-(--background) opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 dark:border dark:border-(--foreground)/15"
+    data-mobile-panel
+  >
+    <nav>
+      <ul class="flex flex-col flex-wrap p-3 text-right">
+        <li class="py-1"><button type="button" data-scroll-target="portfolio-landing">{data.mobileNav.home}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="about">{data.mobileNav.about}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="skills">{data.mobileNav.skills}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="experience">{data.mobileNav.experience}</button></li>
+        <li class="py-1"><button type="button" data-scroll-target="projects">{data.mobileNav.projects}</button></li>
+      </ul>
+    </nav>
+    <div class="border-t border-(--border) px-3 py-1 text-right">
+      <ul class="flex flex-col">
+        <li class="py-2">
+          <label class="flex cursor-pointer items-center justify-end gap-2">
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">EN</span>
+            <input type="checkbox" class="peer sr-only" data-mobile-language-toggle checked={lang === "fr"} />
+            <span class="relative h-4 w-8 rounded-full bg-(--muted) transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-3 after:w-3 after:rounded-full after:bg-(--foreground) after:transition-transform after:duration-300 peer-checked:bg-(--foreground)/30 peer-checked:after:translate-x-4"></span>
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">FR</span>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex cursor-pointer items-center justify-end gap-2">
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">{data.mobileSettings.light}</span>
+            <input type="checkbox" class="peer sr-only" data-mobile-theme-toggle />
+            <span class="relative h-4 w-8 rounded-full bg-(--muted) transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-3 after:w-3 after:rounded-full after:bg-(--foreground) after:transition-transform after:duration-300 peer-checked:bg-(--foreground)/30 peer-checked:after:translate-x-4"></span>
+            <span class="text-[0.85rem] tracking-[0.04em] text-(--foreground)">{data.mobileSettings.dark}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const grid = document.querySelector("#portfolio-grid-section");
+    const landingControls = document.querySelector("[data-landing-controls]");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobilePanel = document.querySelector("[data-mobile-panel]");
+    const mobileToggle = document.querySelector("[data-mobile-toggle]");
+    const mobileOpenIcon = document.querySelector("[data-mobile-icon-open]");
+    const mobileCloseIcon = document.querySelector("[data-mobile-icon-close]");
+    const backToTop = document.querySelector("[data-back-to-top]");
+    const aboutScrollCta = document.querySelector("[data-about-scroll-cta]");
+    const themeLabel = document.querySelector("[data-theme-label]");
+    const mobileThemeToggle = document.querySelector("[data-mobile-theme-toggle]");
+    const portraitImage = document.querySelector("[data-portrait-image]");
+
+    const setTheme = (theme) => {
+      root.classList.toggle("dark", theme === "dark");
+      localStorage.setItem("theme", theme);
+      if (themeLabel) themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
+      if (mobileThemeToggle) mobileThemeToggle.checked = theme === "dark";
+      portraitImage?.classList.toggle("grayscale", theme === "dark");
+    };
+
+    const closeMobileMenu = () => {
+      mobileToggle?.setAttribute("aria-expanded", "false");
+      mobilePanel?.classList.add("pointer-events-none", "translate-y-2", "opacity-0");
+      mobilePanel?.classList.remove("translate-y-0", "opacity-100");
+      mobileOpenIcon?.classList.remove("hidden");
+      mobileCloseIcon?.classList.add("hidden");
+    };
+
+    const setMobileMenuVisible = (visible) => {
+      mobileMenu?.classList.toggle("pointer-events-none", !visible);
+      mobileMenu?.classList.toggle("opacity-0", !visible);
+      mobileMenu?.classList.toggle("translate-y-2", !visible);
+      mobileMenu?.classList.toggle("opacity-100", visible);
+      mobileMenu?.classList.toggle("translate-y-0", visible);
+      if (!visible) closeMobileMenu();
+    };
+
+    const scrollToTarget = (id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      closeMobileMenu();
+    };
+
+    document.querySelectorAll("[data-scroll-target]").forEach((button) => {
+      button.addEventListener("click", () => scrollToTarget(button.getAttribute("data-scroll-target")));
+    });
+
+    mobileToggle?.addEventListener("click", () => {
+      const willOpen = mobileToggle.getAttribute("aria-expanded") !== "true";
+      mobileToggle.setAttribute("aria-expanded", String(willOpen));
+      mobilePanel?.classList.toggle("pointer-events-none", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-2", !willOpen);
+      mobilePanel?.classList.toggle("opacity-0", !willOpen);
+      mobilePanel?.classList.toggle("translate-y-0", willOpen);
+      mobilePanel?.classList.toggle("opacity-100", willOpen);
+      mobileOpenIcon?.classList.toggle("hidden", willOpen);
+      mobileCloseIcon?.classList.toggle("hidden", !willOpen);
+    });
+
+    document.querySelector("[data-mobile-language-toggle]")?.addEventListener("change", (event) => {
+      window.location.href = event.currentTarget.checked ? "/fr/" : "/";
+    });
+
+    mobileThemeToggle?.addEventListener("change", (event) => {
+      setTheme(event.currentTarget.checked ? "dark" : "light");
+    });
+
+    if (landingControls && "IntersectionObserver" in window) {
+      const mobileMenuObserver = new IntersectionObserver(
+        ([entry]) => {
+          setMobileMenuVisible(!entry.isIntersecting);
+        },
+        { threshold: 0.05 },
+      );
+      mobileMenuObserver.observe(landingControls);
+    } else {
+      const updateMobileMenuVisibility = () => {
+        const bottom = landingControls?.getBoundingClientRect().bottom ?? 0;
+        setMobileMenuVisible(bottom <= 0);
+      };
+      window.addEventListener("scroll", updateMobileMenuVisibility);
+      updateMobileMenuVisibility();
+    }
+
+    const updateScrollControls = () => {
+      const scrolled = grid ? grid.scrollTop > 24 : window.scrollY > 24;
+      backToTop?.classList.toggle("pointer-events-none", !scrolled);
+      backToTop?.classList.toggle("opacity-0", !scrolled);
+      backToTop?.classList.toggle("translate-y-4", !scrolled);
+      backToTop?.classList.toggle("opacity-100", scrolled);
+      backToTop?.classList.toggle("translate-y-0", scrolled);
+      aboutScrollCta?.classList.toggle("pointer-events-none", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-0", scrolled);
+      aboutScrollCta?.classList.toggle("opacity-100", !scrolled);
+    };
+
+    grid?.addEventListener("scroll", updateScrollControls);
+    window.addEventListener("scroll", updateScrollControls);
+    updateScrollControls();
+
+    backToTop?.addEventListener("click", () => scrollToTarget("grid-top-sentinel"));
+  })();
+</script>
