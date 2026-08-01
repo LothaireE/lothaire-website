@@ -320,43 +320,43 @@
         "mainImage": {
           "id": "de-nouveau-main",
           "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-          "alt": "Image principale du site portfolio De Nouveau"
+          "alt": "Page d’accueil De Nouveau présentant un projet d’architecture en bois dans un paysage arboré"
         },
         "gallery": [
           {
             "id": "de-nouveau-1",
             "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-            "alt": "Page d'accueil de De Nouveau"
+            "alt": "Page d’accueil De Nouveau présentant un projet d’architecture en bois dans un paysage arboré"
           },
           {
             "id": "de-nouveau-2",
             "src": "/images/optimized/projects/de-nouveau/project-gallery-3.jpg",
-            "alt": "Galerie de projets De Nouveau"
+            "alt": "Galerie De Nouveau affichant une grille de projets d’architecture"
           },
           {
             "id": "de-nouveau-3",
             "src": "/images/optimized/projects/de-nouveau/open-nav.jpg",
-            "alt": "Menu de navigation ouvert"
+            "alt": "Menu De Nouveau ouvert avec liens du site et liste des projets d’architecture"
           },
           {
             "id": "de-nouveau-4",
             "src": "/images/optimized/projects/de-nouveau/project-1.jpg",
-            "alt": "Page détail d'un projet De Nouveau"
+            "alt": "Page du projet de logements sociaux à Bali avec rendu architectural aérien"
           },
           {
             "id": "de-nouveau-5",
             "src": "/images/optimized/projects/de-nouveau/project-2.jpg",
-            "alt": "Page détail d'un projet De Nouveau"
+            "alt": "Galerie du projet de logements sociaux à Bali avec rendus de la cour et de la cuisine"
           },
           {
             "id": "de-nouveau-6",
             "src": "/images/optimized/projects/de-nouveau/admin-project.jpg",
-            "alt": "Interface d'administration des projets dans Payload CMS"
+            "alt": "Éditeur de projet Payload CMS pour Appartement Fraternité"
           },
           {
             "id": "de-nouveau-7",
             "src": "/images/optimized/projects/de-nouveau/admin-medias.jpg",
-            "alt": "Collection de médias dans l'interface d'administration Payload CMS"
+            "alt": "Médiathèque Payload CMS listant les images des projets d’architecture"
           }
         ]
       },
@@ -418,48 +418,48 @@
         "mainImage": {
           "id": "reusable-executive-portfolio-spa-main",
           "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-          "alt": "Composant portfolio réutilisable SPA image principale"
+          "alt": "Page d’accueil du portfolio exécutif avec portrait et navigation"
         },
         "gallery": [
           {
             "id": "reusable-executive-portfolio-spa-1",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 1"
+            "alt": "Page d’accueil du portfolio exécutif avec portrait et navigation"
           },
           {
             "id": "reusable-executive-portfolio-spa-2",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 2"
+            "alt": "Page d’accueil du portfolio exécutif affichée en mode sombre"
           },
           {
             "id": "reusable-executive-portfolio-spa-3",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 3"
+            "alt": "Parcours professionnel du portfolio exécutif en mode clair"
           },
           {
             "id": "reusable-executive-portfolio-spa-4",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 4"
+            "alt": "Section compétences et certifications du portfolio exécutif"
           },
           {
             "id": "reusable-executive-portfolio-spa-5",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 5"
+            "alt": "Parcours professionnel du portfolio exécutif en mode sombre"
           },
           {
             "id": "reusable-executive-portfolio-spa-6",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 6"
+            "alt": "Page à propos du portfolio exécutif avec portrait et biographie"
           },
           {
             "id": "reusable-executive-portfolio-spa-7",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 7"
+            "alt": "Section formation et parcours académique du portfolio exécutif"
           },
           {
             "id": "reusable-executive-portfolio-spa-8",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 8"
+            "alt": "Page contact du portfolio exécutif avec formulaire et coordonnées"
           }
         ]
       },
@@ -509,18 +509,18 @@
         "mainImage": {
           "id": "ribelmais-buch-main",
           "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-          "alt": "Ribelmais buch image principale"
+          "alt": "Page d’accueil de Ribelmais Buch présentant le livre et son introduction"
         },
         "gallery": [
           {
             "id": "ribelmais-buch-1",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-            "alt": "Ribelmais buch image 1"
+            "alt": "Page d’accueil de Ribelmais Buch présentant le livre et son introduction"
           },
           {
             "id": "ribelmais-buch-2",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-2.jpg",
-            "alt": "Ribelmais buch image 2"
+            "alt": "Page produit Ribelmais Buch avec livre ouvert et commandes d’achat Shopify"
           }
         ]
       }

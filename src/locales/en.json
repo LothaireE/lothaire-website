@@ -319,43 +319,43 @@
         "mainImage": {
           "id": "de-nouveau-main",
           "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-          "alt": "De Nouveau portfolio website main image"
+          "alt": "De Nouveau homepage featuring a timber architecture project in a wooded landscape"
         },
         "gallery": [
           {
             "id": "de-nouveau-1",
             "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-            "alt": "De Nouveau homepage"
+            "alt": "De Nouveau homepage featuring a timber architecture project in a wooded landscape"
           },
           {
             "id": "de-nouveau-2",
             "src": "/images/optimized/projects/de-nouveau/project-gallery-3.jpg",
-            "alt": "De Nouveau project gallery"
+            "alt": "De Nouveau project gallery showing a grid of architecture projects"
           },
           {
             "id": "de-nouveau-3",
             "src": "/images/optimized/projects/de-nouveau/open-nav.jpg",
-            "alt": "Navigation tab open"
+            "alt": "De Nouveau navigation overlay with site links and architecture project list"
           },
           {
             "id": "de-nouveau-4",
             "src": "/images/optimized/projects/de-nouveau/project-1.jpg",
-            "alt": "De Nouveau project detail page 1"
+            "alt": "Social housing in Bali project page with aerial architectural rendering"
           },
           {
             "id": "de-nouveau-5",
             "src": "/images/optimized/projects/de-nouveau/project-2.jpg",
-            "alt": "De Nouveau project detail page 2"
+            "alt": "Social housing in Bali gallery with exterior courtyard and kitchen renderings"
           },
           {
             "id": "de-nouveau-6",
             "src": "/images/optimized/projects/de-nouveau/admin-project.jpg",
-            "alt": "Payload CMS administration project interface"
+            "alt": "Payload CMS project editor for Appartement Fraternité"
           },
           {
             "id": "de-nouveau-7",
             "src": "/images/optimized/projects/de-nouveau/admin-medias.jpg",
-            "alt": "Payload CMS administration medias collection"
+            "alt": "Payload CMS media library listing architecture project images"
           }
         ]
       },
@@ -417,48 +417,48 @@
         "mainImage": {
           "id": "reusable-executive-portfolio-spa-main",
           "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-          "alt": "Reusable Executive Portfolio SPA main image"
+          "alt": "Executive portfolio homepage with portrait and navigation"
         },
         "gallery": [
           {
             "id": "reusable-executive-portfolio-spa-1",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 1"
+            "alt": "Executive portfolio homepage with portrait and navigation"
           },
           {
             "id": "reusable-executive-portfolio-spa-2",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 2"
+            "alt": "Executive portfolio homepage displayed in dark mode"
           },
           {
             "id": "reusable-executive-portfolio-spa-3",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 3"
+            "alt": "Executive portfolio experience timeline in light mode"
           },
           {
             "id": "reusable-executive-portfolio-spa-4",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 4"
+            "alt": "Executive portfolio skills and certifications section"
           },
           {
             "id": "reusable-executive-portfolio-spa-5",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 5"
+            "alt": "Executive portfolio experience timeline in dark mode"
           },
           {
             "id": "reusable-executive-portfolio-spa-6",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 6"
+            "alt": "Executive portfolio about page with portrait and biography"
           },
           {
             "id": "reusable-executive-portfolio-spa-7",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 7"
+            "alt": "Executive portfolio education and academic background section"
           },
           {
             "id": "reusable-executive-portfolio-spa-8",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.jpg",
-            "alt": "Reusable Executive Portfolio SPA image 8"
+            "alt": "Executive portfolio contact page with form and contact details"
           }
         ]
       },
@@ -508,18 +508,18 @@
         "mainImage": {
           "id": "ribelmais-buch-main",
           "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-          "alt": "Ribelmais buch main image"
+          "alt": "Ribelmais Buch homepage presenting the book beside introductory text"
         },
         "gallery": [
           {
             "id": "ribelmais-buch-1",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-            "alt": "Ribelmais buch image 1"
+            "alt": "Ribelmais Buch homepage presenting the book beside introductory text"
           },
           {
             "id": "ribelmais-buch-2",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-2.jpg",
-            "alt": "Ribelmais buch image 2"
+            "alt": "Ribelmais Buch product page with an open book and Shopify purchase controls"
           }
         ]
       }
