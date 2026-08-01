@@ -1,0 +1,55 @@
+---
+type Props = {
+  data: typeof import("@/locales/en.json");
+};
+
+const { data } = Astro.props;
+---
+
+<section id="experience" class="bg-(--background) text-(--foreground)">
+  <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+    <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
+      <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+        {data.experience.title}
+      </h2>
+    </div>
+    <div class="mx-auto w-full max-w-400 py-8">
+      <div class="space-y-14">
+        {data.experience.experienceList.map((item, index) => (
+          <article class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}>
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+              <div class="col-span-1 space-y-3">
+                <p class="text-[15px] leading-[1.1] tracking-[-0.03em] text-(--foreground)/70">{item.period}</p>
+                <div class="leading-none">
+                  <h3 class="text-[1.8rem] font-medium tracking-[-0.06em] sm:text-[2.2rem]">{item.role}</h3>
+                  {item.company && <p class="mt-1 text-[1.1rem] tracking-[-0.04em] text-(--foreground)/85">{item.company}</p>}
+                  {item.location && <p class="mt-1 text-[15px] tracking-[-0.03em] text-(--foreground)/60">{item.location}</p>}
+                </div>
+              </div>
+              <div class="grid grid-cols-1 gap-8 lg:col-span-2 lg:grid-cols-3">
+                <div class="col-span-1 space-y-5 xl:col-span-2">
+                  <p class="max-w-full text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/85 md:max-w-54 lg:max-w-60 2xl:max-w-65">
+                    {item.summary}
+                  </p>
+                  <ul class="max-w-full space-y-1.5 md:max-w-54 lg:max-w-60 2xl:max-w-65">
+                    {item.missions.map((mission) => (
+                      <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/75">{mission}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="space-y-3">
+                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                  <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:space-y-1.5">
+                    {item.stack.map((tech) => (
+                      <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

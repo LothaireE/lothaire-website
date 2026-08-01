@@ -1,0 +1,53 @@
+---
+type Props = {
+  data: typeof import("@/locales/en.json");
+};
+
+const { data } = Astro.props;
+---
+
+<section id="skills" class="bg-(--background) text-(--foreground)">
+  <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+    <div class="flex flex-col gap-8 border-t border-(--foreground)/15 lg:gap-10">
+      <div class="mx-auto w-full max-w-400 py-4 md:pt-8">
+        <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+          {data.skillsAndExpertise.title}
+        </h2>
+      </div>
+      <p class="text-[2rem] leading-[0.97] tracking-[-0.06em] md:text-[3rem] lg:text-[3.8rem]">
+        {data.skillsAndExpertise.intro}
+      </p>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[120px_minmax(0,1fr)] lg:gap-x-12">
+        <p class="pt-0 text-center text-[0.85rem] uppercase tracking-[0.04em] text-(--foreground)/60 md:pt-3 md:text-left">
+          {data.skillsAndExpertise.stackLabel}
+        </p>
+        <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4">
+          {[data.skills.frontend, data.skills.backend, data.skills.programmingLanguages, data.skills.tools].map((category) => (
+            <div class="border-t border-(--foreground)/15 pt-4">
+              <h3 class="mb-4 text-[1.1rem] font-medium leading-none tracking-[-0.04em]">{category.label}</h3>
+              <ul class="space-y-1.5">
+                {category.items.map((item) => (
+                  <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[120px_minmax(0,1fr)] lg:gap-x-12">
+        <p class="pt-0 text-center text-[0.85rem] uppercase tracking-[0.04em] text-(--foreground)/60 md:pt-3 md:text-left">
+          {data.expertise.stackLabel}
+        </p>
+        <div>
+          <div class="border-t border-(--foreground)/15 pt-4">
+            <ul class="space-y-1.5">
+              {data.expertise.items.map((item) => (
+                <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

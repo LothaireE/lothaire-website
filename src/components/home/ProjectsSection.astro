@@ -1,0 +1,193 @@
+---
+import { getProjectPath, type Locale } from "@/data/portfolio";
+
+type Props = {
+  data: typeof import("@/locales/en.json");
+  lang: Locale;
+};
+
+const { data, lang } = Astro.props;
+---
+
+<section id="projects" class="bg-(--background) text-(--foreground)">
+  <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+    <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
+      <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
+        {data.projects.title}
+      </h2>
+    </div>
+    <div class="mx-auto w-full max-w-400 py-8">
+      <div class="space-y-20 md:space-y-28">
+        {data.projects.projectList.map((project, index) => (
+          <article
+            id={`project_${project.slug}`}
+            class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}
+            data-project-preview
+            data-project-images={JSON.stringify(project.gallery)}
+          >
+            <div class={`grid grid-cols-1 gap-8 md:grid-cols-5 lg:gap-10 xl:gap-10 ${project.layout === "image-right" ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""}`}>
+              <div class="col-span-1 space-y-4 gap-10 md:col-span-3 md:space-y-10">
+                <button type="button" class="aspect-5/3 overflow-hidden bg-(--foreground)/5 shadow-lg hover:cursor-zoom-in" data-project-preview-open>
+                  <img src={project.mainImage.src} alt={project.mainImage.alt} loading="lazy" decoding="async" class="w-full object-cover" data-project-preview-main />
+                </button>
+                <div class="grid grid-cols-4 gap-1 border-t border-(--foreground)/15 pt-5 md:pt-10 xl:grid-cols-2">
+                  {project.gallery.map((image, imageIndex) => (
+                    <button
+                      type="button"
+                      data-project-thumb={imageIndex}
+                      class={`flex w-full items-center justify-center overflow-hidden shadow-md transition-opacity hover:cursor-pointer hover:opacity-70 ${image.src === project.mainImage.src ? "border-(--foreground)" : "border-(--foreground)/15"}`}
+                    >
+                      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" class="aspect-5/3 w-full object-contain" />
+                    </button>
+                  ))}
+                </div>
+                <div class="flex gap-4 px-2 py-0 md:px-4 md:py-2">
+                  {project.links.live && (
+                    <a href={project.links.live} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
+                      {data.projects.linkLabels.live}
+                      <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
+                    </a>
+                  )}
+                  {project.links.github && (
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
+                      {data.projects.linkLabels.github}
+                      <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
+                    </a>
+                  )}
+                </div>
+              </div>
+              <div class="grid gap-2 sm:grid-cols-1 md:col-span-2 md:grid-cols-5 md:gap-2.5 xl:gap-3.5 2xl:grid-cols-7">
+                <div class="space-y-5 sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-5 2xl:col-span-5">
+                  <div class="space-y-2">
+                    <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{project.period}</p>
+                    <h3 class="max-w-[12ch] text-[2.2rem] font-medium leading-[0.95] tracking-[-0.07em] sm:text-[2.8rem] lg:text-[3.4rem]">
+                      <a href={getProjectPath(lang, project.slug)}>{project.title}</a>
+                    </h3>
+                    <p class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/75">{project.role}</p>
+                  </div>
+                  <p class="max-w-[40ch] text-[1.1rem] leading-[1.05] tracking-tighter">{project.summary}</p>
+                  <div class="space-y-3">
+                    {project.description.map((paragraph) => (
+                      <p class="max-w-[58ch] text-[15px] leading-[1.28] tracking-[-0.03em] text-(--foreground)/80">{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+                <div class="space-y-3 pt-2 sm:col-span-1 xl:col-span-5 2xl:col-span-2 2xl:pt-0">
+                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                  <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:gap-0 md:space-y-1.5 md:space-x-1.5">
+                    {project.stack.map((tech) => (
+                      <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              class="fixed inset-0 z-50 hidden bg-(--background)/96 text-(--foreground) backdrop-blur-none data-[open=true]:flex sm:bg-(--background)/80 sm:backdrop-blur-xl"
+              data-preview-modal
+              data-open="false"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Project image gallery"
+            >
+              <div class="relative z-10 flex h-full w-full flex-col">
+                <div class="flex items-center justify-between px-6 py-4 sm:px-8 md:px-10">
+                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/60" data-preview-count></p>
+                  <button type="button" class="text-[15px] tracking-[-0.03em] text-(--foreground)/80 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60" data-preview-close>
+                    {lang === "fr" ? "Fermer" : "Close"}
+                  </button>
+                </div>
+                <div class="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-0 pb-6 sm:block sm:px-8 md:px-10">
+                  <div class="relative flex min-h-0 w-full flex-1 items-center justify-center sm:h-full">
+                    <img src="" alt="" decoding="async" class="max-h-full w-screen max-w-none object-contain sm:w-auto sm:max-w-[92vw] lg:max-w-full" data-preview-modal-image />
+                  </div>
+                  <div class="relative z-20 flex w-full items-center justify-center gap-8 px-6 sm:contents">
+                    <button type="button" aria-label={lang === "fr" ? "Image precedente" : "Previous image"} class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:left-8 sm:top-1/2 sm:-translate-y-1/2 md:left-10" data-preview-prev>
+                      &lsaquo;
+                    </button>
+                    <button type="button" aria-label={lang === "fr" ? "Image suivante" : "Next image"} class="text-[2rem] leading-none tracking-[-0.08em] text-(--foreground)/70 transition-opacity duration-200 hover:cursor-pointer hover:opacity-60 sm:absolute sm:right-8 sm:top-1/2 sm:-translate-y-1/2 md:right-10" data-preview-next>
+                      &rsaquo;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+
+    document.querySelectorAll("[data-project-preview]").forEach((project) => {
+      const images = JSON.parse(project.getAttribute("data-project-images") ?? "[]");
+      const mainImage = project.querySelector("[data-project-preview-main]");
+      const modal = project.querySelector("[data-preview-modal]");
+      const modalImage = project.querySelector("[data-preview-modal-image]");
+      const count = project.querySelector("[data-preview-count]");
+      let activeIndex = Math.max(0, images.findIndex((image) => image.src === mainImage?.getAttribute("src")));
+
+      const update = () => {
+        const active = images[activeIndex];
+        if (!active) return;
+        if (mainImage instanceof HTMLImageElement) {
+          mainImage.src = active.src;
+          mainImage.alt = active.alt;
+        }
+        if (modalImage instanceof HTMLImageElement) {
+          modalImage.src = active.src;
+          modalImage.alt = active.alt;
+        }
+        if (count) count.textContent = `${activeIndex + 1} / ${images.length}`;
+      };
+
+      const open = () => {
+        update();
+        modal?.classList.remove("hidden");
+        modal?.setAttribute("data-open", "true");
+        root.classList.add("overflow-hidden");
+      };
+
+      const close = () => {
+        modal?.classList.add("hidden");
+        modal?.setAttribute("data-open", "false");
+        root.classList.remove("overflow-hidden");
+      };
+
+      const previous = () => {
+        activeIndex = (activeIndex - 1 + images.length) % images.length;
+        update();
+      };
+
+      const next = () => {
+        activeIndex = (activeIndex + 1) % images.length;
+        update();
+      };
+
+      project.querySelectorAll("[data-project-thumb]").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeIndex = Number(button.getAttribute("data-project-thumb"));
+          update();
+        });
+      });
+
+      project.querySelector("[data-project-preview-open]")?.addEventListener("click", open);
+      project.querySelector("[data-preview-close]")?.addEventListener("click", close);
+      project.querySelector("[data-preview-prev]")?.addEventListener("click", previous);
+      project.querySelector("[data-preview-next]")?.addEventListener("click", next);
+      modal?.addEventListener("click", (event) => {
+        if (event.target === modal) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (modal?.getAttribute("data-open") !== "true") return;
+        if (event.key === "Escape") close();
+        if (event.key === "ArrowLeft") previous();
+        if (event.key === "ArrowRight") next();
+      });
+    });
+  })();
+</script>
