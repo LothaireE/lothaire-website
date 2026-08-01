@@ -1,9 +1,11 @@
 ---
+type PortfolioData = typeof import("@/locales/en.json");
+
 type Props = {
-  data: typeof import("@/locales/en.json");
+  profile: PortfolioData["profile"];
 };
 
-const { data } = Astro.props;
+const { profile } = Astro.props;
 ---
 
 <div class="relative">
@@ -28,22 +30,22 @@ const { data } = Astro.props;
               <p>Angaben gemäß § 5 TMG</p>
               <div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
-                  <p>{data.profile.firstname} {data.profile.lastname}</p>
-                  <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
-                  <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
-                  <p>{data.profile.address.country}</p>
+                  <p>{profile.firstname} {profile.lastname}</p>
+                  <p>{profile.address.street} {profile.address.streetNumber}</p>
+                  <p>{profile.address.zipcode} {profile.address.city}</p>
+                  <p>{profile.address.country}</p>
                 </div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
                   <p>Kontakt</p>
-                  <p>E-Mail: {data.profile.email}</p>
-                  <p>Telefon: {data.profile.phone}</p>
+                  <p>E-Mail: {profile.email}</p>
+                  <p>Telefon: {profile.phone}</p>
                 </div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
                   <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
-                  <p>{data.profile.firstname} {data.profile.lastname}</p>
-                  <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
-                  <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
-                  <p>{data.profile.address.country}</p>
+                  <p>{profile.firstname} {profile.lastname}</p>
+                  <p>{profile.address.street} {profile.address.streetNumber}</p>
+                  <p>{profile.address.zipcode} {profile.address.city}</p>
+                  <p>{profile.address.country}</p>
                 </div>
                 <div class="py-1 text-(--foreground)/80 md:py-2">
                   <p>Haftung für Inhalte</p>
@@ -71,11 +73,11 @@ const { data } = Astro.props;
                 </div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
                   <h4 class="pb-0.5">2. Verantwortlicher</h4>
-                  <p>{data.profile.firstname} {data.profile.lastname}</p>
-                  <p>{data.profile.address.street} {data.profile.address.streetNumber}</p>
-                  <p>{data.profile.address.zipcode} {data.profile.address.city}</p>
-                  <p>{data.profile.address.country}</p>
-                  <p class="pt-2">E-Mail: {data.profile.email}</p>
+                  <p>{profile.firstname} {profile.lastname}</p>
+                  <p>{profile.address.street} {profile.address.streetNumber}</p>
+                  <p>{profile.address.zipcode} {profile.address.city}</p>
+                  <p>{profile.address.country}</p>
+                  <p class="pt-2">E-Mail: {profile.email}</p>
                 </div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
                   <h4 class="pb-0.5">3. Hosting</h4>
@@ -115,7 +117,7 @@ const { data } = Astro.props;
                     <li>- Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
                   </ul>
                   <p>Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:</p>
-                  <p>{data.profile.email}</p>
+                  <p>{profile.email}</p>
                 </div>
                 <div class="py-2 text-(--foreground)/80 md:py-4">
                   <h4 class="pb-0.5">8. Beschwerderecht bei der Aufsichtsbehörde</h4>

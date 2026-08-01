@@ -1,24 +1,27 @@
 ---
 import { getProjectPath, type Locale } from "@/data/portfolio";
 
+type PortfolioData = typeof import("@/locales/en.json");
+
 type Props = {
-  data: typeof import("@/locales/en.json");
+  projects: PortfolioData["projects"];
+  stackLabel: PortfolioData["experience"]["stackLabel"];
   lang: Locale;
 };
 
-const { data, lang } = Astro.props;
+const { projects, stackLabel, lang } = Astro.props;
 ---
 
 <section id="projects" class="bg-(--background) text-(--foreground)">
   <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
     <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
       <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
-        {data.projects.title}
+        {projects.title}
       </h2>
     </div>
     <div class="mx-auto w-full max-w-400 py-8">
       <div class="space-y-20 md:space-y-28">
-        {data.projects.projectList.map((project, index) => (
+        {projects.projectList.map((project, index) => (
           <article
             id={`project_${project.slug}`}
             class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}
@@ -44,13 +47,13 @@ const { data, lang } = Astro.props;
                 <div class="flex gap-4 px-2 py-0 md:px-4 md:py-2">
                   {project.links.live && (
                     <a href={project.links.live} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
-                      {data.projects.linkLabels.live}
+                      {projects.linkLabels.live}
                       <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
                     </a>
                   )}
                   {project.links.github && (
                     <a href={project.links.github} target="_blank" rel="noopener noreferrer" class="group relative inline-block text-[24px] font-medium italic tracking-tighter transition-all duration-200 hover:opacity-70 active:opacity-50 sm:text-[32px] md:text-[40px]">
-                      {data.projects.linkLabels.github}
+                      {projects.linkLabels.github}
                       <span class="absolute -bottom-1 right-0 h-1 w-0 bg-current transition-all duration-300 ease-out group-hover:w-full group-focus-visible:w-full"></span>
                     </a>
                   )}
@@ -73,7 +76,7 @@ const { data, lang } = Astro.props;
                   </div>
                 </div>
                 <div class="space-y-3 pt-2 sm:col-span-1 xl:col-span-5 2xl:col-span-2 2xl:pt-0">
-                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{stackLabel}</p>
                   <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:gap-0 md:space-y-1.5 md:space-x-1.5">
                     {project.stack.map((tech) => (
                       <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>

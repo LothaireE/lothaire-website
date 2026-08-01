@@ -20,9 +20,9 @@ const { data, lang } = Astro.props;
 >
   <div id="grid-top-sentinel"></div>
 
-  <AboutSection data={data} />
-  <SkillsSection data={data} />
-  <ExperienceSection data={data} />
-  <ProjectsSection data={data} lang={lang} />
-  <Footer data={data} />
+  <AboutSection about={data.about} profile={data.profile} skillsLabel={data.mobileNav.skills} />
+  <SkillsSection skillsAndExpertise={data.skillsAndExpertise} skills={data.skills} expertise={data.expertise} />
+  <ExperienceSection experience={data.experience} />
+  <ProjectsSection projects={data.projects} stackLabel={data.experience.stackLabel} lang={lang} />
+  <Footer profile={data.profile} />
 </section>

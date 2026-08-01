@@ -1,21 +1,23 @@
 ---
+type PortfolioData = typeof import("@/locales/en.json");
+
 type Props = {
-  data: typeof import("@/locales/en.json");
+  experience: PortfolioData["experience"];
 };
 
-const { data } = Astro.props;
+const { experience } = Astro.props;
 ---
 
 <section id="experience" class="bg-(--background) text-(--foreground)">
   <div class="mx-auto min-h-screen w-full max-w-350 px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-16">
     <div class="mx-auto w-full max-w-400 border-t border-(--foreground)/15 py-4 md:pt-8">
       <h2 class="text-[2.5rem] font-black uppercase leading-[0.97] tracking-[-0.02em] xl:text-[3.4rem] 2xl:text-[4rem]">
-        {data.experience.title}
+        {experience.title}
       </h2>
     </div>
     <div class="mx-auto w-full max-w-400 py-8">
       <div class="space-y-14">
-        {data.experience.experienceList.map((item, index) => (
+        {experience.experienceList.map((item, index) => (
           <article class={`${index === 0 ? "" : "border-t border-(--foreground)/20"} pt-5`}>
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
               <div class="col-span-1 space-y-3">
@@ -38,7 +40,7 @@ const { data } = Astro.props;
                   </ul>
                 </div>
                 <div class="space-y-3">
-                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{data.experience.stackLabel}</p>
+                  <p class="text-[13px] uppercase tracking-[0.04em] text-(--foreground)/50">{experience.stackLabel}</p>
                   <ul class="flex flex-wrap gap-1.5 pt-0.5 md:flex-col md:space-y-1.5">
                     {item.stack.map((tech) => (
                       <li class="text-[15px] leading-[1.2] tracking-[-0.03em] text-(--foreground)/85">{tech}</li>
