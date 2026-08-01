@@ -115,7 +115,7 @@ const galleryJson = JSON.stringify(images);
       }
     };
 
-    const openModal = (index) => {
+    const openModal = (index: number) => {
       activeIndex = index;
       updateImage();
       modal.dataset.open = "true";
