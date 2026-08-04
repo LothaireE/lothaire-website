@@ -40,7 +40,10 @@ const { about, profile, skillsLabel } = Astro.props;
         </div>
       </div>
       <p class="text-[1.9rem] italic leading-[0.97] tracking-[-0.06em] sm:text-[2rem]">{about.closing}</p>
-      <div class="hidden justify-center transition-all duration-700 md:flex" data-about-scroll-cta>
+      <div
+        class="fixed bottom-6 left-3/4 z-20 hidden -translate-x-1/2 justify-center transition-all duration-700 md:flex"
+        data-about-scroll-cta
+      >
         <button
           type="button"
           data-scroll-target="skills"
