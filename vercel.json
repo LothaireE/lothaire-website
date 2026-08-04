@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.lothaire-epee.com"
+        }
+      ],
+      "destination": "https://lothaire-epee.com/:path*",
+      "permanent": true
+    }
+  ]
+}

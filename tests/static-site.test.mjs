@@ -40,8 +40,30 @@ describe("Astro static output", () => {
     for (const [englishProject, frenchProject] of localizedProjectPairs) {
       assert.equal(frenchProject.gallery.length, englishProject.gallery.length);
       assert.equal(frenchProject.stack.length, englishProject.stack.length);
+      assert.equal(frenchProject.detailSections.length, englishProject.detailSections.length);
       assert.equal(Boolean(frenchProject.mainImage.src), true);
       assert.equal(Boolean(frenchProject.mainImage.alt), true);
+    }
+  });
+
+  it("keeps project SEO detail content complete", () => {
+    for (const project of [...en.projects.projectList, ...fr.projects.projectList]) {
+      assert.equal(Boolean(project.seoTitle), true, `${project.slug} is missing seoTitle`);
+      assert.equal(
+        project.seoDescription.length >= 120,
+        true,
+        `${project.slug} needs a more descriptive SEO description`,
+      );
+      assert.equal(
+        project.seoKeywords.length >= 4,
+        true,
+        `${project.slug} should expose focused SEO keywords`,
+      );
+      assert.equal(
+        project.detailSections.length >= 3,
+        true,
+        `${project.slug} should expose detailed project sections`,
+      );
     }
   });
 
@@ -106,6 +128,19 @@ describe("Astro static output", () => {
         `${route} is missing Twitter card`,
       );
       assert.match(html, /<script type="application\/ld\+json">/, `${route} is missing JSON-LD`);
+    }
+  });
+
+  it("renders enriched project content on project pages", () => {
+    for (const project of en.projects.projectList) {
+      const html = readDistPage(`/projects/${project.slug}/`);
+
+      assert.match(html, new RegExp(project.seoTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+      assert.match(html, /Project overview/);
+      assert.match(html, /Focus/);
+      for (const section of project.detailSections) {
+        assert.match(html, new RegExp(section.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+      }
     }
   });
 
