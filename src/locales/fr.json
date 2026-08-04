@@ -55,11 +55,11 @@
   "about": {
     "label": "À propos",
     "title": "À propos de moi",
-    "intro": "Un développeur confiant avec plus de 5 ans d’expérience en milieu professionnel",
+    "intro": "Un développeur full stack avec +5 ans d’expérience dans la création d’applications web et de produits numériques",
     "portraitAlt": "Photo de profil",
-    "sideText1": "J’ai contribué au développement de plateformes SaaS dans le secteur des énergies renouvelables, ainsi qu’à un système d’enquêtes à grande échelle dans le cadre d’un projet européen open source. Cela m’a permis de travailler sur des applications orientées données et des systèmes complexes utilisés dans des contextes réels.",
-    "sideText2": "Par ailleurs, j’ai développé des sites web et des solutions commerciales pour des clients privés, en m’adaptant à des besoins spécifiques tout en délivrant des résultats concrets, centrés sur l’utilisateur.",
-    "sideText3": "Je porte une grande attention à l’écriture d’un code propre, testé, respectueux des pratiques du métier. Je continue d’apprendre et apprécie relever des défis techniques. Mon objectif est d’améliorer le produit sur lequel je travail et d’offrir une meilleure expérience aux clients comme aux utilisateurs.",
+    "sideText1": "J’ai contribué au développement de plateformes SaaS dans le secteur des énergies renouvelables, ainsi qu’à un système d’enquêtes à grande échelle dans le cadre d’un projet européen open source. Cela m’a permis de travailler avec React, TypeScript, Django et Python sur des applications orientées données et des systèmes complexes utilisés dans des contextes réels.",
+    "sideText2": "Par ailleurs, j’ai développé des sites web responsives et des solutions e-commerce pour des clients privés, en m’adaptant à des besoins spécifiques tout en délivrant des résultats concrets, centrés sur l’utilisateur.",
+    "sideText3": "Je porte une grande attention à l’écriture d’un code propre, testé et respectueux des pratiques du métier. Je continue d’apprendre et apprécie relever des défis techniques. Mon objectif est d’améliorer le produit sur lequel je travaille et d’offrir une meilleure expérience aux clients comme aux utilisateurs.",
     "closing": "Tout au long de ma carrière, j’ai cherché à travailler sur des projets utiles et porteurs de sens.",
     "bottomCta": "Contact",
     "seo": {
@@ -71,7 +71,7 @@
     "label": "Compétences et Expertise",
     "title": "Compétences et Expertise",
     "stackLabel": "Stack",
-    "intro": "Un ensemble de technologies front-end et back-end pour construire de bonnes interfaces dans un domaine d'expertise ciblé."
+    "intro": "Un ensemble de technologies frontend et backend centré sur React, TypeScript, Node.js et Django pour construire des interfaces claires et des applications web fiables."
   },
   "skills": {
     "label": "Compétences",
@@ -159,7 +159,7 @@
     "timelineLabel": "Parcours",
     "stackLabel": "Technos",
     "closingLabel": "Approche",
-    "intro": "Un parcours construit autour du développement frontend, du design d’interface et de la création de produits numériques robustes.",
+    "intro": "Un parcours construit autour du développement full stack, des plateformes SaaS, du design d’interface et de la création de produits numériques robustes.",
     "seo": {
       "title": "Expérience – Lothaire Epee | Développeur Full Stack",
       "description": "Parcours professionnel à travers des projets SaaS, des applications complexes et des produits numériques conçus pour des usages réels."
@@ -171,7 +171,7 @@
         "role": "Développeur Freelance",
         "company": "",
         "location": "",
-        "summary": "Réalisation de solutions web sur mesure pour des sites vitrines, incluant des lancements de produits et des plateformes de vente en ligne. Développement d’interfaces web axées sur la performance, l’accessibilité, tout en créant des designs élégants pour divers produits digitaux.",
+        "summary": "Réalisation de solutions web sur mesure pour des sites vitrines, des lancements de produits et des plateformes de vente en ligne. Développement d’interfaces responsives avec JavaScript, TypeScript et Node.js, axées sur la performance, l’accessibilité et un design élégant.",
         "missions": [
           "Création de landing pages élégantes et de design systems",
           "Développement de composants UI réutilisables",
@@ -198,7 +198,7 @@
         "role": "Développeur Full-Stack",
         "company": "Lumenaza GmbH",
         "location": "Berlin, Allemagne",
-        "summary": "Conception et développement d’applications web et de microservices pilotés par API pour le secteur des énergies renouvelables.",
+        "summary": "Conception et développement d’applications SaaS et de microservices pilotés par API pour le secteur des énergies renouvelables, avec React, TypeScript, Django et Python.",
         "missions": [
           "Développement de composants UI réutilisables",
           "Configuration de produits pour des partenaires B2B",
@@ -227,7 +227,7 @@
         "role": "Développeur Concepteur",
         "company": "Centre de Données Socio-Politiques - Science Po",
         "location": "Paris, France",
-        "summary": "Maintenance et développement de fonctionnalités pour le Web Panel Sample Service (WPSS), une application web pilotée par API permettant la gestion de larges panels (+13 000 participants) et d’enquêtes en collaboration avec une infrastructure de recherche européenne.",
+        "summary": "Maintenance et développement de fonctionnalités pour le Web Panel Sample Service (WPSS), une application Django et Python permettant de gérer des panels de plus de 13 000 participants et des enquêtes à l’échelle européenne.",
         "missions": [
           "Mise en place d’un accès sécurisé basé sur les rôles pour les chercheurs et les participants",
           "Développement d’interfaces multilingues pour des enquêtes menées dans 13 pays européens",
@@ -263,12 +263,39 @@
         "role": "Design / Développement Full Stack / CMS / Déploiement",
         "layout": "image-left",
         "summary": "Site portfolio administrable pour un studio d’architecture, conçu autour d’une galerie de projets, d’un CMS headless et d’une gestion média performante.",
+        "seoTitle": "De Nouveau site portfolio architecture | Projet full stack CMS",
+        "seoDescription": "Étude de cas De Nouveau, un site portfolio d’architecture développé avec Next.js, Payload CMS, PostgreSQL, Cloudflare R2 et Vercel pour publier des projets, médias et contenus SEO.",
+        "seoKeywords": [
+          "site portfolio architecture",
+          "Next.js",
+          "Payload CMS",
+          "CMS headless",
+          "PostgreSQL",
+          "Cloudflare R2",
+          "développement full stack",
+          "métadonnées SEO"
+        ],
         "description": [
           "Conception et développement d’un site vitrine premium pour un studio d’architecture, avec une direction artistique minimaliste, éditoriale et centrée sur la mise en valeur des projets.",
           "Mise en place d’un CMS headless avec Payload CMS permettant au client de gérer les pages, projets, catégories, images, vidéos et métadonnées SEO depuis une interface d’administration.",
           "Développement d’une architecture full stack avec Next.js, PostgreSQL via Neon, stockage média Cloudflare R2 compatible S3, déploiement Vercel et système de revalidation automatique du cache après modification du contenu.",
           "Création de layouts de projets réutilisables — default, editorial, gallery focused et minimal — afin d’adapter la présentation selon la nature visuelle ou narrative de chaque projet.",
-          "Configuration d’un pipeline d’intégration continue (CI) avec GitHub Actions afin d’automatiser les contrôles de qualité du code (linting, formatage), l’exécution des tests et la validation des builds de production avant chaque déploiement."
+          "Configuration d’un pipeline d’intégration continue (CI) avec GitHub Actions afin d’automatiser les contrôles de qualité du code (linting, formatage), l’exécution des tests et la validation des builds de production avant chaque déploiement.",
+          "Le workflow éditorial obtenu permet au studio de gérer directement ses contenus et ses médias tout en conservant une présentation cohérente pour chaque projet."
+        ],
+        "detailSections": [
+          {
+            "title": "Contexte du projet",
+            "body": "De Nouveau avait besoin d’un site portfolio d’architecture haut de gamme, capable de présenter les projets avec une direction visuelle forte tout en restant simple à administrer."
+          },
+          {
+            "title": "Approche technique",
+            "body": "Le projet associe un frontend Next.js, une interface d’administration Payload CMS, une base PostgreSQL, un stockage média Cloudflare R2 et un déploiement Vercel pour structurer et publier le contenu."
+          },
+          {
+            "title": "SEO et maintenabilité",
+            "body": "Le CMS permet de gérer les pages projets, les images, les catégories et les métadonnées SEO, afin de rendre chaque projet d’architecture plus maintenable et crawlable."
+          }
         ],
         "links": {
           "live": "https://www.denouveau.fr",
@@ -293,43 +320,43 @@
         "mainImage": {
           "id": "de-nouveau-main",
           "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-          "alt": "Image principale du site portfolio De Nouveau"
+          "alt": "Page d’accueil De Nouveau présentant un projet d’architecture en bois dans un paysage arboré"
         },
         "gallery": [
           {
             "id": "de-nouveau-1",
             "src": "/images/optimized/projects/de-nouveau/homepage.jpg",
-            "alt": "Page d'accueil de De Nouveau"
+            "alt": "Page d’accueil De Nouveau présentant un projet d’architecture en bois dans un paysage arboré"
           },
           {
             "id": "de-nouveau-2",
             "src": "/images/optimized/projects/de-nouveau/project-gallery-3.jpg",
-            "alt": "Galerie de projets De Nouveau"
+            "alt": "Galerie De Nouveau affichant une grille de projets d’architecture"
           },
           {
             "id": "de-nouveau-3",
             "src": "/images/optimized/projects/de-nouveau/open-nav.jpg",
-            "alt": "Menu de navigation ouvert"
+            "alt": "Menu De Nouveau ouvert avec liens du site et liste des projets d’architecture"
           },
           {
             "id": "de-nouveau-4",
             "src": "/images/optimized/projects/de-nouveau/project-1.jpg",
-            "alt": "Page détail d'un projet De Nouveau"
+            "alt": "Page du projet de logements sociaux à Bali avec rendu architectural aérien"
           },
           {
             "id": "de-nouveau-5",
             "src": "/images/optimized/projects/de-nouveau/project-2.jpg",
-            "alt": "Page détail d'un projet De Nouveau"
+            "alt": "Galerie du projet de logements sociaux à Bali avec rendus de la cour et de la cuisine"
           },
           {
             "id": "de-nouveau-6",
             "src": "/images/optimized/projects/de-nouveau/admin-project.jpg",
-            "alt": "Interface d'administration des projets dans Payload CMS"
+            "alt": "Éditeur de projet Payload CMS pour Appartement Fraternité"
           },
           {
             "id": "de-nouveau-7",
             "src": "/images/optimized/projects/de-nouveau/admin-medias.jpg",
-            "alt": "Collection de médias dans l'interface d'administration Payload CMS"
+            "alt": "Médiathèque Payload CMS listant les images des projets d’architecture"
           }
         ]
       },
@@ -340,11 +367,38 @@
         "period": "2026",
         "role": "Design / Développement Frontend & Integration",
         "layout": "image-left",
-        "summary": "Composant réutilisable de CV et de portfolio pour cadre dirigeant dans une entreprise d’assurance automobile.",
+        "summary": "Portfolio CV réutilisable en React et TypeScript pour un cadre dirigeant dans une entreprise d’assurance automobile.",
+        "seoTitle": "Portfolio exécutif réutilisable SPA | Étude de cas React TypeScript",
+        "seoDescription": "Étude de cas d’une Single Page Application portfolio réutilisable, développée avec React, TypeScript, React Router, Tailwind CSS et une intégration orientée composants.",
+        "seoKeywords": [
+          "portfolio React",
+          "TypeScript",
+          "single page application",
+          "React Router",
+          "Tailwind CSS",
+          "intégration composant",
+          "interface responsive",
+          "mode sombre"
+        ],
         "description": [
-          "Conception d'un composant réutilisable de type Single Page Application pour un client, destiné à être intégré dans une application existante, avec des contraintes spécifiques dû à la stack technique.",
-          "Réalisation d'un portfolio dynamique, basé sur du contenu (sans données en dur), avec un design minimaliste d'inspiration éditoriale, avec des animations fluides et une interface responsive intégrant un mode clair/sombre.",
-          "Mise en place d’une Single Page Application avec plusieurs routes côté client (/, /about, /contact) via React Router, incluant également une page dédiée à la gestion des erreurs 404."
+          "Conception d’une Single Page Application réutilisable destinée à être intégrée dans une application existante, en respectant sa stack technique et ses contraintes d’intégration.",
+          "L’objectif était de créer un portfolio dynamique sans données en dur, combinant un design minimaliste d’inspiration éditoriale, des animations fluides, une interface responsive et des thèmes clair et sombre.",
+          "Développement du portfolio avec React, TypeScript et React Router, incluant plusieurs routes côté client et une page dédiée aux erreurs 404.",
+          "Le résultat est un composant réutilisable dont le contenu et la présentation peuvent être adaptés à différents profils de cadres dirigeants sans reconstruire l’interface."
+        ],
+        "detailSections": [
+          {
+            "title": "Contexte du projet",
+            "body": "Le client avait besoin d’un profil exécutif et portfolio réutilisable, intégrable dans une application existante et capable d’évoluer sans contenu codé en dur."
+          },
+          {
+            "title": "Implémentation frontend",
+            "body": "L’interface a été développée avec React, TypeScript, React Router et Tailwind CSS, avec des composants réutilisables, des layouts responsives, des transitions et un support clair/sombre."
+          },
+          {
+            "title": "Structure du contenu",
+            "body": "Le composant repose sur des données structurées afin que le profil, les expériences, les routes et les sections portfolio puissent évoluer sans modifier le layout principal."
+          }
         ],
         "links": {
           "live": "",
@@ -364,48 +418,48 @@
         "mainImage": {
           "id": "reusable-executive-portfolio-spa-main",
           "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-          "alt": "Composant portfolio réutilisable SPA image principale"
+          "alt": "Page d’accueil du portfolio exécutif avec portrait et navigation"
         },
         "gallery": [
           {
             "id": "reusable-executive-portfolio-spa-1",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-1.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 1"
+            "alt": "Page d’accueil du portfolio exécutif avec portrait et navigation"
           },
           {
             "id": "reusable-executive-portfolio-spa-2",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-2.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 2"
+            "alt": "Page d’accueil du portfolio exécutif affichée en mode sombre"
           },
           {
             "id": "reusable-executive-portfolio-spa-3",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-3.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 3"
+            "alt": "Parcours professionnel du portfolio exécutif en mode clair"
           },
           {
             "id": "reusable-executive-portfolio-spa-4",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-4.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 4"
+            "alt": "Section compétences et certifications du portfolio exécutif"
           },
           {
             "id": "reusable-executive-portfolio-spa-5",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-5.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 5"
+            "alt": "Parcours professionnel du portfolio exécutif en mode sombre"
           },
           {
             "id": "reusable-executive-portfolio-spa-6",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-6.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 6"
+            "alt": "Page à propos du portfolio exécutif avec portrait et biographie"
           },
           {
             "id": "reusable-executive-portfolio-spa-7",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-7.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 7"
+            "alt": "Section formation et parcours académique du portfolio exécutif"
           },
           {
             "id": "reusable-executive-portfolio-spa-8",
             "src": "/images/optimized/projects/reusable-executive-portfolio-spa/reusable-executive-portfolio-spa-8.jpg",
-            "alt": "Composant portfolio réutilisable SPA image 8"
+            "alt": "Page contact du portfolio exécutif avec formulaire et coordonnées"
           }
         ]
       },
@@ -416,10 +470,36 @@
         "period": "2025",
         "role": "Design / Frontend & CMS Development",
         "layout": "image-left",
-        "summary": "Site web dédié à la publication et au lancement d'un livre, ainsi qu'à sa vente",
+        "summary": "Site e-commerce WordPress et Shopify dédié à la publication, au lancement et à la vente en ligne d’un livre.",
+        "seoTitle": "Ribelmais Buch site e-commerce | Projet WordPress Shopify",
+        "seoDescription": "Étude de cas Ribelmais Buch, un site WordPress et Shopify responsive créé pour le lancement d’un livre suisse, la vente en ligne et la présentation éditoriale du projet.",
+        "seoKeywords": [
+          "site WordPress",
+          "intégration Shopify",
+          "site lancement livre",
+          "site e-commerce",
+          "design web responsive",
+          "développement frontend",
+          "client suisse"
+        ],
         "description": [
           "Conception et développement d'un site pour le compte d'un client suisse à l’occasion du lancement de son livre, avec une intégration de Shopify pour la gestion et la vente en ligne.",
-          "L'objectif était de créer un site d' e-commerce au design épuré et minimaliste, conformément à la demande du client."
+          "L’objectif était de créer un site e-commerce précis, au design épuré et minimaliste demandé par le client.",
+          "La solution associe WordPress pour les contenus éditoriaux et Shopify pour la gestion du produit et des commandes, avec un parcours clair de la découverte du livre jusqu’à son achat en ligne."
+        ],
+        "detailSections": [
+          {
+            "title": "Contexte du projet",
+            "body": "Ribelmais Buch nécessitait un site produit clair pour accompagner la publication d’un livre, présenter le projet et orienter les visiteurs vers l’achat en ligne."
+          },
+          {
+            "title": "Implémentation",
+            "body": "Le site combine une base de contenu WordPress avec une intégration Shopify pour la gestion des ventes, afin de relier présentation éditoriale et parcours e-commerce."
+          },
+          {
+            "title": "Expérience utilisateur",
+            "body": "Le design reste minimal, lisible et direct, avec des layouts responsives, une information produit claire et un parcours centré sur la découverte puis l’achat."
+          }
         ],
         "links": {
           "live": "https://ribelmaisbuch.ch/",
@@ -429,18 +509,18 @@
         "mainImage": {
           "id": "ribelmais-buch-main",
           "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-          "alt": "Ribelmais buch image principale"
+          "alt": "Page d’accueil de Ribelmais Buch présentant le livre et son introduction"
         },
         "gallery": [
           {
             "id": "ribelmais-buch-1",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-1.jpg",
-            "alt": "Ribelmais buch image 1"
+            "alt": "Page d’accueil de Ribelmais Buch présentant le livre et son introduction"
           },
           {
             "id": "ribelmais-buch-2",
             "src": "/images/optimized/projects/ribelmais-buch/ribelmais-buch-2.jpg",
-            "alt": "Ribelmais buch image 2"
+            "alt": "Page produit Ribelmais Buch avec livre ouvert et commandes d’achat Shopify"
           }
         ]
       }
